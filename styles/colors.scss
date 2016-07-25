@@ -1,0 +1,94 @@
+// Colour functions
+@function light-shade($color) {
+    @return lighten($color, 20%);
+}
+
+@function dark-shade($color) {
+    @return darken($color, 20%);
+}
+
+// Base colours
+$red:       #fc4e4e;
+$blue:      #21add3;
+$yellow:    #fad250;
+$green:     #3bbf7e;
+$purple:    #c36ad1;
+$brown:     #d06f06;
+
+// Shades
+$light-red: light-shade($red);
+$dark-red:  dark-shade($red);
+$light-blue: light-shade($blue);
+$dark-blue:  dark-shade($blue);
+$light-yellow: light-shade($yellow);
+$dark-yellow:  dark-shade($yellow);
+$light-green: light-shade($green);
+$dark-green:  dark-shade($green);
+$light-purple: light-shade($purple);
+$dark-purple:  dark-shade($purple);
+$light-brown: light-shade($brown);
+$dark-brown:  dark-shade($brown);
+
+// Greys
+$black:     black;
+$gray-0:    #242424;
+$gray-1:    #494949;
+$gray-2:    #6d6d6d;
+$gray-3:    #929292;
+$gray-4:    #b6b6b6;
+$gray-5:    #dbdbdb;
+$white:     white;
+
+// Styles
+.red { color : $red;}
+.light-red { color: $light-red }
+.dark-red { color: $dark-red }
+
+.red-bg { background-color : $red;}
+.light-red-bg { background-color: $light-red }
+.dark-red-bg { background-color: $dark-red }
+
+.blue { color : $blue;}
+.light-blue { color: $light-blue }
+.dark-blue { color: $dark-blue }
+
+.blue-bg { background-color : $blue;}
+.light-blue-bg { background-color: $light-blue }
+.dark-blue-bg { background-color: $dark-blue }
+
+.yellow { color : $yellow;}
+.light-yellow { color: $light-yellow }
+.dark-yellow { color: $dark-yellow }
+
+.yellow-bg { background-color : $yellow;}
+.light-yellow-bg { background-color: $light-yellow }
+.dark-yellow-bg { background-color: $dark-yellow }
+
+.green { color : $green;}
+.light-green { color: $light-green }
+.dark-green { color: $dark-green }
+
+.green-bg { background-color : $green;}
+.light-green-bg { background-color: $light-green }
+.dark-green-bg { background-color: $dark-green }
+
+.purple { color : $purple }
+.light-purple { color: $light-purple }
+.dark-purple { color: $dark-purple }
+
+.purple-bg { background-color : $purple }
+.light-purple-bg { background-color: $light-purple }
+.dark-purple-bg { background-color: $dark-purple }
+
+.brown { color : $brown;}
+.light-brown { color: $light-brown }
+.dark-brown { color: $dark-brown }
+
+.brown-bg { background-color : $brown;}
+.light-brown-bg { background-color: $light-brown }
+.dark-brown-bg { background-color: $dark-brown }
+
+
+
+
+

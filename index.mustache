@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>FZUI Samples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="fzui.css" />
+        <style>
+            .pallete{
+                display:inline-block;
+                width:150px;
+                height:150px;
+            }
+
+            .pallete > div {
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                font-weight: bold;
+                color: #fff;
+            }
+        </style>
+
+        <script type="text/javascript">
+            function getColor(shade, color){
+                var rgb = getComputedStyle(document.getElementById(shade + "-" + color)).backgroundColor.split(',');
+                var output = '#';
+                output += parseInt(rgb[0].substring(4)).toString(16);
+                output += parseInt(rgb[1]).toString(16);
+                output += parseInt(rgb[2]).toString(16);
+                return output;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>FZUI!</h1>
+        <h2>Colour Pallete</h2>
+        <div>
+            {{#colors}}
+            <div class="pallete">
+                <div class="light-{{name}}-bg" id="light-{{name}}"><script type="text/javascript">document.write(getColor('light', '{{name}}'))</script></div>
+                <div class="{{name}}-bg" id="normal-{{name}}"><script type="text/javascript">document.write(getColor('normal', '{{name}}'))</script></div>
+                <div class="dark-{{name}}-bg" id="dark-{{name}}"><script type="text/javascript">document.write(getColor('dark', '{{name}}'))</script></div>
+            </div>
+            {{/colors}}           
+        </div>
+    </body>
+</html>

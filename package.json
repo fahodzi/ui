@@ -1,0 +1,20 @@
+{
+  "name": "fzui",
+  "version": "0.1.0",
+  "description": "Fahodzi UI Library",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ekowabaka/fzui.git"
+  },
+  "author": "James Ekow Ainooson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ekowabaka/fzui/issues"
+  },
+  "homepage": "https://github.com/ekowabaka/fzui#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-mustache-render": "^1.9.2",
+    "grunt-sass": "^1.2.0"
+  }
+}

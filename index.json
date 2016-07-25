@@ -1,0 +1,10 @@
+{
+    "colors" : [
+        {"name": "red"},
+        {"name": "yellow"}, 
+        {"name": "blue"}, 
+        {"name": "green"}, 
+        {"name": "brown"}, 
+        {"name": "purple"}
+    ]
+}
