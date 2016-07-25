@@ -10,7 +10,7 @@
 // Base colours
 $red:       #fc4e4e;
 $blue:      #21add3;
-$yellow:    #fad250;
+$yellow:    #ffb724;
 $green:     #3bbf7e;
 $purple:    #c36ad1;
 $brown:     #d06f06;
@@ -88,7 +88,16 @@ $white:     white;
 .light-brown-bg { background-color: $light-brown }
 .dark-brown-bg { background-color: $dark-brown }
 
+.gray-0 { color: $gray-0 }
+.gray-1 { color: $gray-1 }
+.gray-2 { color: $gray-2 }
+.gray-3 { color: $gray-3 }
+.gray-4 { color: $gray-4 }
+.gray-5 { color: $gray-5 }
 
-
-
-
+.gray-0-bg { background-color: $gray-0 }
+.gray-1-bg { background-color: $gray-1 }
+.gray-2-bg { background-color: $gray-2 }
+.gray-3-bg { background-color: $gray-3 }
+.gray-4-bg { background-color: $gray-4 }
+.gray-5-bg { background-color: $gray-5 }

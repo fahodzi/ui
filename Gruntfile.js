@@ -1,12 +1,19 @@
 module.exports = function(grunt)
 {
     grunt.initConfig({
+        concat:{
+            dist: {
+                src : [
+                    'styles/colors.scss',
+                    'styles/buttons.scss',
+                ],
+                dest : 'build.scss'
+            }
+        },
         sass: {
             dist: {
                 files: {
-                    'fzui.css': [
-                        'styles/colors.scss',
-                    ]
+                    'fzui.css' : 'build.scss',
                 }
             }
         },
@@ -21,8 +28,11 @@ module.exports = function(grunt)
                 ]
             }
         },
+        clean : ['build.scss']
     });
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-mustache-render');
-    grunt.registerTask('default', ['sass', 'mustache_render']);
+    grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.registerTask('default', ['concat', 'sass', 'mustache_render']);
 }

@@ -7,23 +7,23 @@
         <link rel="stylesheet" type="text/css" href="fzui.css" />
         <style>
             .pallete{
-                display:inline-block;
-                width:150px;
-                height:150px;
+                display: inline-block;
+                width: 170px;
+                text-align: center;
+                font-weight: bold;
             }
 
             .pallete > div {
                 height: 50px;
                 line-height: 50px;
-                text-align: center;
-                font-weight: bold;
+                font-weight: normal;
                 color: #fff;
             }
         </style>
 
         <script type="text/javascript">
-            function getColor(shade, color){
-                var rgb = getComputedStyle(document.getElementById(shade + "-" + color)).backgroundColor.split(',');
+            function getColor(id){
+                var rgb = getComputedStyle(document.getElementById(id)).backgroundColor.split(',');
                 var output = '#';
                 output += parseInt(rgb[0].substring(4)).toString(16);
                 output += parseInt(rgb[1]).toString(16);
@@ -36,36 +36,72 @@
         <h1>FZUI!</h1>
         <h2>Colour Pallete</h2>
         <div>
+            <h3>Colors</h3>
             <div class="pallete">
-                <div class="light-red-bg" id="light-red"><script type="text/javascript">document.write(getColor('light', 'red'))</script></div>
-                <div class="red-bg" id="normal-red"><script type="text/javascript">document.write(getColor('normal', 'red'))</script></div>
-                <div class="dark-red-bg" id="dark-red"><script type="text/javascript">document.write(getColor('dark', 'red'))</script></div>
+                <div class="light-red-bg" id="light-red"><script type="text/javascript">document.write(getColor('light-red'))</script></div>
+                <div class="red-bg" id="normal-red"><script type="text/javascript">document.write(getColor('normal-red'))</script></div>
+                <div class="dark-red-bg" id="dark-red"><script type="text/javascript">document.write(getColor('dark-red'))</script></div>
+                <span>red</span>
             </div>
             <div class="pallete">
-                <div class="light-yellow-bg" id="light-yellow"><script type="text/javascript">document.write(getColor('light', 'yellow'))</script></div>
-                <div class="yellow-bg" id="normal-yellow"><script type="text/javascript">document.write(getColor('normal', 'yellow'))</script></div>
-                <div class="dark-yellow-bg" id="dark-yellow"><script type="text/javascript">document.write(getColor('dark', 'yellow'))</script></div>
+                <div class="light-yellow-bg" id="light-yellow"><script type="text/javascript">document.write(getColor('light-yellow'))</script></div>
+                <div class="yellow-bg" id="normal-yellow"><script type="text/javascript">document.write(getColor('normal-yellow'))</script></div>
+                <div class="dark-yellow-bg" id="dark-yellow"><script type="text/javascript">document.write(getColor('dark-yellow'))</script></div>
+                <span>yellow</span>
             </div>
             <div class="pallete">
-                <div class="light-blue-bg" id="light-blue"><script type="text/javascript">document.write(getColor('light', 'blue'))</script></div>
-                <div class="blue-bg" id="normal-blue"><script type="text/javascript">document.write(getColor('normal', 'blue'))</script></div>
-                <div class="dark-blue-bg" id="dark-blue"><script type="text/javascript">document.write(getColor('dark', 'blue'))</script></div>
+                <div class="light-blue-bg" id="light-blue"><script type="text/javascript">document.write(getColor('light-blue'))</script></div>
+                <div class="blue-bg" id="normal-blue"><script type="text/javascript">document.write(getColor('normal-blue'))</script></div>
+                <div class="dark-blue-bg" id="dark-blue"><script type="text/javascript">document.write(getColor('dark-blue'))</script></div>
+                <span>blue</span>
             </div>
             <div class="pallete">
-                <div class="light-green-bg" id="light-green"><script type="text/javascript">document.write(getColor('light', 'green'))</script></div>
-                <div class="green-bg" id="normal-green"><script type="text/javascript">document.write(getColor('normal', 'green'))</script></div>
-                <div class="dark-green-bg" id="dark-green"><script type="text/javascript">document.write(getColor('dark', 'green'))</script></div>
+                <div class="light-green-bg" id="light-green"><script type="text/javascript">document.write(getColor('light-green'))</script></div>
+                <div class="green-bg" id="normal-green"><script type="text/javascript">document.write(getColor('normal-green'))</script></div>
+                <div class="dark-green-bg" id="dark-green"><script type="text/javascript">document.write(getColor('dark-green'))</script></div>
+                <span>green</span>
             </div>
             <div class="pallete">
-                <div class="light-brown-bg" id="light-brown"><script type="text/javascript">document.write(getColor('light', 'brown'))</script></div>
-                <div class="brown-bg" id="normal-brown"><script type="text/javascript">document.write(getColor('normal', 'brown'))</script></div>
-                <div class="dark-brown-bg" id="dark-brown"><script type="text/javascript">document.write(getColor('dark', 'brown'))</script></div>
+                <div class="light-brown-bg" id="light-brown"><script type="text/javascript">document.write(getColor('light-brown'))</script></div>
+                <div class="brown-bg" id="normal-brown"><script type="text/javascript">document.write(getColor('normal-brown'))</script></div>
+                <div class="dark-brown-bg" id="dark-brown"><script type="text/javascript">document.write(getColor('dark-brown'))</script></div>
+                <span>brown</span>
             </div>
             <div class="pallete">
-                <div class="light-purple-bg" id="light-purple"><script type="text/javascript">document.write(getColor('light', 'purple'))</script></div>
-                <div class="purple-bg" id="normal-purple"><script type="text/javascript">document.write(getColor('normal', 'purple'))</script></div>
-                <div class="dark-purple-bg" id="dark-purple"><script type="text/javascript">document.write(getColor('dark', 'purple'))</script></div>
+                <div class="light-purple-bg" id="light-purple"><script type="text/javascript">document.write(getColor('light-purple'))</script></div>
+                <div class="purple-bg" id="normal-purple"><script type="text/javascript">document.write(getColor('normal-purple'))</script></div>
+                <div class="dark-purple-bg" id="dark-purple"><script type="text/javascript">document.write(getColor('dark-purple'))</script></div>
+                <span>purple</span>
             </div>
         </div>
+        <div>
+            <h3>Grayscales</h3>
+            <div class="pallete">
+                <div class="gray-0-bg" id="gray-0"><script type="text/javascript">document.write(getColor('gray-0'))</script></div>
+            </div>        
+            <div class="pallete">
+                <div class="gray-1-bg" id="gray-1"><script type="text/javascript">document.write(getColor('gray-1'))</script></div>
+            </div>        
+            <div class="pallete">
+                <div class="gray-2-bg" id="gray-2"><script type="text/javascript">document.write(getColor('gray-2'))</script></div>
+            </div>        
+            <div class="pallete">
+                <div class="gray-3-bg" id="gray-3"><script type="text/javascript">document.write(getColor('gray-3'))</script></div>
+            </div>        
+            <div class="pallete">
+                <div class="gray-4-bg" id="gray-4"><script type="text/javascript">document.write(getColor('gray-4'))</script></div>
+            </div>        
+            <div class="pallete">
+                <div class="gray-5-bg" id="gray-5"><script type="text/javascript">document.write(getColor('gray-5'))</script></div>
+            </div>        
+        </div>
+        <h2>Buttons</h2>
+        <button>Default</button>
+        <button class='button-red'>Red</button>
+        <button class='button-yellow'>Yellow</button>
+        <button class='button-blue'>Blue</button>
+        <button class='button-green'>Green</button>
+        <button class='button-brown'>Brown</button>
+        <button class='button-purple'>Purple</button>
     </body>
 </html>

@@ -35,22 +35,22 @@
   background-color: #13657b; }
 
 .yellow {
-  color: #fad250; }
+  color: #ffb724; }
 
 .light-yellow {
-  color: #fdecb3; }
+  color: #ffd98a; }
 
 .dark-yellow {
-  color: #deab06; }
+  color: #bd7f00; }
 
 .yellow-bg {
-  background-color: #fad250; }
+  background-color: #ffb724; }
 
 .light-yellow-bg {
-  background-color: #fdecb3; }
+  background-color: #ffd98a; }
 
 .dark-yellow-bg {
-  background-color: #deab06; }
+  background-color: #bd7f00; }
 
 .green {
   color: #3bbf7e; }
@@ -105,3 +105,109 @@
 
 .dark-brown-bg {
   background-color: #6d3a03; }
+
+.gray-0 {
+  color: #242424; }
+
+.gray-1 {
+  color: #494949; }
+
+.gray-2 {
+  color: #6d6d6d; }
+
+.gray-3 {
+  color: #929292; }
+
+.gray-4 {
+  color: #b6b6b6; }
+
+.gray-5 {
+  color: #dbdbdb; }
+
+.gray-0-bg {
+  background-color: #242424; }
+
+.gray-1-bg {
+  background-color: #494949; }
+
+.gray-2-bg {
+  background-color: #6d6d6d; }
+
+.gray-3-bg {
+  background-color: #929292; }
+
+.gray-4-bg {
+  background-color: #b6b6b6; }
+
+.gray-5-bg {
+  background-color: #dbdbdb; }
+
+button, .button {
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.2);
+  background-color: #b6b6b6;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: white;
+  border: 1px solid transparent;
+  display: inline-block;
+  padding: 10px 15px 8px 15px;
+  padding-right: 15px;
+  min-width: 50px;
+  outline: none; }
+
+button::-moz-focus-inner {
+  border: none; }
+
+button:active, .button:active {
+  background-color: darkgray;
+  box-shadow: inset 1px 1px 3px #6a6a6a; }
+
+.button-red {
+  box-shadow: 1px 1px 3px rgba(24, 0, 0, 0.2);
+  background-color: #fc4e4e; }
+
+.button-red:active {
+  background-color: #f13f3f;
+  box-shadow: inset 1px 1px 3px #ae0303; }
+
+.button-yellow {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #ffb724; }
+
+.button-yellow:active {
+  background-color: #f3aa17;
+  box-shadow: inset 1px 1px 3px #8a5d00; }
+
+.button-blue {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #21add3; }
+
+.button-blue:active {
+  background-color: #2895b2;
+  box-shadow: inset 1px 1px 3px #0c414f; }
+
+.button-green {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #3bbf7e; }
+
+.button-green:active {
+  background-color: #40a071;
+  box-shadow: inset 1px 1px 3px #174a31; }
+
+.button-brown {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  background-color: #d06f06; }
+
+.button-brown:active {
+  background-color: #ae610f;
+  box-shadow: inset 1px 1px 3px #3b2002; }
+
+.button-purple {
+  box-shadow: 1px 1px 3px rgba(6, 2, 7, 0.2);
+  background-color: #c36ad1; }
+
+.button-purple:active {
+  background-color: #b362c0;
+  box-shadow: inset 1px 1px 3px #70267c; }

@@ -1,0 +1,51 @@
+@mixin button-base($color){
+    box-shadow: 1px 1px 3px rgba(darken($color, 60%), 0.2);
+    background-color:$color;
+}
+
+@mixin button-active($color){
+    background-color:desaturate(darken($color, 5%), 10%);
+    box-shadow: inset 1px 1px 3px darken($color, 30%);
+}
+
+button, .button {
+    @include button-base($gray-4);
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 3px;
+    cursor: pointer;
+    color: white;
+    border: 1px solid transparent;
+    display:inline-block;
+    padding:10px 15px 8px 15px;
+    padding-right: 15px;
+    min-width: 50px;
+    outline: none;
+}
+
+button::-moz-focus-inner{
+    border: none;
+}
+
+button:active, .button:active {
+    @include button-active($gray-4)
+}
+
+.button-red { @include button-base($red) }
+.button-red:active { @include button-active($red) }
+
+.button-yellow { @include button-base($yellow) }
+.button-yellow:active { @include button-active($yellow) }
+
+.button-blue { @include button-base($blue) }
+.button-blue:active { @include button-active($blue) }
+
+.button-green { @include button-base($green) }
+.button-green:active { @include button-active($green) }
+
+.button-brown { @include button-base($brown) }
+.button-brown:active { @include button-active($brown) }
+
+.button-purple { @include button-base($purple) }
+.button-purple:active { @include button-active($purple) }
+
