@@ -5,19 +5,20 @@
 
 @mixin button-active($color){
     background-color:desaturate(darken($color, 5%), 10%);
-    box-shadow: inset 1px 1px 3px darken($color, 30%);
+    box-shadow: inset 1px 1px 4px darken($color, 30%);
 }
 
 button, .button {
     @include button-base($gray-4);
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-weight: bold;
     font-size: 14px;
     border-radius: 3px;
     cursor: pointer;
     color: white;
-    border: 1px solid transparent;
+    border: none;
     display:inline-block;
-    padding:10px 15px 8px 15px;
+    padding:10px 15px 10px 15px;
     padding-right: 15px;
     min-width: 50px;
     outline: none;
@@ -48,4 +49,13 @@ button:active, .button:active {
 
 .button-purple { @include button-base($purple) }
 .button-purple:active { @include button-active($purple) }
+
+.dropdown > button:after{
+    content: "\f078";
+    padding-left: 10px;
+}
+
+.dropdown-contents{
+    display: none;
+}
 
