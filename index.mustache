@@ -32,7 +32,8 @@
                 border-radius: 7px;
             }
         </style>
-
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="fzui.js"></script>
         <script type="text/javascript">
             function getColor(id){
                 var rgb = getComputedStyle(document.getElementById(id)).backgroundColor.split(',');
@@ -93,6 +94,13 @@
             <button>Dropdown</button>
             <div class="dropdown-contents">
                 Hello!
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <button class="button-red" >Red</button>
+            <div class="dropdown-contents">
+                I am red!
             </div>
         </div>
     </body>

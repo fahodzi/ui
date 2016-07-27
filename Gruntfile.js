@@ -1,10 +1,19 @@
 module.exports = function(grunt)
 {
     grunt.initConfig({
+        concat: {
+                options: {
+                separator: ';',
+            },
+            dist: {
+                src: ['js/dropdown.js'],
+                dest: 'fzui.js',
+            },
+        },
         sass: {
             dist: {
                 files: {
-                    'fzui.css' : 'fzui.scss',
+                    'fzui.css' : 'sass/fzui.scss',
                 }
             }
         },
@@ -24,5 +33,6 @@ module.exports = function(grunt)
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-mustache-render');
     grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.registerTask('default', ['sass', 'mustache_render']);
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.registerTask('default', ['sass', 'concat', 'mustache_render']);
 }

@@ -57,5 +57,8 @@ button:active, .button:active {
 
 .dropdown-contents{
     display: none;
+    position: absolute;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    margin-top: 5px;
 }
 
