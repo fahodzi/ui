@@ -4,7 +4,7 @@
         <title>FZUI Samples</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="fzui.css" />
+        <link rel="stylesheet" type="text/css" href="dist/fzui.css" />
         <style>
             .pallete{
                 display: inline-block;
@@ -33,7 +33,7 @@
             }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="fzui.js"></script>
+        <script src="dist/fzui.js"></script>
         <script type="text/javascript">
             function getColor(id){
                 var rgb = getComputedStyle(document.getElementById(id)).backgroundColor.split(',');
@@ -127,9 +127,10 @@
 
         <div class="dropdown">
             <button class="button-red" >Red</button>
-            <div class="dropdown-contents">
-                I am red!
-            </div>
+            <ul class="dropdown-contents menu">
+                <li>Some Item</li>
+                <li>Another Item</li>
+            </li>
         </div>
     </body>
 </html>

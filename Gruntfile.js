@@ -7,13 +7,13 @@ module.exports = function(grunt)
             },
             dist: {
                 src: ['js/dropdown.js'],
-                dest: 'fzui.js',
+                dest: 'dist/fzui.js',
             },
         },
         sass: {
             dist: {
                 files: {
-                    'fzui.css' : 'sass/fzui.scss',
+                    'dist/fzui.css' : 'sass/fzui.scss',
                 }
             }
         },
