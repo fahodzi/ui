@@ -306,15 +306,14 @@ button:active, .button:active {
   background-color: #b362c0;
   box-shadow: inset 1px 1px 4px #70267c; }
 
-.dropdown > button:after {
-  content: "\f078";
-  padding-left: 10px; }
-
-.dropdown-contents {
-  display: none;
-  position: absolute;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
-  margin-top: 5px; }
+.button-group {
+  font-size: 0; }
+  .button-group button {
+    border-radius: 0px; }
+  .button-group > button:first-child, .button-group .dropdown:first-child > button {
+    border-radius: 3px 0px 0px 3px; }
+  .button-group > button:last-child, .button-group .dropdown:last-child > button {
+    border-radius: 0px 3px 3px 0px; }
 
 .dropdown {
   display: inline-block; }
