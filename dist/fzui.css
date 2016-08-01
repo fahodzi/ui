@@ -238,18 +238,18 @@ body {
 button, .button {
   box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.2);
   background-color: #b6b6b6;
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: bold;
-  font-size: 14px;
   border-radius: 3px;
   cursor: pointer;
   color: white;
   border: none;
   display: inline-block;
-  padding: 10px 15px 10px 15px;
-  padding-right: 15px;
   min-width: 50px;
-  outline: none; }
+  outline: none;
+  vertical-align: bottom; }
 
 button::-moz-focus-inner {
   border: none; }
@@ -306,6 +306,22 @@ button:active, .button:active {
   background-color: #b362c0;
   box-shadow: inset 1px 1px 4px #70267c; }
 
+.button-mini {
+  font-size: 12px;
+  padding: 3px 6px 3px 6px; }
+
+.button-small {
+  font-size: 14px;
+  padding: 5px 12px 5px 12px; }
+
+.button-large {
+  font-size: 14px;
+  padding: 10px 18px 10px 18px; }
+
+.button-mega {
+  font-size: 16px;
+  padding: 12px 24px 12px 24px; }
+
 .button-group {
   font-size: 0; }
   .button-group button {
@@ -314,6 +330,22 @@ button:active, .button:active {
     border-radius: 3px 0px 0px 3px; }
   .button-group > button:last-child, .button-group .dropdown:last-child > button {
     border-radius: 0px 3px 3px 0px; }
+
+.button-group-mini > button, .button-group-mini > .dropdown > button {
+  font-size: 12px;
+  padding: 3px 6px 3px 6px; }
+
+.button-group-small > button, .button-group-small > .dropdown > button {
+  font-size: 14px;
+  padding: 5px 12px 5px 12px; }
+
+.button-group-large > button, .button-group-large > .dropdown > button {
+  font-size: 14px;
+  padding: 10px 18px 10px 18px; }
+
+.button-group-mega > button, .button-group-mega > .dropdown > button {
+  font-size: 16px;
+  padding: 12px 24px 12px 24px; }
 
 .dropdown {
   display: inline-block; }
