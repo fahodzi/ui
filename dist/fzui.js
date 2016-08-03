@@ -6,10 +6,11 @@ $(function(){
         });
     }
 
-    $('.dropdown > button').click(function(){
+    $('.dropdown > button').click(function(event){
         var parent;
         parent = $(this).parent();
         parent.toggleClass('active');
+        event.stopPropagation();
     });
 
     $(document).on('click.fzui', resetContents);

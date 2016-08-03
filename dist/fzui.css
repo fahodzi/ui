@@ -247,7 +247,6 @@ button, .button {
   color: white;
   border: none;
   display: inline-block;
-  min-width: 50px;
   outline: none;
   vertical-align: bottom; }
 
@@ -347,6 +346,16 @@ button:active, .button:active {
   font-size: 16px;
   padding: 12px 24px 12px 24px; }
 
+.button-group-plain > button, .button-group-plain > .dropdown > button {
+  box-shadow: none;
+  background-color: transparent;
+  color: #929292;
+  padding: 5px; }
+
+.button-group-plain > .dropdown > button:after {
+  content: "";
+  padding: 0px; }
+
 .dropdown {
   display: inline-block; }
   .dropdown button:after {
@@ -356,10 +365,11 @@ button:active, .button:active {
     display: none;
     position: absolute;
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 7px;
+    margin-top: 5px;
     background-color: #fff;
     border-radius: 3px;
-    border: 1px solid #e8e8e8; }
+    border: 1px solid #e8e8e8;
+    z-index: 1000; }
 
 .dropdown.active > .dropdown-contents {
   display: block; }
@@ -367,9 +377,10 @@ button:active, .button:active {
 ul.menu {
   list-style: none;
   margin: 0px;
-  padding: 0px; }
+  padding: 0px;
+  color: #929292; }
   ul.menu > li {
-    padding: 7px 15px 7px 15px;
+    padding: 6px;
     font-size: 14px; }
   ul.menu > li:hover {
     background: #fafafa; }

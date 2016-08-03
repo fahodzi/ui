@@ -49,7 +49,6 @@ button, .button {
     color: white;
     border: none;
     display:inline-block;
-    min-width: 50px;
     outline: none;
     vertical-align: bottom;
 }
@@ -112,4 +111,18 @@ button:active, .button:active {
 
 .button-group-mega {
     > button, >.dropdown > button { @include button-size-mega }
+}
+
+.button-group-plain{
+    > button, >.dropdown > button {
+        box-shadow: none;
+        background-color: transparent;
+        color: $gray-3;
+        padding:5px;
+    }
+
+    >.dropdown > button:after {
+        content: "";
+        padding: 0px;
+    }
 }
