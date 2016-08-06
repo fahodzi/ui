@@ -1,0 +1,80 @@
+.modal{
+    display: none;
+}
+
+.modal-backdrop{
+    position:fixed;
+    left:0px;
+    top:0px;
+    width:100%;
+    height:100%;
+    background-color: rgba($gray-0, 0.8);
+    display:none;
+}
+
+.modal-wrapper{
+
+    width: 700px;
+    background-color: #fff;
+    border-radius: 7px 7px 5px 5px;
+    display: none;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 2px 2px 6px rgba($gray-0, 0.8);
+    margin-top: 50px;
+
+    .modal {
+        display: none;
+    }
+
+    .title {
+        background-color:$gray-2;
+        border-radius: 5px 5px 0px 0px;
+    }
+
+    .title:after {
+        content: "";
+        display: block;
+        clear:both;
+    }
+
+    .title > span {
+        display: block;
+        float: left;
+        width:639px;
+        line-height: 32px;
+        padding-left: 10px;
+        color: $white;
+        font-weight: bold;
+    }
+
+    .close-button {
+        cursor:default;
+        background: transparent;
+        padding: 3px;
+        box-shadow: none;
+        border: none;
+        color: $gray-3;
+        font-size: 16px;
+        width:50px;
+        float: right;
+        display: block;
+        padding: 5px 10px;
+        text-align: right;
+        font-weight: bold;
+
+    }
+
+    .close-button:after{
+        content: "x";
+        text-align: right;
+    }
+
+    .close-button:hover{
+        color: lighten($gray-3, 10%);
+    }
+
+    .close-button:active{
+        color: darken($gray-3, 20%);
+    }
+}
