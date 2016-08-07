@@ -119,6 +119,7 @@ button:active, .button:active {
         background-color: transparent;
         color: $gray-3;
         padding:5px;
+        font-weight: normal;
     }
 
     >.dropdown > button:after {
