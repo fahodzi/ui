@@ -353,9 +353,19 @@ button:active, .button:active {
   padding: 5px;
   font-weight: normal; }
 
+.button-group-plain > button:hover, .button-group-plain > .dropdown > button:hover {
+  color: #b6b6b6; }
+
+.button-group-plain > .dropdown.active > button {
+  color: #b6b6b6;
+  background-color: whitesmoke; }
+
 .button-group-plain > .dropdown > button:after {
   content: "";
   padding: 0px; }
+
+.button-group-plain > .dropdown > .dropdown-contents {
+  margin-top: 0px; }
 
 .dropdown {
   display: inline-block; }
@@ -383,6 +393,8 @@ ul.menu {
   ul.menu > li {
     padding: 6px;
     font-size: 14px; }
+  ul.menu > li > a {
+    display: block; }
   ul.menu > li:hover {
     background: #fafafa; }
 

@@ -122,8 +122,21 @@ button:active, .button:active {
         font-weight: normal;
     }
 
-    >.dropdown > button:after {
+    > button:hover, >.dropdown > button:hover{
+        color: $gray-4;
+    }
+
+    > .dropdown.active > button {
+        color: $gray-4;
+        background-color: lighten($gray-5, 10%);
+    }
+
+    > .dropdown > button:after {
         content: "";
         padding: 0px;
+    }
+
+    > .dropdown > .dropdown-contents {
+        margin-top: 0px;
     }
 }

@@ -62,7 +62,10 @@ $(function(){
 
 fzui.closeModal = function(){
     $('.modal-wrapper').fadeOut('fast', function(){
-        $('.modal-backdrop').fadeOut('fast');
-        $('body').removeClass('modal-active');
+        $('.modal-backdrop').fadeOut('fast', function(){
+            $('.modal-wrapper').remove();
+            $('.modal-backdrop').remove();
+            $('body').removeClass('modal-active');
+        });
     });
 };
