@@ -1,5 +1,4 @@
-function dropdown()
-{
+function dropdown() {
     var resetContents = function (event) {
         $('.dropdown').each(function(){
             // Reset all dropdowns on body click
@@ -20,7 +19,8 @@ function dropdown()
 
     $(document).on('click.fzui', resetContents);
 }
+
 fzui.dropdowns = new dropdown();
-$(function(){
+$(function() {
     fzui.dropdowns.init();
 })
