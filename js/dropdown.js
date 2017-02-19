@@ -1,3 +1,6 @@
+/**
+ * Dropdown menu javascript
+ */
 function dropdown() {
     var resetContents = function (event) {
         $('.dropdown').each(function(){
@@ -21,6 +24,7 @@ function dropdown() {
 }
 
 fzui.dropdowns = new dropdown();
+
 $(function() {
     fzui.dropdowns.init();
 })

@@ -1,5 +1,9 @@
+/**
+ * Create a modal window.
+ * @params selector A CSS selector used for selecting the contents of the modal
+ * @params options An object or string that contains options for the model window creator.
+ */
 fzui.modal = function(selector, options){
-    // Prevent modals from
     var title = ''; 
     if($('body').hasClass('modal-active')) return;
     if(typeof options == 'string') {

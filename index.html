@@ -6,6 +6,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="dist/fzui.css" />
         <style>
+            body{
+                width:80%;
+                margin-left:auto;
+                margin-right:auto;
+            }
+
             .pallete{
                 display: inline-block;
                 width: 170px;
@@ -183,7 +189,7 @@
         </div><br/>
 
         <div class='button-group button-group-large'>
-            <button>Normal</button>
+            <button>Large</button>
             <button>First</button>
             <button>Second</button>
             <button>Third</button>
@@ -191,12 +197,31 @@
         </div><br/>
 
         <div class='button-group button-group-mega'>
-            <button>Normal</button>
+            <button>Mega</button>
             <button>First</button>
             <button>Second</button>
             <button>Third</button>
             <button>Fourth</button>
         </div><br/>
+
+        <h2>Tabs and Pills</h2>
+        
+        <ul class="tabs tabs-small">
+            <li class="active"><a href='#one'>One</a></li>
+            <li><a href='#two'>Two</a></li>
+            <li><a href='#three'>Three</a></li>
+        </ul>
+        <div class="tab" id="one">
+            Contents of tab #1
+        </div>
+        <div class="tab" id="two">
+            Contents of tab #2
+        </div>
+        <div class="tab" id="three">
+            Contents of tab #3
+        </div>
+
+        </div>
         <h2>Modals</h2>
         <button onclick='fzui.modal("#modal-test")'>Show Modal</button>
         <div class="modal" id="modal-test">

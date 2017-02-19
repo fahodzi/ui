@@ -1,6 +1,8 @@
 var fzui = {};
-;function dropdown()
-{
+;/**
+ * Dropdown menu javascript
+ */
+function dropdown() {
     var resetContents = function (event) {
         $('.dropdown').each(function(){
             // Reset all dropdowns on body click
@@ -21,12 +23,18 @@ var fzui = {};
 
     $(document).on('click.fzui', resetContents);
 }
+
 fzui.dropdowns = new dropdown();
-$(function(){
+
+$(function() {
     fzui.dropdowns.init();
 })
-;fzui.modal = function(selector, options){
-    // Prevent modals from
+;/**
+ * Create a modal window.
+ * @params selector A CSS selector used for selecting the contents of the modal
+ * @params options An object or string that contains options for the model window creator.
+ */
+fzui.modal = function(selector, options){
     var title = ''; 
     if($('body').hasClass('modal-active')) return;
     if(typeof options == 'string') {
@@ -69,3 +77,22 @@ fzui.closeModal = function(){
         });
     });
 };
+;/**
+ * Implements the highlighting of the current tab or pill for tab and pill
+ * user interfaces.
+ */
+function tabs() {
+    this.init = function() {
+        $('.tabs a').click(function(event){
+            var parent = $(event.target).parent();
+            parent.parent().find('li').removeClass('active')
+            parent.addClass('active');
+        })
+    }
+}
+
+fzui.tabs = new tabs();
+
+$(function(){
+    fzui.tabs.init();
+});

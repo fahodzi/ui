@@ -1,0 +1,30 @@
+@mixin size($font-size, $vertical-padding, $horizontal-padding){
+    font-size:$font-size;
+    padding:$vertical-padding $horizontal-padding $vertical-padding $horizontal-padding;    
+}
+
+@mixin size-mini{ @include size($mini-font-size, $mini-vertical-padding, $mini-horizontal-padding) }
+@mixin size-small{ @include size($small-font-size, $small-vertical-padding, $small-horizontal-padding) }
+@mixin size-normal{ @include size($normal-font-size, $normal-vertical-padding, $normal-horizontal-padding);}
+@mixin size-large{ @include size($large-font-size, $large-vertical-padding, $large-horizontal-padding) }
+@mixin size-mega{ @include size($mega-font-size, $mega-vertical-padding, $mega-horizontal-padding) }
+
+$mini-font-size : 12px;
+$mini-vertical-padding : 3px;
+$mini-horizontal-padding : 6px;
+
+$small-font-size : 14px;
+$small-vertical-padding : 5px;
+$small-horizontal-padding : 12px;
+
+$normal-font-size : 14px;
+$normal-vertical-padding : 7px;
+$normal-horizontal-padding : 15px;
+
+$large-font-size : 14px;
+$large-vertical-padding : 10px;
+$large-horizontal-padding : 18px;
+
+$mega-font-size : 16px;
+$mega-vertical-padding : 12px;
+$mega-horizontal-padding : 24px;

@@ -393,8 +393,6 @@ ul.menu {
   ul.menu > li {
     padding: 6px;
     font-size: 14px; }
-  ul.menu > li > a {
-    display: block; }
   ul.menu > li:hover {
     background: #fafafa; }
 
@@ -458,3 +456,31 @@ ul.menu {
     content: "";
     display: block;
     clear: both; }
+
+ul.tabs {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+  border-bottom: solid 1px #dbdbdb; }
+  ul.tabs li {
+    display: inline-block;
+    margin-bottom: -1px;
+    font-weight: bold; }
+    ul.tabs li a {
+      font-size: 14px;
+      padding: 7px 15px 7px 15px;
+      text-decoration: none;
+      display: block;
+      color: #929292; }
+  ul.tabs li.active {
+    border: solid 1px #dbdbdb;
+    border-bottom: solid 1px white;
+    background-color: white;
+    border-radius: 3px 3px 0px 0px; }
+
+div.tab {
+  display: none;
+  padding: 10px; }
+
+div.tab:target {
+  display: block; }

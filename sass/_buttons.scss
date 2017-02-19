@@ -8,40 +8,9 @@
     box-shadow: inset 1px 1px 4px darken($color, 30%);
 }
 
-@mixin button-size($font-size, $vertical-padding, $horizontal-padding){
-    font-size:$font-size;
-    padding:$vertical-padding $horizontal-padding $vertical-padding $horizontal-padding;    
-}
-
-@mixin button-size-mini{ @include button-size($mini-font-size, $mini-vertical-padding, $mini-horizontal-padding) }
-@mixin button-size-small{ @include button-size($small-font-size, $small-vertical-padding, $small-horizontal-padding) }
-@mixin button-size-normal{ @include button-size($normal-font-size, $normal-vertical-padding, $normal-horizontal-padding);}
-@mixin button-size-large{ @include button-size($large-font-size, $large-vertical-padding, $large-horizontal-padding) }
-@mixin button-size-mega{ @include button-size($mega-font-size, $mega-vertical-padding, $mega-horizontal-padding) }
-
-$mini-font-size : 12px;
-$mini-vertical-padding : 3px;
-$mini-horizontal-padding : 6px;
-
-$small-font-size : 14px;
-$small-vertical-padding : 5px;
-$small-horizontal-padding : 12px;
-
-$normal-font-size : 14px;
-$normal-vertical-padding : 7px;
-$normal-horizontal-padding : 15px;
-
-$large-font-size : 14px;
-$large-vertical-padding : 10px;
-$large-horizontal-padding : 18px;
-
-$mega-font-size : 16px;
-$mega-vertical-padding : 12px;
-$mega-horizontal-padding : 24px;
-
 button, .button {
     @include button-base($gray-4);
-    @include button-size-normal;
+    @include size-normal;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-weight: bold;
     border-radius: 3px;
@@ -79,10 +48,10 @@ button:active, .button:active {
 .button-purple { @include button-base($purple) }
 .button-purple:active { @include button-active($purple) }
 
-.button-mini{ @include button-size-mini }
-.button-small{ @include button-size-small }
-.button-large{ @include button-size-large }
-.button-mega{ @include button-size-mega }
+.button-mini{ @include size-mini }
+.button-small{ @include size-small }
+.button-large{ @include size-large }
+.button-mega{ @include size-mega }
 
 .button-group {
     font-size: 0;
@@ -98,19 +67,19 @@ button:active, .button:active {
 }
 
 .button-group-mini {
-    > button, >.dropdown > button { @include button-size-mini }
+    > button, >.dropdown > button { @include size-mini }
 }
 
 .button-group-small {
-    > button, >.dropdown > button { @include button-size-small }
+    > button, >.dropdown > button { @include size-small }
 }
 
 .button-group-large {
-    > button, >.dropdown > button { @include button-size-large }
+    > button, >.dropdown > button { @include size-large }
 }
 
 .button-group-mega {
-    > button, >.dropdown > button { @include button-size-mega }
+    > button, >.dropdown > button { @include size-mega }
 }
 
 .button-group-plain{

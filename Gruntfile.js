@@ -6,7 +6,7 @@ module.exports = function(grunt)
                 separator: ';',
             },
             dist: {
-                src: ['js/fzui.js', 'js/dropdown.js', 'js/modal.js'],
+                src: ['js/fzui.js', 'js/dropdown.js', 'js/modal.js', 'js/tabs.js'],
                 dest: 'dist/fzui.js',
             },
         },
@@ -21,9 +21,9 @@ module.exports = function(grunt)
             dist: {
                 files : [
                     {
-                        data: "index.json", 
-                        template: "index.mustache", 
-                        dest: "index.html" 
+                        data: "index.json",
+                        template: "index.mustache",
+                        dest: "index.html"
                     }
                 ]
             }
