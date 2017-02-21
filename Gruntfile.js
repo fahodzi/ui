@@ -6,7 +6,7 @@ module.exports = function(grunt)
                 separator: ';',
             },
             dist: {
-                src: ['js/fzui.js', 'js/dropdown.js', 'js/modal.js', 'js/tabs.js'],
+                src: ['js/fzui.js', 'js/dropdown.js', 'js/modal.js', 'js/nav.js'],
                 dest: 'dist/fzui.js',
             },
         },
