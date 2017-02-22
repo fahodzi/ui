@@ -236,10 +236,9 @@ body {
   font-family: "Open Sans", Arial, Helvetica, sans-serif; }
 
 button, .button {
-  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.2);
-  background-color: #b6b6b6;
   font-size: 14px;
   padding: 7px 15px 7px 15px;
+  background-color: #b6b6b6;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-weight: bold;
   border-radius: 3px;
@@ -248,7 +247,8 @@ button, .button {
   border: none;
   display: inline-block;
   outline: none;
-  vertical-align: bottom; }
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.2); }
 
 button::-moz-focus-inner {
   border: none; }
@@ -258,48 +258,114 @@ button:active, .button:active {
   box-shadow: inset 1px 1px 4px #6a6a6a; }
 
 .button-red {
-  box-shadow: 1px 1px 3px rgba(24, 0, 0, 0.2);
-  background-color: #fc4e4e; }
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
+  background-color: #fc4e4e;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: default;
+  color: white;
+  border: none;
+  display: inline-block;
+  outline: none;
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(24, 0, 0, 0.2); }
 
 .button-red:active {
   background-color: #f13f3f;
   box-shadow: inset 1px 1px 4px #ae0303; }
 
 .button-yellow {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  background-color: #ffb724; }
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
+  background-color: #ffb724;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: default;
+  color: white;
+  border: none;
+  display: inline-block;
+  outline: none;
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
 
 .button-yellow:active {
   background-color: #f3aa17;
   box-shadow: inset 1px 1px 4px #8a5d00; }
 
 .button-blue {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  background-color: #21add3; }
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
+  background-color: #21add3;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: default;
+  color: white;
+  border: none;
+  display: inline-block;
+  outline: none;
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
 
 .button-blue:active {
   background-color: #2895b2;
   box-shadow: inset 1px 1px 4px #0c414f; }
 
 .button-green {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  background-color: #3bbf7e; }
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
+  background-color: #3bbf7e;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: default;
+  color: white;
+  border: none;
+  display: inline-block;
+  outline: none;
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
 
 .button-green:active {
   background-color: #40a071;
   box-shadow: inset 1px 1px 4px #174a31; }
 
 .button-brown {
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  background-color: #d06f06; }
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
+  background-color: #d06f06;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: default;
+  color: white;
+  border: none;
+  display: inline-block;
+  outline: none;
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
 
 .button-brown:active {
   background-color: #ae610f;
   box-shadow: inset 1px 1px 4px #3b2002; }
 
 .button-purple {
-  box-shadow: 1px 1px 3px rgba(6, 2, 7, 0.2);
-  background-color: #c36ad1; }
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
+  background-color: #c36ad1;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: default;
+  color: white;
+  border: none;
+  display: inline-block;
+  outline: none;
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(6, 2, 7, 0.2); }
 
 .button-purple:active {
   background-color: #b362c0;
@@ -457,15 +523,6 @@ ul.menu {
     display: block;
     clear: both; }
 
-ul.nav {
-  list-style: none; }
-  ul.nav li a {
-    font-size: 14px;
-    padding: 7px 15px 7px 15px;
-    text-decoration: none;
-    display: block;
-    color: #929292; }
-
 ul.tabs {
   list-style: none;
   margin: 0px;
@@ -473,13 +530,64 @@ ul.tabs {
   border-bottom: solid 1px #dbdbdb; }
   ul.tabs li {
     display: inline-block;
-    margin-bottom: -1px;
-    font-weight: bold; }
+    margin-bottom: -1px; }
+    ul.tabs li a {
+      color: #929292; }
   ul.tabs li.active {
     border: solid 1px #dbdbdb;
     border-bottom: solid 1px white;
     background-color: white;
     border-radius: 3px 3px 0px 0px; }
+
+ul.pills {
+  list-style: none;
+  margin: 0px;
+  padding: 0px; }
+  ul.pills li {
+    color: white;
+    background-color: #21add3;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: default;
+    color: white;
+    border: none;
+    display: inline-block;
+    outline: none;
+    vertical-align: bottom; }
+    ul.pills li a {
+      color: white; }
+  ul.pills li.active, ul.pills li.active:hover {
+    background-color: #13657b;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: default;
+    color: white;
+    border: none;
+    display: inline-block;
+    outline: none;
+    vertical-align: bottom; }
+  ul.pills li:hover {
+    background-color: #71cfe9;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: default;
+    color: white;
+    border: none;
+    display: inline-block;
+    outline: none;
+    vertical-align: bottom; }
+
+ul.nav {
+  list-style: none; }
+  ul.nav li a {
+    font-size: 14px;
+    padding: 7px 15px 7px 15px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold; }
 
 div.nav-panel {
   display: none;
@@ -487,3 +595,23 @@ div.nav-panel {
 
 div.nav-panel:target {
   display: block; }
+
+ul.nav-mini li a {
+  font-size: 12px;
+  padding: 3px 6px 3px 6px; }
+
+ul.nav-small li a {
+  font-size: 14px;
+  padding: 5px 12px 5px 12px; }
+
+ul.nav-normal li a {
+  font-size: 14px;
+  padding: 7px 15px 7px 15px; }
+
+ul.nav-large li a {
+  font-size: 14px;
+  padding: 10px 18px 10px 18px; }
+
+ul.nav-mega li a {
+  font-size: 16px;
+  padding: 12px 24px 12px 24px; }

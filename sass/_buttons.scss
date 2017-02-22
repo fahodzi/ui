@@ -1,16 +1,16 @@
-@mixin button-base($color){
+// Shadow for the button
+@mixin button-shadow($color){
     box-shadow: 1px 1px 3px rgba(darken($color, 60%), 0.2);
-    background-color:$color;
 }
 
+// Inversion of the shadow for active engaged button
 @mixin button-active($color){
     background-color:desaturate(darken($color, 5%), 10%);
     box-shadow: inset 1px 1px 4px darken($color, 30%);
 }
 
-button, .button {
-    @include button-base($gray-4);
-    @include size-normal;
+@mixin button-decoration($color){
+    background-color:$color;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-weight: bold;
     border-radius: 3px;
@@ -22,6 +22,16 @@ button, .button {
     vertical-align: bottom;
 }
 
+@mixin button($color){
+    @include size-normal;
+    @include button-decoration($color);
+    @include button-shadow($color);
+}
+
+button, .button {
+    @include button($gray-4)
+}
+
 button::-moz-focus-inner{
     border: none;
 }
@@ -30,22 +40,22 @@ button:active, .button:active {
     @include button-active($gray-4)
 }
 
-.button-red { @include button-base($red) }
+.button-red { @include button($red) }
 .button-red:active { @include button-active($red) }
 
-.button-yellow { @include button-base($yellow) }
+.button-yellow { @include button($yellow) }
 .button-yellow:active { @include button-active($yellow) }
 
-.button-blue { @include button-base($blue) }
+.button-blue { @include button($blue) }
 .button-blue:active { @include button-active($blue) }
 
-.button-green { @include button-base($green) }
+.button-green { @include button($green) }
 .button-green:active { @include button-active($green) }
 
-.button-brown { @include button-base($brown) }
+.button-brown { @include button($brown) }
 .button-brown:active { @include button-active($brown) }
 
-.button-purple { @include button-base($purple) }
+.button-purple { @include button($purple) }
 .button-purple:active { @include button-active($purple) }
 
 .button-mini{ @include size-mini }
