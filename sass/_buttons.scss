@@ -17,7 +17,6 @@
     cursor: default;
     color: white;
     border: none;
-    display:inline-block;
     outline: none;
     vertical-align: bottom;
 }
@@ -26,6 +25,7 @@
     @include size-normal;
     @include button-decoration($color);
     @include button-shadow($color);
+    display:inline-block
 }
 
 button, .button {

@@ -25,8 +25,9 @@ ul.pills{
     margin: 0px;
     padding: 0px;
     li {
-        color:$white;
         @include button-decoration($blue);
+        color:$white;
+        display:inline-block;
         a{
             color:$white
         }
@@ -38,6 +39,17 @@ ul.pills{
 
     li:hover {
         @include button-decoration($light-blue)
+    }
+}
+
+ul.pills-vertical{
+    li{
+        display:block;
+        margin-bottom:7px;
+    }
+
+    li:last-child{
+        margin-bottom: 0px;
     }
 }
 

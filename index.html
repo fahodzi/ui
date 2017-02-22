@@ -4,7 +4,7 @@
         <title>FZUI Samples</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="dist/fzui.css" />
+        <link rel="stylesheet" type="text/css" href="build/fzui.css" />
         <style>
             body{
                 width:80%;
@@ -39,7 +39,7 @@
             }
         </style>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-        <script src="dist/fzui.js"></script>
+        <script src="build/fzui.js"></script>
         <script type="text/javascript">
             function getColor(id){
                 var rgb = getComputedStyle(document.getElementById(id)).backgroundColor.split(',');
@@ -221,10 +221,10 @@
             Contents of tab #3
         </div>
 
-        <ul class="pills nav nav-small">
-            <li class="active"><a href=''>One</a></li>
-            <li><a href=''>Two</a></li>
-            <li><a href=''>Three</a></li>
+        <ul class="pills pills-vertical nav">
+            <li class="active"><a href='#' onclick='return false'>One</a></li>
+            <li><a href='#' onclick='return false'>Two</a></li>
+            <li><a href='#' onclick='return false'>Three</a></li>
         </ul>
 
         </div>

@@ -245,10 +245,10 @@ button, .button {
   cursor: default;
   color: white;
   border: none;
-  display: inline-block;
   outline: none;
   vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.2); }
+  box-shadow: 1px 1px 3px rgba(29, 29, 29, 0.2);
+  display: inline-block; }
 
 button::-moz-focus-inner {
   border: none; }
@@ -267,10 +267,10 @@ button:active, .button:active {
   cursor: default;
   color: white;
   border: none;
-  display: inline-block;
   outline: none;
   vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(24, 0, 0, 0.2); }
+  box-shadow: 1px 1px 3px rgba(24, 0, 0, 0.2);
+  display: inline-block; }
 
 .button-red:active {
   background-color: #f13f3f;
@@ -286,10 +286,10 @@ button:active, .button:active {
   cursor: default;
   color: white;
   border: none;
-  display: inline-block;
   outline: none;
   vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  display: inline-block; }
 
 .button-yellow:active {
   background-color: #f3aa17;
@@ -305,10 +305,10 @@ button:active, .button:active {
   cursor: default;
   color: white;
   border: none;
-  display: inline-block;
   outline: none;
   vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  display: inline-block; }
 
 .button-blue:active {
   background-color: #2895b2;
@@ -324,10 +324,10 @@ button:active, .button:active {
   cursor: default;
   color: white;
   border: none;
-  display: inline-block;
   outline: none;
   vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  display: inline-block; }
 
 .button-green:active {
   background-color: #40a071;
@@ -343,10 +343,10 @@ button:active, .button:active {
   cursor: default;
   color: white;
   border: none;
-  display: inline-block;
   outline: none;
   vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); }
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  display: inline-block; }
 
 .button-brown:active {
   background-color: #ae610f;
@@ -362,10 +362,10 @@ button:active, .button:active {
   cursor: default;
   color: white;
   border: none;
-  display: inline-block;
   outline: none;
   vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(6, 2, 7, 0.2); }
+  box-shadow: 1px 1px 3px rgba(6, 2, 7, 0.2);
+  display: inline-block; }
 
 .button-purple:active {
   background-color: #b362c0;
@@ -544,7 +544,6 @@ ul.pills {
   margin: 0px;
   padding: 0px; }
   ul.pills li {
-    color: white;
     background-color: #21add3;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
     font-weight: bold;
@@ -552,9 +551,10 @@ ul.pills {
     cursor: default;
     color: white;
     border: none;
-    display: inline-block;
     outline: none;
-    vertical-align: bottom; }
+    vertical-align: bottom;
+    color: white;
+    display: inline-block; }
     ul.pills li a {
       color: white; }
   ul.pills li.active, ul.pills li.active:hover {
@@ -565,7 +565,6 @@ ul.pills {
     cursor: default;
     color: white;
     border: none;
-    display: inline-block;
     outline: none;
     vertical-align: bottom; }
   ul.pills li:hover {
@@ -576,9 +575,15 @@ ul.pills {
     cursor: default;
     color: white;
     border: none;
-    display: inline-block;
     outline: none;
     vertical-align: bottom; }
+
+ul.pills-vertical li {
+  display: block;
+  margin-bottom: 7px; }
+
+ul.pills-vertical li:last-child {
+  margin-bottom: 0px; }
 
 ul.nav {
   list-style: none; }
