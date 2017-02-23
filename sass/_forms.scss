@@ -1,0 +1,24 @@
+.form-element{
+
+  padding-bottom: 5px;
+
+  >label {
+    display:block;
+    padding-top:5px;
+    padding-bottom:5px;
+  }
+
+  >input[type=text] {
+    border:1px solid $gray-5;
+    border-radius: 3px;
+    padding:7px;
+    width:100%;
+    box-sizing: border-box
+  }
+
+  >span{
+    font-size: small;
+    color: $gray-4;
+    display:block;
+  }
+}

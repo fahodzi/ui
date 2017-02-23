@@ -63,28 +63,28 @@
                 <div class="dark-{{name}}-bg" id="dark-{{name}}"><script type="text/javascript">document.write(getColor('dark-{{name}}'))</script></div>
                 <span>{{name}}</span>
             </div>
-            {{/colors}}   
+            {{/colors}}
         </div>
         <div>
             <h3>Grayscales</h3>
             <div class="pallete">
                 <div class="gray-0-bg" id="gray-0"><script type="text/javascript">document.write(getColor('gray-0'))</script></div>
-            </div>        
+            </div>
             <div class="pallete">
                 <div class="gray-1-bg" id="gray-1"><script type="text/javascript">document.write(getColor('gray-1'))</script></div>
-            </div>        
+            </div>
             <div class="pallete">
                 <div class="gray-2-bg" id="gray-2"><script type="text/javascript">document.write(getColor('gray-2'))</script></div>
-            </div>        
+            </div>
             <div class="pallete">
                 <div class="gray-3-bg" id="gray-3"><script type="text/javascript">document.write(getColor('gray-3'))</script></div>
-            </div>        
+            </div>
             <div class="pallete">
                 <div class="gray-4-bg" id="gray-4"><script type="text/javascript">document.write(getColor('gray-4'))</script></div>
-            </div>        
+            </div>
             <div class="pallete">
                 <div class="gray-5-bg" id="gray-5"><script type="text/javascript">document.write(getColor('gray-5'))</script></div>
-            </div>        
+            </div>
         </div>
         <h2>Buttons</h2>
         <h3>Colours</h3>
@@ -177,7 +177,7 @@
         </div><br/>
 
         <h2>Tabs and Pills</h2>
-        
+
         <ul class="tabs nav nav-small">
             <li class="active"><a href='#one'>One</a></li>
             <li><a href='#two'>Two</a></li>
@@ -200,10 +200,20 @@
         </ul>
 
         </div>
+
         <h2>Modals</h2>
         <button onclick='fzui.modal("#modal-test")'>Show Modal</button>
         <div class="modal" id="modal-test">
             This is expected to contain some modal content.
         </div>
+
+        <h2>Forms</h2>
+        <form>
+            <div class="form-element">
+                <label>Username</label>
+                <input type="text" name="username" />
+                <span>Please select a unique username or password</span>
+            </div>
+        </form>
     </body>
 </html>

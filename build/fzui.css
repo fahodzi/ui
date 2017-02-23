@@ -620,3 +620,20 @@ ul.nav-large li a {
 ul.nav-mega li a {
   font-size: 16px;
   padding: 12px 24px 12px 24px; }
+
+.form-element {
+  padding-bottom: 5px; }
+  .form-element > label {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 5px; }
+  .form-element > input[type=text] {
+    border: 1px solid #dbdbdb;
+    border-radius: 3px;
+    padding: 7px;
+    width: 100%;
+    box-sizing: border-box; }
+  .form-element > span {
+    font-size: small;
+    color: #b6b6b6;
+    display: block; }
