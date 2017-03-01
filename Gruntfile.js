@@ -15,7 +15,7 @@ module.exports = function(grunt)
         cssmin: {
             target: {
                 files:{
-                    'dist/fzui.css.min': 'build/fzui.css'
+                    'dist/fzui.min.css': 'build/fzui.css'
                 } 
             }
         },
