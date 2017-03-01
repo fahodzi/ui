@@ -1,5 +1,9 @@
 .form-element{
 
+  input:focus, textarea:focus{
+    outline:none
+  }
+
   padding-bottom: 5px;
 
   >label {
@@ -13,7 +17,10 @@
     border-radius: 3px;
     padding:7px;
     width:100%;
-    box-sizing: border-box
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 3px rgba(darken($gray-5, 60%), 0.2);
+    color:$gray-1;
+    font-size: initial
   }
 
   >span{
@@ -22,3 +29,37 @@
     display:block;
   }
 }
+
+.form-grid {
+  .form-element{
+    white-space: nowrap;
+    font-size: 0;
+    label {
+      display:inline-block;
+      width:30%;
+      box-sizing: border-box;
+      font-size: initial;
+    }
+    input[type=text]{
+      width:70%;
+      display:inline-block;
+      box-sizing: border-box;
+      font-size: initial;
+    }
+    span{
+      margin-left: 30%;
+      font-size:small;
+    }
+  }
+}
+
+@mixin marked-element($color) {
+  border-color: $color;
+  box-shadow: inset 1px 1px 3px rgba(darken($color, 60%), 0.2);
+  background-color: lighten($color, 50%);
+  color: darken($color,50)
+}
+
+.form-error{ input[type=text]{ @include marked-element($light-red) }}
+.form-warning{ input[type=text]{ @include marked-element($light-yellow) }}
+.form-success{ input[type=text]{ @include marked-element($light-green) }}

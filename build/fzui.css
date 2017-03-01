@@ -623,6 +623,8 @@ ul.nav-mega li a {
 
 .form-element {
   padding-bottom: 5px; }
+  .form-element input:focus, .form-element textarea:focus {
+    outline: none; }
   .form-element > label {
     display: block;
     padding-top: 5px;
@@ -632,8 +634,46 @@ ul.nav-mega li a {
     border-radius: 3px;
     padding: 7px;
     width: 100%;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 3px rgba(66, 66, 66, 0.2);
+    color: #494949;
+    font-size: initial; }
   .form-element > span {
     font-size: small;
     color: #b6b6b6;
     display: block; }
+
+.form-grid .form-element {
+  white-space: nowrap;
+  font-size: 0; }
+  .form-grid .form-element label {
+    display: inline-block;
+    width: 30%;
+    box-sizing: border-box;
+    font-size: initial; }
+  .form-grid .form-element input[type=text] {
+    width: 70%;
+    display: inline-block;
+    box-sizing: border-box;
+    font-size: initial; }
+  .form-grid .form-element span {
+    margin-left: 30%;
+    font-size: small; }
+
+.form-error input[type=text] {
+  border-color: #feb2b2;
+  box-shadow: inset 1px 1px 3px rgba(124, 2, 2, 0.2);
+  background-color: white;
+  color: #ae0303; }
+
+.form-warning input[type=text] {
+  border-color: #ffd98a;
+  box-shadow: inset 1px 1px 3px rgba(87, 58, 0, 0.2);
+  background-color: white;
+  color: #8a5d00; }
+
+.form-success input[type=text] {
+  border-color: #86dab1;
+  box-shadow: inset 1px 1px 3px rgba(11, 35, 23, 0.2);
+  background-color: white;
+  color: #174a31; }
