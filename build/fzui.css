@@ -621,6 +621,21 @@ ul.nav-mega li a {
   font-size: 16px;
   padding: 12px 24px 12px 24px; }
 
+form input[type=submit] {
+  font-size: 14px;
+  padding: 7px 15px 7px 15px;
+  background-color: #21add3;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: default;
+  color: white;
+  border: none;
+  outline: none;
+  vertical-align: bottom;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  display: inline-block; }
+
 .form-element {
   padding-bottom: 5px; }
   .form-element input:focus, .form-element textarea:focus {
@@ -677,3 +692,121 @@ ul.nav-mega li a {
   box-shadow: inset 1px 1px 3px rgba(11, 35, 23, 0.2);
   background-color: white;
   color: #174a31; }
+
+/*
+ * This stylesheet was inspired by the 1KB grid
+ */
+.grid_3_1 {
+  width: 33%; }
+
+.grid_3_1_1 {
+  width: 34%; }
+
+.grid_3_2 {
+  width: 67%; }
+
+.grid_3_3 {
+  width: 100%; }
+
+.grid_10_1 {
+  width: 10%; }
+
+.grid_10_2 {
+  width: 20%; }
+
+.grid_10_3 {
+  width: 30%; }
+
+.grid_10_4 {
+  width: 40%; }
+
+.grid_10_5 {
+  width: 50%; }
+
+.grid_10_6 {
+  width: 60%; }
+
+.grid_10_7 {
+  width: 70%; }
+
+.grid_10_8 {
+  width: 80%; }
+
+.grid_10_9 {
+  width: 90%; }
+
+.grid_10_10 {
+  width: 100%; }
+
+.grid_20_1 {
+  width: 5%; }
+
+.grid_20_2 {
+  width: 10%; }
+
+.grid_20_3 {
+  width: 15%; }
+
+.grid_20_4 {
+  width: 20%; }
+
+.grid_20_5 {
+  width: 25%; }
+
+.grid_20_6 {
+  width: 30%; }
+
+.grid_20_7 {
+  width: 35%; }
+
+.grid_20_8 {
+  width: 40%; }
+
+.grid_20_9 {
+  width: 45%; }
+
+.grid_20_10 {
+  width: 50%; }
+
+.grid_20_11 {
+  width: 55%; }
+
+.grid_20_12 {
+  width: 60%; }
+
+.grid_20_13 {
+  width: 65%; }
+
+.grid_20_14 {
+  width: 70%; }
+
+.grid_20_15 {
+  width: 75%; }
+
+.grid_20_16 {
+  width: 80%; }
+
+.grid_20_17 {
+  width: 85%; }
+
+.grid_20_18 {
+  width: 90%; }
+
+.grid_20_19 {
+  width: 95%; }
+
+.grid_20_20 {
+  width: 100%; }
+
+.column {
+  overflow: hidden;
+  float: left;
+  display: inline; }
+
+.row {
+  width: 100%;
+  margin: 0 auto;
+  overflow: hidden; }
+  .row .row {
+    width: auto;
+    display: inline-block; }

@@ -1,3 +1,8 @@
+form{
+  input[type=submit]{
+    @include button($blue)
+  }
+}
 .form-element{
 
   input:focus, textarea:focus{
