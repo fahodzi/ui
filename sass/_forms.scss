@@ -68,3 +68,7 @@ form{
 .form-error{ input[type=text], input[type=password]     { @include marked-element($light-red) }}
 .form-warning{ input[type=text], input[type=password]   { @include marked-element($light-yellow) }}
 .form-success{ input[type=text], input[type=password]   { @include marked-element($light-green) }}
+
+.form-submit-area {
+  padding-top:10px
+}

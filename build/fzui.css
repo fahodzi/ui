@@ -693,6 +693,9 @@ form input[type=submit] {
   background-color: white;
   color: #174a31; }
 
+.form-submit-area {
+  padding-top: 10px; }
+
 /*
  * This stylesheet was inspired by the 1KB grid
  */
