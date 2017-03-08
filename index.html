@@ -12,12 +12,36 @@
                 margin-right:auto;
             }
 
+            h1, h2, h3{
+                margin-bottom:5px;
+            }
+
+            .section{
+                font-size:0;
+            }
+
+            .section > .half{
+                vertical-align: top;
+                width:50%;
+                display: inline-block;
+                font-size: initial;
+                box-sizing: border-box;
+            }
+
+            .section > .half:first-child{
+                padding-right:5px;
+            }
+            .section > .half:last-child{
+                padding-left:5px;
+            }
+
             .pallete{
                 display: inline-block;
-                width: 170px;
+                width: 16%;
                 text-align: center;
                 font-weight: bold;
                 border-radius: 5px;
+                box-sizing: border-box;
             }
 
             .pallete > div {
@@ -115,21 +139,27 @@
             </div>
         </div>
         <h2>Buttons</h2>
-        <h3>Colours</h3>
-        <button>Default</button>
-        <button class='button-red'>Red</button>
-        <button class='button-yellow'>Yellow</button>
-        <button class='button-blue'>Blue</button>
-        <button class='button-green'>Green</button>
-        <button class='button-brown'>Brown</button>
-        <button class='button-purple'>Purple</button>
+        <div class="section">
+            <div class="half">
+                <h3>Colours</h3>
+                <button>Default</button>
+                <button class='button-red'>Red</button>
+                <button class='button-yellow'>Yellow</button>
+                <button class='button-blue'>Blue</button>
+                <button class='button-green'>Green</button>
+                <button class='button-brown'>Brown</button>
+                <button class='button-purple'>Purple</button>
+            </div>
 
-        <h3>Sizes</h3>
-        <button class='button-blue button-mini'>Mini</button>
-        <button class='button-blue button-small'>Small</button>
-        <button class='button-blue'>Default</button>
-        <button class='button-blue button-large'>Large</button>
-        <button class='button-blue button-mega'>Mega</button>
+            <div class="half">
+                <h3>Sizes</h3>
+                <button class='button-blue button-mini'>Mini</button>
+                <button class='button-blue button-small'>Small</button>
+                <button class='button-blue'>Default</button>
+                <button class='button-blue button-large'>Large</button>
+                <button class='button-blue button-mega'>Mega</button>
+            </div>
+        </div>
 
         <h2>Dropdown</h2>
         <div class="dropdown">
@@ -148,87 +178,94 @@
         </div>
 
         <h2>Button Groups</h2>
-        <div class='button-group'>
-            <button>First</button>
-            <button>Second</button>
-            <button>Third</button>
-            <div class='dropdown'>
-                <button>Nested</button>
-                <ul class='dropdown-contents menu'>
-                    <li>Test</li>
-                    <li>Another Test</li>
-                    <li>Let's go!</li>
-                </ul>
+        <div class="section">
+            <div class="half">
+                <div class='button-group'>
+                    <button>First</button>
+                    <button>Second</button>
+                    <button>Third</button>
+                    <div class='dropdown'>
+                        <button>Nested</button>
+                        <ul class='dropdown-contents menu'>
+                            <li>Test</li>
+                            <li>Another Test</li>
+                            <li>Let's go!</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="half">
+                <h3>Sizes</h3>
+                <div class='button-group button-group-mini'>
+                    <button>Mini</button>
+                    <button>First</button>
+                    <button>Second</button>
+                    <button>Third</button>
+                    <button>Fourth</button>
+                </div><br/>
+
+                <div class='button-group button-group-small'>
+                    <button>Small</button>
+                    <button>First</button>
+                    <button>Second</button>
+                    <button>Third</button>
+                    <button>Fourth</button>
+                </div><br/>
+
+                <div class='button-group'>
+                    <button>Normal</button>
+                    <button>First</button>
+                    <button>Second</button>
+                    <button>Third</button>
+                    <button>Fourth</button>
+                </div><br/>
+
+                <div class='button-group button-group-large'>
+                    <button>Large</button>
+                    <button>First</button>
+                    <button>Second</button>
+                    <button>Third</button>
+                    <button>Fourth</button>
+                </div><br/>
+
+                <div class='button-group button-group-mega'>
+                    <button>Mega</button>
+                    <button>First</button>
+                    <button>Second</button>
+                    <button>Third</button>
+                    <button>Fourth</button>
+                </div>
             </div>
         </div>
 
-        <h3>Sizes</h3>
-
-        <div class='button-group button-group-mini'>
-            <button>Mini</button>
-            <button>First</button>
-            <button>Second</button>
-            <button>Third</button>
-            <button>Fourth</button>
-        </div><br/>
-
-        <div class='button-group button-group-small'>
-            <button>Small</button>
-            <button>First</button>
-            <button>Second</button>
-            <button>Third</button>
-            <button>Fourth</button>
-        </div><br/>
-
-        <div class='button-group'>
-            <button>Normal</button>
-            <button>First</button>
-            <button>Second</button>
-            <button>Third</button>
-            <button>Fourth</button>
-        </div><br/>
-
-        <div class='button-group button-group-large'>
-            <button>Large</button>
-            <button>First</button>
-            <button>Second</button>
-            <button>Third</button>
-            <button>Fourth</button>
-        </div><br/>
-
-        <div class='button-group button-group-mega'>
-            <button>Mega</button>
-            <button>First</button>
-            <button>Second</button>
-            <button>Third</button>
-            <button>Fourth</button>
-        </div><br/>
-
         <h2>Tabs and Pills</h2>
+        <div class="section">
+            <div class="half">
+                <ul class="tabs nav nav-small">
+                    <li class="active"><a href='#one'>One</a></li>
+                    <li><a href='#two'>Two</a></li>
+                    <li><a href='#three'>Three</a></li>
+                </ul>
+                <div class="nav-panel" id="one">
+                    Contents of tab #1
+                </div>
+                <div class="nav-panel" id="two">
+                    Contents of tab #2
+                </div>
+                <div class="nav-panel" id="three">
+                    Contents of tab #3
+                </div>
+            </div>
 
-        <ul class="tabs nav nav-small">
-            <li class="active"><a href='#one'>One</a></li>
-            <li><a href='#two'>Two</a></li>
-            <li><a href='#three'>Three</a></li>
-        </ul>
-        <div class="nav-panel" id="one">
-            Contents of tab #1
+            <div class="half">
+                <ul class="pills pills-vertical nav">
+                    <li class="active"><a href='#' onclick='return false'>One</a></li>
+                    <li><a href='#' onclick='return false'>Two</a></li>
+                    <li><a href='#' onclick='return false'>Three</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="nav-panel" id="two">
-            Contents of tab #2
-        </div>
-        <div class="nav-panel" id="three">
-            Contents of tab #3
-        </div>
-
-        <ul class="pills pills-vertical nav">
-            <li class="active"><a href='#' onclick='return false'>One</a></li>
-            <li><a href='#' onclick='return false'>Two</a></li>
-            <li><a href='#' onclick='return false'>Three</a></li>
-        </ul>
-
-        </div>
-
         <h2>Modals</h2>
         <button onclick='fzui.modal("#modal-test")'>Show Modal</button>
         <div class="modal" id="modal-test">
@@ -236,64 +273,101 @@
         </div>
 
         <h2>Forms</h2>
-        <form>
-            <div class="form-element">
-                <label>Username</label>
-                <input type="text" name="username" />
-                <span>Please select a unique username</span>
+        <div class="section">
+            <div class="half">
+                <h3>Inline Layout</h3>            
+                <form class="">
+                    <div class="form-element">
+                        <label>Text</label>
+                        <input type="text" name="username" />
+                        <span>A sample text field</span>
+                    </div>
+
+                    <div class="form-element">
+                        <label>Password</label>
+                        <input type="password" name="username" />
+                        <span>A sample password field</span>
+                    </div>
+
+                    <div class="form-element">
+                        <label>Selection</label>
+                        <select>
+                            <option></option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-element form-error">
+                        <label>Error</label>
+                        <input type="text" name="error" />
+                        <span>This is an error'ed field </span>
+                    </div>
+
+                    <div class="form-element form-warning">
+                        <label>Warning</label>
+                        <input type="text" name="warning" />
+                        <span>This is a warning field </span>
+                    </div>
+
+                    <div class="form-element form-success">
+                        <label>Success</label>
+                        <input type="text" name="success" />
+                        <span>This is a warning field </span>
+                    </div>        
+                    <div class="form-submit-area">
+                        <input type="submit" />    
+                    </div>
+                </form>
             </div>
+            <div class="half">
+                <h3>Grid Layout</h3>            
+                <form class="form-grid">
+                    <div class="form-element">
+                        <label>Text</label>
+                        <input type="text" name="username" />
+                        <span>A sample text field</span>
+                    </div>
 
-            <div class="form-element">
-                <label>Password</label>
-                <input type="password" name="username" />
-                <span>Please select a difficult to guess password</span>
+                    <div class="form-element">
+                        <label>Password</label>
+                        <input type="password" name="username" />
+                        <span>A sample password field</span>
+                    </div>
+
+                    <div class="form-element">
+                        <label>Selection</label>
+                        <select>
+                            <option></option>
+                            <option>Option 1</option>
+                            <option>Option 2</option>
+                            <option>Option 3</option>
+                        </select>
+                    </div>
+
+                    <div class="form-element form-error">
+                        <label>Error</label>
+                        <input type="text" name="error" />
+                        <span>This is an error'ed field </span>
+                    </div>
+
+                    <div class="form-element form-warning">
+                        <label>Warning</label>
+                        <input type="text" name="warning" />
+                        <span>This is a warning field </span>
+                    </div>
+
+                    <div class="form-element form-success">
+                        <label>Success</label>
+                        <input type="text" name="success" />
+                        <span>This is a warning field </span>
+                    </div>        
+                    <div class="form-submit-area">
+                        <input type="submit" />    
+                    </div>
+                </form>
             </div>
-
-            <div class="form-element form-error">
-                <label>Error</label>
-                <input type="text" name="error" />
-                <span>This is an error'ed field </span>
-            </div>
-
-            <div class="form-element form-warning">
-                <label>Warning</label>
-                <input type="text" name="warning" />
-                <span>This is a warning field </span>
-            </div>
-
-            <div class="form-element form-success">
-                <label>Success</label>
-                <input type="text" name="success" />
-                <span>This is a warning field </span>
-            </div>        
-            <input type="submit" />    
-        </form>
-
-        <form class="form-grid">
-            <div class="form-element">
-                <label>Username</label>
-                <input type="text" name="username" />
-                <span>Please select a unique username</span>
-            </div>
-
-            <div class="form-element form-error">
-                <label>Error</label>
-                <input type="text" name="error" />
-                <span>This is an error'ed field </span>
-            </div>
-
-            <div class="form-element form-warning">
-                <label>Warning</label>
-                <input type="text" name="warning" />
-                <span>This is a warning field </span>
-            </div>
-
-            <div class="form-element form-success">
-                <label>Success</label>
-                <input type="text" name="success" />
-                <span>This is a warning field </span>
-            </div>            
-        </form>
-        
+        </div>
     </body>
 </html>

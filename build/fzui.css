@@ -638,25 +638,29 @@ form input[type=submit] {
 
 .form-element {
   padding-bottom: 5px; }
-  .form-element input:focus, .form-element textarea:focus {
+  .form-element input:focus, .form-element textarea:focus, .form-element select:focus {
     outline: none; }
   .form-element > label {
     display: block;
     padding-top: 5px;
     padding-bottom: 5px; }
-  .form-element > input[type=text], .form-element > input[type=password] {
+  .form-element > input[type=text], .form-element > input[type=password], .form-element > select, .form-element > input[type=date] {
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     padding: 7px;
     width: 100%;
     box-sizing: border-box;
-    box-shadow: inset 1px 1px 3px rgba(66, 66, 66, 0.2);
+    box-shadow: inset 1px 1px 3px rgba(143, 143, 143, 0.2);
     color: #494949;
-    font-size: initial; }
+    font-size: initial;
+    background-color: white; }
   .form-element > span {
     font-size: small;
     color: #b6b6b6;
     display: block; }
+
+.form-submit-area {
+  padding-top: 10px; }
 
 .form-grid .form-element {
   white-space: nowrap;
@@ -665,15 +669,23 @@ form input[type=submit] {
     display: inline-block;
     width: 30%;
     box-sizing: border-box;
-    font-size: initial; }
-  .form-grid .form-element input[type=text] {
+    font-size: initial;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px; }
+  .form-grid .form-element input[type=text], .form-grid .form-element input[type=password], .form-grid .form-element select {
     width: 70%;
     display: inline-block;
     box-sizing: border-box;
-    font-size: initial; }
+    font-size: initial;
+    margin-top: 10px; }
   .form-grid .form-element span {
     margin-left: 30%;
     font-size: small; }
+
+.form-grid .form-submit-area {
+  padding-top: 10px;
+  margin-left: 30%; }
 
 .form-error input[type=text], .form-error input[type=password] {
   border-color: #feb2b2;
@@ -692,9 +704,6 @@ form input[type=submit] {
   box-shadow: inset 1px 1px 3px rgba(11, 35, 23, 0.2);
   background-color: white;
   color: #174a31; }
-
-.form-submit-area {
-  padding-top: 10px; }
 
 /*
  * This stylesheet was inspired by the 1KB grid
