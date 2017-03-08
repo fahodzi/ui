@@ -83,5 +83,16 @@ form{
 .form-success{ input[type=text], input[type=password]   { @include marked-element($light-green) }}
 
 fieldset{
+  border:1px solid $gray-5;
+  border-radius: 3px;
+  padding-top:50px;
+  position:relative;
+  margin-top:10px;
 
+  legend {
+    font-weight: bold;
+    position:absolute;
+    top:10px;
+    color:$gray-2;
+  }
 }
