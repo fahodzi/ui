@@ -643,8 +643,9 @@ form input[type=submit] {
   .form-element > label {
     display: block;
     padding-top: 5px;
-    padding-bottom: 5px; }
-  .form-element > input[type=text], .form-element > input[type=password], .form-element > select, .form-element > input[type=date] {
+    padding-bottom: 5px;
+    font-weight: bold; }
+  .form-element > input, .form-element > select {
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     padding: 7px;
@@ -673,7 +674,7 @@ form input[type=submit] {
     text-align: right;
     padding-right: 10px;
     margin-top: 10px; }
-  .form-grid .form-element input[type=text], .form-grid .form-element input[type=password], .form-grid .form-element select {
+  .form-grid .form-element > input, .form-grid .form-element > select {
     width: 70%;
     display: inline-block;
     box-sizing: border-box;
@@ -687,19 +688,19 @@ form input[type=submit] {
   padding-top: 10px;
   margin-left: 30%; }
 
-.form-error input[type=text], .form-error input[type=password] {
+.form-error input, .form-error select {
   border-color: #feb2b2;
   box-shadow: inset 1px 1px 3px rgba(124, 2, 2, 0.2);
   background-color: white;
   color: #ae0303; }
 
-.form-warning input[type=text], .form-warning input[type=password] {
+.form-warning input, .form-warning select {
   border-color: #ffd98a;
   box-shadow: inset 1px 1px 3px rgba(87, 58, 0, 0.2);
   background-color: white;
   color: #8a5d00; }
 
-.form-success input[type=text], .form-success input[type=password] {
+.form-success input, .form-success select {
   border-color: #86dab1;
   box-shadow: inset 1px 1px 3px rgba(11, 35, 23, 0.2);
   background-color: white;
@@ -713,9 +714,15 @@ fieldset {
   margin-top: 10px; }
   fieldset legend {
     font-weight: bold;
+    font-size: initial;
     position: absolute;
-    top: 10px;
-    color: #6d6d6d; }
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    color: #6d6d6d;
+    border-bottom: 1px dotted #dbdbdb;
+    padding: 10px;
+    box-sizing: border-box; }
 
 /*
  * This stylesheet was inspired by the 1KB grid

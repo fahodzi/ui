@@ -15,9 +15,10 @@ form{
     display:block;
     padding-top:5px;
     padding-bottom:5px;
+    font-weight: bold;
   }
 
-  >input[type=text], >input[type=password], >select, >input[type=date] {
+  >input, >select {
     border:1px solid $gray-5;
     border-radius: 3px;
     padding:7px;
@@ -53,7 +54,7 @@ form{
       padding-right:10px;
       margin-top:10px;
     }
-    input[type=text], input[type=password], select{
+    >input, >select, {
       width:70%;
       display:inline-block;
       box-sizing: border-box;
@@ -78,9 +79,9 @@ form{
   color: darken($color,50)
 }
 
-.form-error{ input[type=text], input[type=password]     { @include marked-element($light-red) }}
-.form-warning{ input[type=text], input[type=password]   { @include marked-element($light-yellow) }}
-.form-success{ input[type=text], input[type=password]   { @include marked-element($light-green) }}
+.form-error{ input, select { @include marked-element($light-red) }}
+.form-warning{ input, select { @include marked-element($light-yellow) }}
+.form-success{ input, select { @include marked-element($light-green) }}
 
 fieldset{
   border:1px solid $gray-5;
@@ -91,8 +92,14 @@ fieldset{
 
   legend {
     font-weight: bold;
+    font-size: initial;
     position:absolute;
-    top:10px;
+    left:0px;
+    top:0px;
+    width:100%;
     color:$gray-2;
+    border-bottom: 1px dotted $gray-5;
+    padding:10px;
+    box-sizing: border-box;
   }
 }
