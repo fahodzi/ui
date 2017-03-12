@@ -709,6 +709,7 @@ form input[type=submit] {
 fieldset {
   border: 1px solid #dbdbdb;
   border-radius: 3px;
+  padding: 10px;
   padding-top: 50px;
   position: relative;
   margin-top: 10px; }
