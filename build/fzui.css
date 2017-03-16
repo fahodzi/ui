@@ -645,7 +645,7 @@ form input[type=submit] {
     padding-top: 5px;
     padding-bottom: 5px;
     font-weight: bold; }
-  .form-element > input, .form-element > select {
+  .form-element > input, .form-element > select, .form-element textarea {
     border: 1px solid #dbdbdb;
     border-radius: 3px;
     padding: 7px;
@@ -659,6 +659,8 @@ form input[type=submit] {
     font-size: small;
     color: #b6b6b6;
     display: block; }
+  .form-element textarea {
+    height: 80px; }
 
 .form-submit-area {
   padding-top: 10px; }
@@ -673,8 +675,9 @@ form input[type=submit] {
     font-size: initial;
     text-align: right;
     padding-right: 10px;
-    margin-top: 10px; }
-  .form-grid .form-element > input, .form-grid .form-element > select {
+    margin-top: 10px;
+    vertical-align: top; }
+  .form-grid .form-element > input, .form-grid .form-element > select, .form-grid .form-element textarea {
     width: 70%;
     display: inline-block;
     box-sizing: border-box;
