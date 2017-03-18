@@ -661,6 +661,8 @@ form input[type=submit] {
     display: block; }
   .form-element textarea {
     height: 80px; }
+  .form-element .radio-group label {
+    display: block; }
 
 .form-submit-area {
   padding-top: 10px; }
@@ -677,7 +679,7 @@ form input[type=submit] {
     padding-right: 10px;
     margin-top: 10px;
     vertical-align: top; }
-  .form-grid .form-element > input, .form-grid .form-element > select, .form-grid .form-element textarea {
+  .form-grid .form-element > input, .form-grid .form-element > select, .form-grid .form-element textarea, .form-grid .form-element .radio-group {
     width: 70%;
     display: inline-block;
     box-sizing: border-box;
@@ -686,6 +688,10 @@ form input[type=submit] {
   .form-grid .form-element span {
     margin-left: 30%;
     font-size: small; }
+  .form-grid .form-element .radio-group label {
+    display: block;
+    width: auto;
+    text-align: left; }
 
 .form-grid .form-submit-area {
   padding-top: 10px;

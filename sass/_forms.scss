@@ -39,6 +39,14 @@ form{
   textarea{
     height:80px;
   }
+
+  .radio-group{
+    label {
+      display: block;
+    }
+  }
+
+
 }
 
 .form-submit-area {
@@ -59,7 +67,7 @@ form{
       margin-top:10px;
       vertical-align: top
     }
-    >input, >select, textarea{
+    >input, >select, textarea, .radio-group{
       width:70%;
       display:inline-block;
       box-sizing: border-box;
@@ -69,6 +77,13 @@ form{
     span{
       margin-left: 30%;
       font-size:small;
+    }
+    .radio-group {
+      label{
+        display: block;
+        width: auto;
+        text-align: left;
+      }
     }
   }
   .form-submit-area {
