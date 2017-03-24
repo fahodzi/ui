@@ -657,7 +657,8 @@ form input[type=submit] {
     background-color: white; }
   .form-element > input[type=checkbox] {
     border: none;
-    box-shadow: none; }
+    box-shadow: none;
+    width: auto; }
   .form-element > span {
     font-size: small;
     color: #b6b6b6;
@@ -688,6 +689,9 @@ form input[type=submit] {
     box-sizing: border-box;
     font-size: initial;
     margin-top: 10px; }
+  .form-grid .form-element > input[type=checkbox] {
+    width: initial;
+    margin-top: 20px; }
   .form-grid .form-element span {
     margin-left: 30%;
     font-size: small; }

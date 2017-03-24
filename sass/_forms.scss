@@ -34,6 +34,7 @@ form {
   >input[type=checkbox]{
     border:none;
     box-shadow: none;
+    width: auto;
   }
 
   >span {
@@ -77,6 +78,10 @@ form {
       box-sizing: border-box;
       font-size: initial;
       margin-top:10px;
+    }
+    >input[type=checkbox] {
+      width:initial;
+      margin-top:20px;
     }
     span {
       margin-left: 30%;
