@@ -52,6 +52,11 @@ form {
       display: block;
     }
   }
+
+  > select {
+    width: auto;
+    max-width: 100%;
+  }
 }
 
 .form-submit-area {
@@ -83,6 +88,10 @@ form {
       width:initial;
       margin-top:20px;
     }
+    > select {
+      width: auto;
+      max-width: 70%;
+    }    
     span {
       margin-left: 30%;
       font-size:small;
