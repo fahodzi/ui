@@ -700,7 +700,11 @@ form input[type=submit] {
     max-width: 70%; }
   .form-grid .form-element span {
     margin-left: 30%;
-    font-size: small; }
+    font-size: small;
+    white-space: normal; }
+  .form-grid .form-element div {
+    margin-left: 30%;
+    white-space: normal; }
   .form-grid .form-element .check-group label {
     display: block;
     width: auto;

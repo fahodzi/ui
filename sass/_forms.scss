@@ -88,14 +88,23 @@ form {
       width:initial;
       margin-top:20px;
     }
+
     > select {
       width: auto;
       max-width: 70%;
-    }    
+    }
+
     span {
       margin-left: 30%;
       font-size:small;
+      white-space: normal;
     }
+
+    div{
+      margin-left: 30%;
+      white-space: normal;
+    }
+    
     .check-group {
       label{
         display: block;
