@@ -10,7 +10,7 @@ form {
     outline:none
   }
 
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 
   >label {
     display:block;
@@ -39,7 +39,7 @@ form {
 
   >span {
     font-size: small;
-    color: $gray-4;
+    color: $gray-3;
     display:block;
   }
 
@@ -56,6 +56,15 @@ form {
   > select {
     width: auto;
     max-width: 100%;
+  }
+
+  ul{
+    margin:0px;
+    font-size: 0.9em;
+    padding-top: 5px;
+    padding-bottom:5px;
+    padding-left:30px;
+    color:$gray-1;
   }
 }
 
@@ -100,9 +109,13 @@ form {
       white-space: normal;
     }
 
-    div.sub-items{
+    ul{
       margin-left: 30%;
       white-space: normal;
+      font-size: initial;
+      li{
+        font-size: 0.9em;
+      }
     }
 
     .check-group {
@@ -120,15 +133,26 @@ form {
 }
 
 @mixin marked-element($color) {
-  border-color: $color;
-  box-shadow: inset 1px 1px 3px rgba(darken($color, 60%), 0.2);
-  background-color: lighten($color, 50%);
-  color: darken($color,50)
+  input, select{
+    border-color: $color;
+    box-shadow: inset 1px 1px 3px rgba(darken($color, 60%), 0.2);
+    background-color: lighten($color, 50%);
+    color: darken($color,50)
+  }
+  label, ul {
+    color: darken($color,50)
+  }
 }
 
-.form-error{ input, select { @include marked-element($light-red) }}
-.form-warning{ input, select { @include marked-element($light-yellow) }}
-.form-success{ input, select { @include marked-element($light-green) }}
+.form-error{ 
+  @include marked-element($light-red)
+}
+.form-warning{ 
+  @include marked-element($light-yellow)
+}
+.form-success{ 
+  @include marked-element($light-green)
+}
 
 fieldset {
   border:1px solid $gray-5;

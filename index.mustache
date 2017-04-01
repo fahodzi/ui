@@ -259,7 +259,11 @@
                     <div class="form-element">
                         <label>Password</label>
                         <input type="password" name="username" />
-                        <span>A sample password field</span>
+                        <ul>
+                            <li>Passwords must contain numbers and letters</li>
+                            <li>Choose a strong password</li>
+                            <li>Do not use your phone number or date of birth</li>
+                        </ul>
                     </div>
 
                     <div class="form-element">
@@ -275,19 +279,28 @@
                     <div class="form-element form-error">
                         <label>Error</label>
                         <input type="text" name="error" />
-                        <span>This is an error'ed field </span>
+                        <ul>
+                            <li>Password fails all the password rules.</li>
+                            <li>Can you try a different password.</li>
+                        </ul>
+                        <span>An errored field</span>
                     </div>
 
                     <div class="form-element form-warning">
                         <label>Warning</label>
                         <input type="text" name="warning" />
-                        <span>This is a warning field </span>
+                        <ul>
+                            <li>A warning.</li>
+                            <li>What do you have to say?</li>
+                        </ul>
                     </div>
 
                     <div class="form-element form-success">
                         <label>Success</label>
                         <input type="text" name="success" />
-                        <span>This is a warning field </span>
+                        <ul>
+                            <li>Seems everything worked well</li>
+                        </ul>                        
                     </div>        
                     <div class="form-element">
                         <label>Residential Area</label>
