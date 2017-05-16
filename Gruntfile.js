@@ -52,5 +52,5 @@ module.exports = function(grunt)
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.registerTask('default', ['sass', 'concat', 'mustache_render']);
-    grunt.registerTask('build', ['sass', 'cssmin', 'uglify', 'mustache_render'])
+    grunt.registerTask('build', ['sass', 'concat', 'cssmin', 'uglify', 'mustache_render'])
 }

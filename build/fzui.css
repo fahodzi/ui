@@ -489,35 +489,35 @@ ul.menu {
   .modal-wrapper > .title {
     background-color: #6d6d6d;
     border-radius: 5px 5px 0px 0px; }
-    .modal-wrapper > .title > span {
-      display: block;
-      float: left;
-      width: 639px;
-      line-height: 32px;
-      padding-left: 10px;
-      color: white;
-      font-weight: bold; }
-    .modal-wrapper > .title > .close-button {
-      cursor: default;
-      background: transparent;
-      padding: 3px;
-      box-shadow: none;
-      border: none;
-      color: #929292;
-      font-size: 16px;
-      width: 50px;
-      float: right;
-      display: block;
-      padding: 5px 10px;
-      text-align: right;
-      font-weight: bold; }
-    .modal-wrapper > .title > .close-button:after {
-      content: "x";
-      text-align: right; }
-    .modal-wrapper > .title > .close-button:hover {
-      color: #acacac; }
-    .modal-wrapper > .title > .close-button:active {
-      color: #5f5f5f; }
+  .modal-wrapper > span {
+    display: block;
+    float: left;
+    width: 639px;
+    line-height: 32px;
+    padding-left: 10px;
+    color: white;
+    font-weight: bold; }
+  .modal-wrapper > .close-button {
+    cursor: default;
+    background: transparent;
+    padding: 3px;
+    box-shadow: none;
+    border: none;
+    color: #929292;
+    font-size: 16px;
+    width: 50px;
+    float: right;
+    display: block;
+    padding: 5px 10px;
+    text-align: right;
+    font-weight: bold; }
+  .modal-wrapper > .close-button:after {
+    content: "\274c";
+    text-align: right; }
+  .modal-wrapper > .close-button:hover {
+    color: #acacac; }
+  .modal-wrapper > .close-button:active {
+    color: #5f5f5f; }
   .modal-wrapper > .title:after {
     content: "";
     display: block;

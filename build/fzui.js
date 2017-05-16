@@ -35,24 +35,15 @@ $(function() {
  * @params options An object or string that contains options for the model window creator.
  */
 fzui.modal = function(selector, options){
-    var title = ''; 
     if($('body').hasClass('modal-active')) return;
-    if(typeof options == 'string') {
-        title = options;
-    }
-
     var backdrop = $('<div></div>');
     backdrop.addClass('modal-backdrop');
     
     var modal = $('<div></div>');
-    var title = $('<div><span>' + title + '</span></div>');
+
     var close = $('<button></button>');
-
-    title.addClass('title');
     close.addClass('close-button');
-
-    title.append(close);
-    modal.append(title);
+    modal.append(close);
     modal.addClass('modal-wrapper');
     modal.append($(selector).html());
 
