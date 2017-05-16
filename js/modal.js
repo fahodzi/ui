@@ -1,3 +1,5 @@
+fzui.modalSelector = null;
+
 /**
  * Create a modal window.
  * @params selector A CSS selector used for selecting the contents of the modal
@@ -15,6 +17,8 @@ fzui.modal = function(selector, options){
     modal.append(close);
     modal.addClass('modal-wrapper');
     modal.append($(selector).html());
+    $(selector).html("");
+    fzui.modalSelector = selector;
 
     backdrop.append(modal);
     $('body').append(backdrop);
@@ -30,6 +34,8 @@ fzui.modal = function(selector, options){
 
 fzui.closeModal = function(){
     $('.modal-wrapper').fadeOut('fast', function(){
+        $('.modal-wrapper > .close-button').remove();
+        $(fzui.modalSelector).html($('.modal-wrapper').html());
         $('.modal-backdrop').fadeOut('fast', function(){
             $('.modal-wrapper').remove();
             $('.modal-backdrop').remove();
