@@ -621,21 +621,6 @@ ul.nav-mega li a {
   font-size: 16px;
   padding: 12px 24px 12px 24px; }
 
-form input[type=submit] {
-  font-size: 14px;
-  padding: 7px 15px 7px 15px;
-  background-color: #21add3;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  border-radius: 3px;
-  cursor: default;
-  color: white;
-  border: none;
-  outline: none;
-  vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  display: inline-block; }
-
 .form-element {
   padding-bottom: 10px; }
   .form-element input:focus, .form-element textarea:focus, .form-element select:focus {
@@ -680,6 +665,20 @@ form input[type=submit] {
 
 .form-submit-area {
   padding-top: 10px; }
+  .form-submit-area input[type=submit] {
+    font-size: 14px;
+    padding: 7px 15px 7px 15px;
+    background-color: #21add3;
+    font-family: "Open Sans", Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 3px;
+    cursor: default;
+    color: white;
+    border: none;
+    outline: none;
+    vertical-align: bottom;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    display: inline-block; }
 
 .form-grid .form-element {
   white-space: nowrap;
