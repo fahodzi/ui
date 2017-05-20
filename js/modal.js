@@ -36,7 +36,7 @@ fzui.modal = function(selector, options){
 fzui.closeModal = function(){
     $('.modal-wrapper').fadeOut('fast', function(){
         $('body').append($('.current-modal'));
-        $('.current-modal').removeClass('.current-modal');
+        $('.current-modal').addClass('modal').removeClass('current-modal');
         $('.modal-backdrop').fadeOut('fast', function(){
             $('.modal-wrapper').remove();
             $('.modal-backdrop').remove();

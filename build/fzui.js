@@ -29,9 +29,7 @@ fzui.dropdowns = new dropdown();
 $(function() {
     fzui.dropdowns.init();
 })
-;fzui.modalSelector = null;
-
-/**
+;/**
  * Create a modal window.
  * @params selector A CSS selector used for selecting the contents of the modal
  * @params options An object or string that contains options for the model window creator.
@@ -68,9 +66,8 @@ fzui.modal = function(selector, options){
 
 fzui.closeModal = function(){
     $('.modal-wrapper').fadeOut('fast', function(){
-        //$(fzui.modalSelector).html($('.modal-wrapper').html());
         $('body').append($('.current-modal'));
-        $('.current-modal').removeClass('.current-modal');
+        $('.current-modal').addClass('modal').removeClass('current-modal');
         $('.modal-backdrop').fadeOut('fast', function(){
             $('.modal-wrapper').remove();
             $('.modal-backdrop').remove();
