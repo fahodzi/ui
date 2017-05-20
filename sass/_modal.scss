@@ -13,9 +13,12 @@
     z-index: 1000;
 }
 
+.current-modal{
+    width:700px;
+}
+
 .modal-wrapper{
 
-    width: 700px;
     background-color: #fff;
     border-radius: 7px 7px 5px 5px;
     display: none;
