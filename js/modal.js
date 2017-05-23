@@ -12,11 +12,13 @@ fzui.modal = function(selector, options){
 
     var close = $('<button></button>');
     var content = $(selector).clone(); 
+    var width = content.width() == 0 ? 700 : content.width();
     $(selector).remove();
     close.addClass('close-button');
     modal.append(close);
     modal.addClass('modal-wrapper');
-    modal.width(content.width() == 0 ? 700 : content.width());
+    modal.width(width);
+    modal.css({left: $(window).width()/2 - width/2 });
     modal.append(content);
     content.removeClass("modal");
     content.addClass('current-modal');
@@ -26,15 +28,23 @@ fzui.modal = function(selector, options){
     $('body').addClass('modal-active');
 
     backdrop.fadeIn('fast', function(){
-            modal.fadeIn('fast', function(){
-        });
+        modal.css('opacity', '0.0');
+        modal.show();
+        modal.animate({
+            top:"+=20",
+            opacity:1
+        }, 'fast');
     })
 
     close.on('click.fzui', fzui.closeModal);
 };
 
 fzui.closeModal = function(){
-    $('.modal-wrapper').fadeOut('fast', function(){
+    $('.modal-wrapper').animate({
+            top:"-20",
+            opacity: 0
+        }, 'fast', 
+        function(){
         $('body').append($('.current-modal'));
         $('.current-modal').addClass('modal').removeClass('current-modal');
         $('.modal-backdrop').fadeOut('fast', function(){
