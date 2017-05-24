@@ -22,7 +22,7 @@ fzui.modal = function(selector, options){
     modal.addClass('modal-wrapper');
     modal.attr('modal-wrapper-' + fzui.modalCount);
     modal.width(width);
-    modal.css({left: $(window).width()/2 - width/2 });
+    modal.css({left: $(window).width()/2 - width/2 , top: fzui.modalCount * 50});
     modal.append(content);
     content.removeClass("modal");
     //content.addClass('current-modal');
@@ -39,18 +39,22 @@ fzui.modal = function(selector, options){
         }, 'fast');
     })
 
+    fzui.modalCount++;
+
     close.on('click.fzui', function(){
         $(modal).animate({
                 top:"-20",
                 opacity: 0
             }, 'fast', 
             function(){
-            $('body').append(content);
-            content.addClass('modal');//.removeClass('current-modal');
-            backdrop.fadeOut('fast', function(){
-                modal.remove();
-                backdrop.remove();
-            });
-        });
+                $('body').append(content);
+                content.addClass('modal');//.removeClass('current-modal');
+                backdrop.fadeOut('fast', function(){
+                    modal.remove();
+                    backdrop.remove();
+                    fzui.modalCount--;
+                });
+            }
+        );
     });
 };
