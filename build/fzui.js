@@ -29,7 +29,7 @@ fzui.dropdowns = new dropdown();
 $(function() {
     fzui.dropdowns.init();
 })
-;fzui.modalCount = 0;
+;fzui.modals = [];
 
 /**
  * Create a modal window.
@@ -39,7 +39,7 @@ $(function() {
 fzui.modal = function(selector, options){
     var backdrop = $('<div></div>');
     backdrop.addClass('modal-backdrop');
-    backdrop.attr('id', 'modal-backdrop-' + fzui.modalCount);
+    backdrop.attr('id', 'modal-backdrop-' + fzui.modals.length);
     
     var modal = $('<div></div>');
 
@@ -53,7 +53,7 @@ fzui.modal = function(selector, options){
     modal.addClass('modal-wrapper');
     modal.attr('modal-wrapper-' + fzui.modalCount);
     modal.width(width);
-    modal.css({left: $(window).width()/2 - width/2 , top: fzui.modalCount * 50});
+    modal.css({left: $(window).width()/2 - width/2 , top: fzui.modals.length * 30});
     modal.append(content);
     content.removeClass("modal");
     //content.addClass('current-modal');
@@ -68,27 +68,34 @@ fzui.modal = function(selector, options){
             top:"+=20",
             opacity:1
         }, 'fast');
-    })
-
-    fzui.modalCount++;
-
-    close.on('click.fzui', function(){
-        $(modal).animate({
-                top:"-20",
-                opacity: 0
-            }, 'fast', 
-            function(){
-                $('body').append(content);
-                content.addClass('modal');//.removeClass('current-modal');
-                backdrop.fadeOut('fast', function(){
-                    modal.remove();
-                    backdrop.remove();
-                    fzui.modalCount--;
-                });
-            }
-        );
     });
+
+    fzui.modals.push({modal:modal, content:content, backdrop:backdrop});
+
+    close.on('click.fzui', fzui.closeModal);
 };
+
+fzui.closeModal = function() {
+    var modalData = fzui.modals.pop();
+    var modal = modalData.modal;
+    var content = modalData.content;
+    var backdrop = modalData.backdrop;
+
+    $(modal).animate({
+            top:"-20",
+            opacity: 0
+        }, 'fast', 
+        function(){
+            $('body').append(content);
+            content.addClass('modal');//.removeClass('current-modal');
+            backdrop.fadeOut('fast', function(){
+                modal.remove();
+                backdrop.remove();
+                fzui.modalCount--;
+            });
+        }
+    );
+}
 ;/**
  * Implements the highlighting of the current tab or pill for tab and pill
  * user interfaces.
