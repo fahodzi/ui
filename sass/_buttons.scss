@@ -51,6 +51,10 @@ button:active, .button:active {
 
 .button-green { @include button($green) }
 .button-green:active { @include button-active($green) }
+.button-light-green { @include button($light-green) }
+.button-light-green:active { @include button-active($light-green) }
+.button-dark-green { @include button($dark-green) }
+.button-dark-green:active { @include button-active($dark-green) }
 
 .button-brown { @include button($brown) }
 .button-brown:active { @include button-active($brown) }
