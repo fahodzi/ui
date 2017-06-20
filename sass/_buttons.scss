@@ -65,13 +65,15 @@ button:active, .button:active {
 
 .button-group {
     font-size: 0;
-    button{
+    button, .button{
         border-radius: 0px;
     }
-    > button:first-child, .dropdown:first-child > button {
+    > button:first-child, .dropdown:first-child > button, 
+    > .button:first-child, .dropdown:first-child > .button {
         border-radius: 3px 0px 0px 3px;
     }
-    > button:last-child, .dropdown:last-child > button {
+    > button:last-child, .dropdown:last-child > button,
+    > .button:last-child, .dropdown:last-child > .button {
         border-radius: 0px 3px 3px 0px;
     }
 }

@@ -389,11 +389,13 @@ button:active, .button:active {
 
 .button-group {
   font-size: 0; }
-  .button-group button {
+  .button-group button, .button-group .button {
     border-radius: 0px; }
-  .button-group > button:first-child, .button-group .dropdown:first-child > button {
+  .button-group > button:first-child, .button-group .dropdown:first-child > button,
+  .button-group > .button:first-child, .button-group .dropdown:first-child > .button {
     border-radius: 3px 0px 0px 3px; }
-  .button-group > button:last-child, .button-group .dropdown:last-child > button {
+  .button-group > button:last-child, .button-group .dropdown:last-child > button,
+  .button-group > .button:last-child, .button-group .dropdown:last-child > .button {
     border-radius: 0px 3px 3px 0px; }
 
 .button-group-mini > button, .button-group-mini > .dropdown > button {
