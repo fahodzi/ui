@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .red {
   color: #fc4e4e; }
 
@@ -333,44 +334,6 @@ button:active, .button:active {
   background-color: #40a071;
   box-shadow: inset 1px 1px 4px #174a31; }
 
-.button-light-green {
-  font-size: 14px;
-  padding: 7px 15px 7px 15px;
-  background-color: #86dab1;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  border-radius: 3px;
-  cursor: default;
-  color: white;
-  border: none;
-  outline: none;
-  vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(11, 35, 23, 0.2);
-  display: inline-block; }
-
-.button-light-green:active {
-  background-color: #7ccba4;
-  box-shadow: inset 1px 1px 4px #2f9864; }
-
-.button-dark-green {
-  font-size: 14px;
-  padding: 7px 15px 7px 15px;
-  background-color: #23714b;
-  font-family: "Open Sans", Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  border-radius: 3px;
-  cursor: default;
-  color: white;
-  border: none;
-  outline: none;
-  vertical-align: bottom;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  display: inline-block; }
-
-.button-dark-green:active {
-  background-color: #23573e;
-  box-shadow: inset 1px 1px 4px black; }
-
 .button-brown {
   font-size: 14px;
   padding: 7px 15px 7px 15px;
@@ -476,7 +439,7 @@ button:active, .button:active {
 .dropdown {
   display: inline-block; }
   .dropdown button:after {
-    content: "\f078";
+    content: "▼";
     padding-left: 10px; }
   .dropdown .dropdown-contents {
     display: none;
