@@ -7,6 +7,13 @@
 @mixin button-active($color){
     background-color:desaturate(darken($color, 5%), 10%);
     box-shadow: inset 1px 1px 4px darken($color, 30%);
+    top:1px;
+    left:1px;
+}
+
+@mixin button-hover($color){
+    background-color:lighten($color, 5%);
+    box-shadow: 2px 2px 4px rgba(darken($color, 70%), 0.2);
 }
 
 @mixin button-decoration($color){
@@ -22,6 +29,7 @@
 }
 
 @mixin button($color){
+    position:relative;
     @include size-normal;
     @include button-decoration($color);
     @include button-shadow($color);
@@ -36,26 +44,31 @@ button::-moz-focus-inner{
     border: none;
 }
 
-button:active, .button:active {
-    @include button-active($gray-4)
-}
+button:hover, .button:hover {@include button-hover($gray-4)}
+button:active, .button:active {@include button-active($gray-4)}
 
 .button-red { @include button($red) }
+.button-red:hover { @include button-hover($red) }
 .button-red:active { @include button-active($red) }
 
 .button-yellow { @include button($yellow) }
+.button-yellow:hover { @include button-hover($yellow) }
 .button-yellow:active { @include button-active($yellow) }
 
 .button-blue { @include button($blue) }
+.button-blue:hover { @include button-hover($blue) }
 .button-blue:active { @include button-active($blue) }
 
 .button-green { @include button($green) }
+.button-green:hover { @include button-hover($green) }
 .button-green:active { @include button-active($green) }
 
 .button-brown { @include button($brown) }
+.button-brown:hover { @include button-hover($brown) }
 .button-brown:active { @include button-active($brown) }
 
 .button-purple { @include button($purple) }
+.button-purple:hover { @include button-hover($purple) }
 .button-purple:active { @include button-active($purple) }
 
 .button-mini{ @include size-mini }
@@ -68,8 +81,26 @@ button:active, .button:active {
     button, .button{
         border-radius: 0px;
     }
-    > button:first-child, .dropdown:first-child > button, 
-    > .button:first-child, .dropdown:first-child > .button {
+    button:active, .button:active,
+    .button-red:active,
+    .button-yellow:active,
+    .button-blue:active,
+    .button-green:active,
+    .button-brown:active,
+    .button-purple:active
+    {
+        top:0px;
+        left:0px;
+    }
+    > button:first-child, .dropdown:first-child > button,
+    > .button:first-child, .dropdown:first-child > .button,
+    > .button-red:first-child, .dropdown:first-child > .button-red,
+    > .button-yellow:first-child, .dropdown:first-child > .button-yellow,
+    > .button-blue:first-child, .dropdown:first-child > .button-blue,
+    > .button-green:first-child, .dropdown:first-child > .button-green,
+    > .button-brown:first-child, .dropdown:first-child > .button-brown,
+    > .button-purple:first-child, .dropdown:first-child > .button-purple
+    {
         border-radius: 3px 0px 0px 3px;
     }
     > button:last-child, .dropdown:last-child > button,
