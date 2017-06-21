@@ -525,7 +525,8 @@ ul.menu {
   color: #929292; }
   ul.menu > li {
     padding: 6px;
-    font-size: 14px; }
+    font-size: 14px;
+    white-space: nowrap; }
   ul.menu > li:hover {
     background: #fafafa; }
 
