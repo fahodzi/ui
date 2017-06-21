@@ -15,12 +15,16 @@ function dropdown() {
         $('.dropdown > .dropdown-right').each(function(i, item){
             var button = $(item).prev();
             $(item).css({left: button.offset().left + button.outerWidth() - $(item).outerWidth()});
+            console.log();
         });
         $('.dropdown > button, .dropdown > .button').click(function(event){
             resetContents(event);
             var parent;
             parent = $(this).parent();
             parent.toggleClass('active');
+            if($(this).next().hasClass('dropdown-right')) {
+                $(this).next().css({left: $(this).offset().left + $(this).outerWidth() - $(this).next().outerWidth()});
+            }
             event.stopPropagation();
         });
     }
