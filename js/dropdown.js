@@ -11,7 +11,11 @@ function dropdown() {
     }
 
     this.init = function(){
-        $('.dropdown > button').click(function(event){
+        $('.dropdown > .dropdown-right').each(function(i, item){
+            var button = $(item).prev();
+            $(item).css({left: button.offset().left + button.outerWidth() - $(item).outerWidth()});
+        });
+        $('.dropdown > button, .dropdown > .button').click(function(event){
             resetContents(event);
             var parent;
             parent = $(this).parent();
