@@ -526,7 +526,9 @@ ul.menu {
   ul.menu > li {
     padding: 6px;
     font-size: 14px;
-    white-space: nowrap; }
+    white-space: nowrap;
+    padding-left: 10px;
+    padding-right: 10px; }
   ul.menu > li:hover {
     background: #fafafa; }
 
@@ -703,7 +705,7 @@ ul.nav-mega li a {
     box-sizing: border-box;
     box-shadow: inset 1px 1px 3px rgba(143, 143, 143, 0.2);
     color: #494949;
-    font-size: initial;
+    font-size: 14px;
     background-color: white; }
   .form-element > input[type=checkbox] {
     border: none;
