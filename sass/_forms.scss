@@ -64,15 +64,42 @@
 
 .form-submit-area {
   padding-top:10px;
-  input[type=submit]{
-    @include button($blue)
-  }  
+  input[type=submit]{ @include button($blue) }  
   input[type=submit]:hover{
     @include button-hover($blue)
   }  
   input[type=submit]:active{
     @include button-active($blue)
-  }
+  }  
+  
+  input[type=submit].button-red { @include button($red) }
+  input[type=submit].button-red:hover { @include button-hover($red) }
+  input[type=submit].button-red:active { @include button-active($red) }
+
+  input[type=submit].button-yellow { @include button($yellow) }
+  input[type=submit].button-yellow:hover { @include button-hover($yellow) }
+  input[type=submit].button-yellow:active { @include button-active($yellow) }
+
+  input[type=submit].button-blue { @include button($blue) }
+  input[type=submit].button-blue:hover { @include button-hover($blue) }
+  input[type=submit].button-blue:active { @include button-active($blue) }
+
+  input[type=submit].button-green { @include button($green) }
+  input[type=submit].button-green:hover { @include button-hover($green) }
+  input[type=submit].button-green:active { @include button-active($green) }
+
+  input[type=submit].button-brown { @include button($brown) }
+  input[type=submit].button-brown:hover { @include button-hover($brown) }
+  input[type=submit].button-brown:active { @include button-active($brown) }
+
+  input[type=submit].button-purple { @include button($purple) }
+  input[type=submit].button-purple:hover { @include button-hover($purple) }
+  input[type=submit].button-purple:active { @include button-active($purple) }  
+  
+  input[type=submit].button-mini{ @include size-mini }
+  input[type=submit].button-small{ @include size-small }
+  input[type=submit].button-large{ @include size-large }
+  input[type=submit].button-mega{ @include size-mega }    
 }
 
 .form-grid {
