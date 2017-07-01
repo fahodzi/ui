@@ -74,7 +74,7 @@ button:active, .button:active {@include button-active($gray-4)}
 .button-mini{ @include size-mini }
 .button-small{ @include size-small }
 .button-large{ @include size-large }
-.button-mega{ @include size-mega }
+input[type=submit].button-mega{ @include size-mega }
 
 .button-group {
     font-size: 0;

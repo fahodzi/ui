@@ -67,6 +67,12 @@
   input[type=submit]{
     @include button($blue)
   }  
+  input[type=submit]:hover{
+    @include button-hover($blue)
+  }  
+  input[type=submit]:active{
+    @include button-active($blue)
+  }
 }
 
 .form-grid {
