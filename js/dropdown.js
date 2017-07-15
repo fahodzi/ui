@@ -16,7 +16,7 @@ function dropdown() {
             $(item).css({left: button.offset().left + button.outerWidth() - $(item).outerWidth()});
             console.log();
         });
-        $('.dropdown > button, .dropdown > .button').click(function(event){
+        $('.dropdown > button, .dropdown > .button, .dropdown > .clickable').click(function(event){
             resetContents(event);
             var parent;
             parent = $(this).parent();
