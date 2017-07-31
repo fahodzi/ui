@@ -1,0 +1,12 @@
+.align-left{
+    float:left;
+}
+
+.align-right{
+    float:right;
+}
+
+.align-container:after{
+    content: ' ';
+    clear: both
+}
