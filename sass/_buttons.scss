@@ -120,7 +120,13 @@ button:active, .button:active {@include button-active($gray-4)}
 .button-outline.button-green:hover{ @include button-outline-hover($green) }
 .button-outline.button-green:active{ @include button-outline-active($green) }
 
+.button-outline.button-brown{ @include button-outline($brown) }
+.button-outline.button-brown:hover{ @include button-outline-hover($brown) }
+.button-outline.button-brown:active{ @include button-outline-active($brown) }
 
+.button-outline.button-purple{ @include button-outline($purple) }
+.button-outline.button-purple:hover{ @include button-outline-hover($purple) }
+.button-outline.button-purple:active{ @include button-outline-active($purple) }
 
 .button-mini{ @include size-mini }
 .button-small{ @include size-small }
