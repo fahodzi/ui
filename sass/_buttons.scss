@@ -36,6 +36,22 @@
     display:inline-block
 }
 
+@mixin button-outline($color){
+    border-color: $color;
+    color: $color;
+}
+
+@mixin button-outline-hover($color){
+    background-color:rgba($color, 0.1);
+}
+
+@mixin button-outline-active($color){
+    background-color:rgba(darken($color, 20%), 0.1);
+    box-shadow: inset 1px 1px 2px rgba(darken($color, 30%), 0.4);
+    top: 0px;
+    left: 0px;
+}
+
 button, .button {
     @include button($gray-4)
 }
@@ -70,6 +86,41 @@ button:active, .button:active {@include button-active($gray-4)}
 .button-purple { @include button($purple) }
 .button-purple:hover { @include button-hover($purple) }
 .button-purple:active { @include button-active($purple) }
+
+.button-outline{
+    background-color:transparent;
+    box-shadow: none;
+    border-width: 1px;
+    border-style: solid;
+    @include button-outline($gray-4);
+}
+
+.button-outline:hover{
+    box-shadow: none;
+    @include button-outline-hover($gray-4);
+}
+
+.button-outline:active{
+    @include button-outline-active($gray-4);
+}
+
+.button-outline.button-red{ @include button-outline($red) }
+.button-outline.button-red:hover{ @include button-outline-hover($red) }
+.button-outline.button-red:active{ @include button-outline-active($red) }
+
+.button-outline.button-yellow{ @include button-outline($yellow) }
+.button-outline.button-yellow:hover{ @include button-outline-hover($yellow) }
+.button-outline.button-yellow:active{ @include button-outline-active($yellow) }
+
+.button-outline.button-blue{ @include button-outline($blue) }
+.button-outline.button-blue:hover{ @include button-outline-hover($blue) }
+.button-outline.button-blue:active{ @include button-outline-active($blue) }
+
+.button-outline.button-green{ @include button-outline($green) }
+.button-outline.button-green:hover{ @include button-outline-hover($green) }
+.button-outline.button-green:active{ @include button-outline-active($green) }
+
+
 
 .button-mini{ @include size-mini }
 .button-small{ @include size-small }
