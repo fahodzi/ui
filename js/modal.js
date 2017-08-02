@@ -22,7 +22,7 @@ fzui.modal = function(selector, options){
     modal.addClass('modal-wrapper');
     modal.attr('modal-wrapper-' + fzui.modalCount);
     modal.width(width);
-    modal.css({left: $(window).width()/2 - width/2 , top: fzui.modals.length * 30});
+    modal.css({left: $(window).width()/2 - width/2 , top: fzui.modals.length * 30 + 60});
     modal.append(content);
     content.removeClass("modal");
     //content.addClass('current-modal');
