@@ -8,5 +8,6 @@
 
 .align-container:after{
     content: ' ';
-    clear: both
+    clear: both;
+    display: block;
 }
