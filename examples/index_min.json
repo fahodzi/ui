@@ -1,0 +1,15 @@
+{
+    "min": true,
+    "colors" : [
+        {"name": "red"},
+        {"name": "yellow"}, 
+        {"name": "blue"}, 
+        {"name": "green"}, 
+        {"name": "brown"}, 
+        {"name": "purple"}
+    ],
+    "form-layouts" : [
+        {"title": "Inline Layout", "class": ""},
+        {"title": "Grid Layout", "class": "form-grid"}
+    ]
+}

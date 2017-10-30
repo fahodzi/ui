@@ -33,12 +33,24 @@ module.exports = function(grunt)
             }
         },
         mustache_render: {
-            dist: {
+            options: {
+                directory: 'examples'
+            },
+            default: {
                 files : [
                     {
-                        data: "index.json",
-                        template: "index.mustache",
-                        dest: "index.html"
+                        data: "examples/index.json",
+                        template: "examples/index.mustache",
+                        dest: "build/index.html"
+                    }
+                ]
+            },
+            build: {
+                files : [
+                    {
+                        data: "examples/index_min.json",
+                        template: "examples/index.mustache",
+                        dest: "dist/index.html"
                     }
                 ]
             }

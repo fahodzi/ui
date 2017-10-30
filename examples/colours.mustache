@@ -1,0 +1,33 @@
+<h2>Colour Pallete</h2>
+<div>
+    <h3>Colors</h3>
+    {{#colors}}
+    <div class="pallete">
+        <div class="light-{{name}}-bg" id="light-{{name}}"><script type="text/javascript">document.write(getColor('light-{{name}}'))</script></div>
+        <div class="{{name}}-bg" id="normal-{{name}}"><script type="text/javascript">document.write(getColor('normal-{{name}}'))</script></div>
+        <div class="dark-{{name}}-bg" id="dark-{{name}}"><script type="text/javascript">document.write(getColor('dark-{{name}}'))</script></div>
+        <span>{{name}}</span>
+    </div>
+    {{/colors}}
+</div>
+<div>
+    <h3>Grayscales</h3>
+    <div class="pallete">
+        <div class="gray-0-bg" id="gray-0"><script type="text/javascript">document.write(getColor('gray-0'))</script></div>
+    </div>
+    <div class="pallete">
+        <div class="gray-1-bg" id="gray-1"><script type="text/javascript">document.write(getColor('gray-1'))</script></div>
+    </div>
+    <div class="pallete">
+        <div class="gray-2-bg" id="gray-2"><script type="text/javascript">document.write(getColor('gray-2'))</script></div>
+    </div>
+    <div class="pallete">
+        <div class="gray-3-bg" id="gray-3"><script type="text/javascript">document.write(getColor('gray-3'))</script></div>
+    </div>
+    <div class="pallete">
+        <div class="gray-4-bg" id="gray-4"><script type="text/javascript">document.write(getColor('gray-4'))</script></div>
+    </div>
+    <div class="pallete">
+        <div class="gray-5-bg" id="gray-5"><script type="text/javascript">document.write(getColor('gray-5'))</script></div>
+    </div>
+</div>

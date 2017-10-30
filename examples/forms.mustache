@@ -1,0 +1,102 @@
+<h2>Forms</h2>
+<div class="section">
+    {{#form-layouts}}
+    <div class="half">
+        <h3>{{title}}</h3>
+        <form class="{{class}}">
+            <div class="form-element">
+                <label>Text</label>
+                <input type="text" name="username" />
+                <span>A sample text field. Trying to make this description field so long it might try to wrap.</span>
+            </div>
+
+            <div class="form-element">
+                <label>Password</label>
+                <input type="password" name="username" />
+                <ul>
+                    <li>Passwords must contain numbers and letters</li>
+                    <li>Choose a strong password</li>
+                    <li>Do not use your phone number or date of birth</li>
+                </ul>
+            </div>
+
+            <div class="form-element">
+                <label>Selection</label>
+                <select>
+                    <option></option>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                    <option>Option 3</option>
+                </select>
+            </div>
+
+            <div class="form-element form-error">
+                <label>Error</label>
+                <input type="text" name="error" />
+                <ul>
+                    <li>Password fails all the password rules.</li>
+                    <li>Can you try a different password.</li>
+                </ul>
+                <span>An errored field</span>
+            </div>
+
+            <div class="form-element form-warning">
+                <label>Warning</label>
+                <input type="text" name="warning" />
+                <ul>
+                    <li>A warning.</li>
+                    <li>What do you have to say?</li>
+                </ul>
+            </div>
+
+            <div class="form-element form-success">
+                <label>Success</label>
+                <input type="text" name="success" />
+                <ul>
+                    <li>Seems everything worked well</li>
+                </ul>
+            </div>
+            <div class="form-element">
+                <label>Residential Area</label>
+                <textarea name="residential">Some content please?</textarea>
+            </div>
+
+
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="form-element">
+                    <label>Firstname</label>
+                    <input type="text" name="firstname" />
+                    <span>A sample text field</span>
+                </div>
+                <div class="form-element">
+                    <label>Lastname</label>
+                    <input type="text" name="lastname" />
+                    <span>A sample text field</span>
+                </div>
+                <div class="form-element">
+                    <label>Food?</label>
+                    <div class="check-group">
+                        <label><input type="radio" name="hey" /> Burgers and Chips</label>
+                        <label><input type="radio" name="hey" /> Pizza and Coke</label>
+                        <label><input type="radio" name="hey" /> Tacos</label>
+                    </div>
+                </div>
+                <div class="form-element">
+                    <label for="check_1_{{class}}">Take Out?</label><input type="checkbox" name="check_1" id="check_1_{{class}}" />
+                </div>
+                <div class="form-element">
+                    <label>Custom Input Wrapper</label>
+                    <div class="input-wrapper">
+                        Some generic html inputs can be put inside this wrapper
+                    </div>
+                </div>
+            </fieldset>
+            <div class="form-submit-area">
+                <input type="submit" />
+            </div>
+
+        </form>
+    </div>
+    {{/form-layouts}}
+</div>
