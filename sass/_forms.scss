@@ -210,3 +210,23 @@ fieldset {
     box-sizing: border-box;
   }
 }
+
+.form-element.elements-inline{
+
+  white-space: normal;
+  font-size: initial;
+
+  >label, >input, >select, >textarea {
+    display: inline-block;
+    width: auto;
+    margin:0px;
+    margin-right:5px;
+  }
+
+  >label{
+    padding:0px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    vertical-align: middle;
+  }
+}
