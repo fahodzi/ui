@@ -40,6 +40,7 @@
     font-size: small;
     color: $gray-3;
     display:block;
+    margin-top:5px;
   }
 
   textarea {
@@ -62,8 +63,9 @@
     font-size: 0.9em;
     padding-top: 5px;
     padding-bottom:5px;
-    padding-left:30px;
+    padding-left:0px;
     color:$gray-1;
+    list-style: none;
   }
 }
 
@@ -172,10 +174,10 @@
     border-color: $color;
     box-shadow: inset 1px 1px 3px rgba(darken($color, 60%), 0.2);
     background-color: lighten($color, 50%);
-    color: darken($color,50)
+    color: darken($color,30%)
   }
   label, ul {
-    color: darken($color,50)
+    color: darken($color,30%)
   }
 }
 
@@ -215,6 +217,7 @@ fieldset {
 
   white-space: normal;
   font-size: initial;
+  margin-top: 10px;
 
   >label, >input, >select, >textarea {
     display: inline-block;
@@ -224,9 +227,17 @@ fieldset {
   }
 
   >label{
-    padding:0px;
+    padding:0px;  
     padding-top: 5px;
     padding-bottom: 5px;
     vertical-align: middle;
+  }
+}
+
+.form-element.elements-inline.form-error,
+.form-element.elements-inline.form-warning,
+.form-element.elements-inline.form-success{
+  ul{
+    margin-left: 0px;
   }
 }
