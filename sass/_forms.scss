@@ -174,10 +174,10 @@
     border-color: $color;
     box-shadow: inset 1px 1px 3px rgba(darken($color, 60%), 0.2);
     background-color: lighten($color, 50%);
-    color: darken($color,30%)
+    color: darken($color,50%)
   }
   label, ul {
-    color: darken($color,30%)
+    color: darken($color,50%)
   }
 }
 
