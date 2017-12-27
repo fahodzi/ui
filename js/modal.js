@@ -34,7 +34,9 @@ fzui.modal = function (selector, options) {
     content.show();
     content.trigger('fzui.modal.showing');
     content.animate(
-      {top: "+=20", opacity: 1}, 'fast', function(){
+      {top: "+=20", opacity: 1}, 'fast',
+      function(){
+        fzui.dropdowns.init(content);
         content.trigger('fzui.modal.shown');
       }
     );

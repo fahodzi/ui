@@ -1,30 +1,64 @@
-@mixin size($font-size, $vertical-padding, $horizontal-padding){
-    font-size:$font-size;
-    padding:$vertical-padding $horizontal-padding $vertical-padding $horizontal-padding;    
+@mixin size($font-size, $vertical-padding, $horizontal-padding, $offset) {
+  font-size: $font-size;
+  padding: ($vertical-padding - $offset) ($horizontal-padding - $offset) ($vertical-padding - $offset) ($horizontal-padding - $offset);
 }
 
-@mixin size-mini{ @include size($mini-font-size, $mini-vertical-padding, $mini-horizontal-padding) }
-@mixin size-small{ @include size($small-font-size, $small-vertical-padding, $small-horizontal-padding) }
-@mixin size-normal{ @include size($normal-font-size, $normal-vertical-padding, $normal-horizontal-padding);}
-@mixin size-large{ @include size($large-font-size, $large-vertical-padding, $large-horizontal-padding) }
-@mixin size-mega{ @include size($mega-font-size, $mega-vertical-padding, $mega-horizontal-padding) }
+@mixin size-mini {
+  @include size($mini-font-size, $mini-vertical-padding, $mini-horizontal-padding, 0)
+}
 
-$mini-font-size : 12px;
-$mini-vertical-padding : 3px;
-$mini-horizontal-padding : 6px;
+@mixin size-small {
+  @include size($small-font-size, $small-vertical-padding, $small-horizontal-padding, 0)
+}
 
-$small-font-size : 14px;
-$small-vertical-padding : 5px;
-$small-horizontal-padding : 12px;
+@mixin size-normal {
+  @include size($normal-font-size, $normal-vertical-padding, $normal-horizontal-padding, 0);
+}
 
-$normal-font-size : 14px;
-$normal-vertical-padding : 7px;
-$normal-horizontal-padding : 15px;
+@mixin size-large {
+  @include size($large-font-size, $large-vertical-padding, $large-horizontal-padding, 0)
+}
 
-$large-font-size : 14px;
-$large-vertical-padding : 10px;
-$large-horizontal-padding : 18px;
+@mixin size-mega {
+  @include size($mega-font-size, $mega-vertical-padding, $mega-horizontal-padding, 0)
+}
 
-$mega-font-size : 16px;
-$mega-vertical-padding : 12px;
-$mega-horizontal-padding : 24px;
+@mixin outline-size-mini {
+  @include size($mini-font-size, $mini-vertical-padding, $mini-horizontal-padding, 1)
+}
+
+@mixin outline-size-small {
+  @include size($small-font-size, $small-vertical-padding, $small-horizontal-padding, 1)
+}
+
+@mixin outline-size-normal {
+  @include size($normal-font-size, $normal-vertical-padding, $normal-horizontal-padding, 1);
+}
+
+@mixin outline-size-large {
+  @include size($large-font-size, $large-vertical-padding, $large-horizontal-padding, 1)
+}
+
+@mixin outline-size-mega {
+  @include size($mega-font-size, $mega-vertical-padding, $mega-horizontal-padding, 1)
+}
+
+$mini-font-size: 12px;
+$mini-vertical-padding: 3px;
+$mini-horizontal-padding: 6px;
+
+$small-font-size: 14px;
+$small-vertical-padding: 5px;
+$small-horizontal-padding: 12px;
+
+$normal-font-size: 14px;
+$normal-vertical-padding: 7px;
+$normal-horizontal-padding: 15px;
+
+$large-font-size: 14px;
+$large-vertical-padding: 10px;
+$large-horizontal-padding: 18px;
+
+$mega-font-size: 16px;
+$mega-vertical-padding: 12px;
+$mega-horizontal-padding: 24px;
