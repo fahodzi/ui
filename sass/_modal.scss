@@ -42,23 +42,18 @@
 
     > .close-button {
         cursor:default;
-        background: transparent;
-        padding: 3px;
         box-shadow: none;
         border: none;
         color: $gray-3;
         font-size: 16px;
-        width:50px;
-        float: right;
-        display: block;
-        padding: 5px 10px;
-        text-align: right;
-        font-weight: bold;
-
+        position: absolute;
+        width: 35px;
+        text-align: center;
+        top: 5px;
     }
 
     > .close-button:after{
-        content: "\274c";
+        content: "\2716";
         text-align: right;
     }
 
