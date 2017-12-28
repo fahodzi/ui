@@ -292,8 +292,6 @@ button:active, .button:active {
   > button:last-child, .dropdown:last-child > button,
   > .button:last-child, .dropdown:last-child > .button {
     border-radius: 0px 3px 3px 0px;
-    border-right-style: solid;
-    border-right-width: 1px;
   }
 }
 
@@ -321,35 +319,3 @@ button:active, .button:active {
   }
 }
 
-.button-group-plain {
-  > button, > .dropdown > button {
-    box-shadow: none;
-    background-color: transparent;
-    color: $gray-3;
-    padding: 5px;
-    font-weight: normal;
-  }
-
-  > button:hover, > .dropdown > button:hover {
-    color: $gray-4;
-  }
-
-  > .dropdown.active > button {
-    color: $gray-4;
-    background-color: lighten($gray-5, 10%);
-  }
-
-  > .dropdown > button:after {
-    content: "";
-    padding: 0px;
-  }
-
-  > .dropdown > .dropdown-contents {
-    margin-top: 0px;
-  }
-
-  > button:last-child, .dropdown:last-child > button,
-  > .button:last-child, .dropdown:last-child > .button {
-    border-right-style: none;
-  }
-}
