@@ -24,10 +24,10 @@ function dropdown() {
             var content = button.next();
             parent.toggleClass('active');
             if(content.hasClass('dropdown-right') || content.hasClass('dropup-right')) {
-                content.css({left: button.offset().left + button.outerWidth() - content.outerWidth()});
+                content.css({left: button.outerWidth() - content.outerWidth()});
             }
             if(parent.hasClass('dropup')) {
-                content.css({top:button.offset().top - content.outerHeight(true)});
+                content.css({top: -content.outerHeight(true)});
             }
             event.stopPropagation();
         });

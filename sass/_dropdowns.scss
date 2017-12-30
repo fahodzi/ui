@@ -15,8 +15,13 @@
   padding-left: 10px;
 }
 
-.dropdown {
+@mixin drop {
   display: inline-block;
+  position: relative;
+}
+
+.dropdown {
+  @include drop;
   button:after {
     @include after("▼")
   }
@@ -26,7 +31,7 @@
 }
 
 .dropup {
-  display: inline-block;
+  @include drop;
   button:after {
     @include after("▲")
   }
