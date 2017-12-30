@@ -1,26 +1,42 @@
+@mixin contents {
+  display: none;
+  position: absolute;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid lighten($gray-5, 5%);
+  z-index: 1000;
+}
+
+@mixin after ($text){
+  content: $text;
+  padding-left: 10px;
+}
+
 .dropdown {
-
   display: inline-block;
-
   button:after {
-    content: "▼";
-    padding-left: 10px;
+    @include after("▼")
   }
-
   .dropdown-contents {
-    display: none;
-    position: absolute;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;
-    background-color: #fff;
-    border-radius: 3px;
-    border: 1px solid lighten($gray-5, 5%);
-    z-index: 1000;
+    @include contents;
   }
 }
 
-.dropdown.active {
-  > .dropdown-contents {
-    display: block;
+.dropup {
+  display: inline-block;
+  button:after {
+    @include after("▲")
+  }
+  .dropup-contents {
+    @include contents;
   }
 }
+
+.dropdown.active > .dropdown-contents, 
+.dropup.active > .dropup-contents {
+    display: block;
+}
+

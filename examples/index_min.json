@@ -11,5 +11,9 @@
     "form-layouts" : [
         {"title": "Inline Layout", "class": ""},
         {"title": "Grid Layout", "class": "form-grid"}
+    ],
+    "drops" : [
+        {"type": "dropdown"},
+        {"type": "dropup"}
     ]
 }

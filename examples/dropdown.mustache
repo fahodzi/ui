@@ -1,31 +1,35 @@
 <h2>Dropdown</h2>
-<div class="dropdown">
-    <button>Dropdown</button>
-    <div class="dropdown-contents">
-        Hello!
+{{#drops}}
+<p>
+    <div class="{{type}}">
+        <button>Dropdown</button>
+        <div class="{{type}}-contents">
+            Hello!
+        </div>
     </div>
-</div>
 
-<div class="dropdown">
-    <button class="button-red" >Red</button>
-    <ul class="dropdown-contents menu">
-        <li>Some Item</li>
-        <li>Another Item</li>
-    </li>
-</div>
-
-<div class="dropdown">
-    <button class="button-purple" >Purple</button>
-    <ul class="dropdown-contents dropdown-right menu">
-        <li>Some Item</li>
-        <li>Another Item</li>
-        <li>Item should align to right"
-    </li>
-</div>
-
-<div class="dropdown">
-    <div class="clickable"> Clickable DIV</div>
-    <div class="dropdown-contents">
-        <p>This is supposed to be a padded dropdown.</p>
+    <div class="{{type}}">
+        <button class="button-red" >Red</button>
+        <ul class="{{type}}-contents menu">
+            <li>Some Item</li>
+            <li>Another Item</li>
+        </li>
     </div>
-</div>
+
+    <div class="{{type}}">
+        <button class="button-purple" >Purple</button>
+        <ul class="{{type}}-contents {{type}}-right menu">
+            <li>Some Item</li>
+            <li>Another Item</li>
+            <li>Item should align to right"
+        </li>
+    </div>
+
+    <div class="{{type}}">
+        <div class="clickable"> Clickable DIV</div>
+        <div class="{{type}}-contents">
+            <p>This is supposed to be a padded {{type}}.</p>
+        </div>
+    </div>
+</p>
+{{/drops}}
