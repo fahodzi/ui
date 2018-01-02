@@ -1,8 +1,8 @@
 /**
  * Dropdown menu javascript
  */
-function dropdown() {
-    var resetContents = function (event) {
+fzui.dropdowns = new (function () {
+    function resetContents (event) {
         $('.dropdown, .dropup').each(function(){
             // Reset all dropdowns on body click
             if(event.type == 'click' && event.target.parentNode === $(this)[0]) return;
@@ -33,10 +33,4 @@ function dropdown() {
         });
     }
     $(document).on('click.fzui', resetContents);
-}
-
-fzui.dropdowns = new dropdown();
-
-$(function() {
-    fzui.dropdowns.init($(document));
-})
+})();

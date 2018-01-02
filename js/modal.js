@@ -5,7 +5,7 @@ fzui.modals = [];
  * @params selector A CSS selector used for selecting the contents of the modal
  * @params options An object or string that contains options for the model window creator.
  */
-fzui.modal = function (selector, options) {
+$.fn.modal = function () {
   var backdrop = $('<div></div>');
   backdrop.addClass('modal-backdrop');
   backdrop.attr('id', 'modal-backdrop-' + fzui.modals.length);
@@ -13,13 +13,12 @@ fzui.modal = function (selector, options) {
   var modal = $('<div></div>');
 
   var close = $('<div></div>');
-  var original = $(selector);
-  var content = original.clone();
-  var width = original.outerWidth(true);
+  var content = this.clone();
+  var width = this.outerWidth(true);
   var left = $(window).width() / 2 - width / 2;
   var top = fzui.modals.length * 30 + 60;
 
-  original.remove();
+  this.remove();
   content.addClass('modal-wrapper');
   content.prepend(close);
   content.attr('modal-wrapper-' + fzui.modalCount);
@@ -42,7 +41,7 @@ fzui.modal = function (selector, options) {
     );
   });
 
-  fzui.modals.push({modal: content, content: original, backdrop: backdrop});
+  fzui.modals.push({modal: content, content: this, backdrop: backdrop});
   close.on('click.fzui', fzui.closeModal);
   return content;
 };

@@ -1,5 +1,2 @@
-node_modules
-/build/
-/dist/
+/node_modules/
 /vendor/
-index.html

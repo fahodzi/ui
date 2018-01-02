@@ -1,21 +1,22 @@
-var js_sources = ['js/fzui.js', 'js/dropdown.js', 'js/modal.js', 'js/nav.js'];
+var js_sources = ['js/fzui.js', 'js/dropdown.js', 'js/modal.js', 'js/nav.js', 'js/main.js'];
 
 module.exports = function(grunt)
 {
     grunt.initConfig({
         concat: {
             options: {
-                separator: ';',
+                banner: '(function($){',
+                footer: '}(jQuery));'
             },
             dist: {
                 src: js_sources,
-                dest: 'build/fzui.js',
+                dest: 'dist/fzui.js',
             },
         },
         cssmin: {
             target: {
                 files:{
-                    'dist/fzui.min.css': 'build/fzui.css'
+                    'dist/fzui.min.css': 'dist/fzui.css'
                 } 
             }
         },
@@ -28,7 +29,7 @@ module.exports = function(grunt)
         sass: {
             dist: {
                 files: {
-                    'build/fzui.css' : 'sass/fzui.scss',
+                    'dist/fzui.css' : 'sass/fzui.scss',
                 }
             }
         },
@@ -41,7 +42,7 @@ module.exports = function(grunt)
                     {
                         data: "examples/index.json",
                         template: "examples/index.mustache",
-                        dest: "build/index.html"
+                        dest: "dist/index.html"
                     }
                 ]
             },
@@ -50,7 +51,7 @@ module.exports = function(grunt)
                     {
                         data: "examples/index_min.json",
                         template: "examples/index.mustache",
-                        dest: "dist/index.html"
+                        dest: "dist/index.min.html"
                     }
                 ]
             }

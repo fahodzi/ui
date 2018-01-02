@@ -1,11 +1,11 @@
 <h2>Modals</h2>
-<button onclick='fzui.modal("#modal-test")'>Show Modal</button>
+<button onclick='$("#modal-test").modal()'>Show Modal</button>
 <div class="modal" id="modal-test" style="padding:20px">
     <center> This is expected to contain some modal content.</center>
-    <center><p><button onclick="fzui.modal('#modal-test-1')">Show Another Modal</button></p></center>
+    <center><p><button onclick="$('#modal-test-1').modal()">Show Another Modal</button></p></center>
 </div>
 
-<button onclick='fzui.modal("#modal-test-1")'>Show Modal</button>
+<button onclick='$("#modal-test-1").modal()'>Show Modal</button>
 <div class="modal" style="width:300px;padding:30px" id="modal-test-1">
     This is expected to contain some modal content with a title.
 </div>

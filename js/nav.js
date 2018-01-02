@@ -2,7 +2,7 @@
  * Implements the highlighting of the current tab or pill for tab and pill
  * user interfaces.
  */
-function nav() {
+fzui.nav = new (function() {
     this.init = function() {
         $('.nav > li > a').click(function(event){
             var parent = $(event.target).parent();
@@ -10,11 +10,5 @@ function nav() {
             parent.addClass('active');
         })
     }
-}
-
-fzui.nav = new nav();
-
-$(function(){
-    fzui.nav.init();
-});
+})();
 
