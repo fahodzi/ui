@@ -1,6 +1,8 @@
 (function($){
 var fzui = {};
-
+if($ === null && typeof require === 'function') {
+    $ = require('jquery')
+}
 /**
  * Dropdown menu javascript
  */
@@ -124,4 +126,4 @@ fzui.nav = new (function() {
 
 
 $(function(){ fzui.dropdowns.init($(document)) })
-}(jQuery));
+}(typeof jQuery === 'undefined' ? null : jQuery));

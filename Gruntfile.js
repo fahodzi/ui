@@ -6,7 +6,7 @@ module.exports = function(grunt)
         concat: {
             options: {
                 banner: '(function($){',
-                footer: '}(jQuery));'
+                footer: "}(typeof jQuery === 'undefined' ? null : jQuery));"
             },
             dist: {
                 src: js_sources,
