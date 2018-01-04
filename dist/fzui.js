@@ -40,27 +40,27 @@ fzui.dropdowns = new (function () {
     $(document).on('click.fzui', resetContents);
 })();
 
-fzui.modals = [];
+fzui.modals = {};
+fzui.uidCounter = 0;
 
-/**
- * Create a modal window.
- * @params selector A CSS selector used for selecting the contents of the modal
- * @params options An object or string that contains options for the model window creator.
- */
-$.fn.modal = function () {
+function getModalUID(object) {
+  return object.attr('id') || 'modal-uid-' + (fzui.uidCounter ++)
+}
+
+function openModal(object) {
   var backdrop = $('<div></div>');
   backdrop.addClass('modal-backdrop');
-  backdrop.attr('id', 'modal-backdrop-' + fzui.modals.length);
 
   var modal = $('<div></div>');
-
   var close = $('<div></div>');
-  var content = this.clone();
-  var width = this.outerWidth(true);
+  var uid = getModalUID(object);
+  object.attr('id', uid);
+  var content = object.clone();
+  var width = object.outerWidth(true);
   var left = $(window).width() / 2 - width / 2;
-  var top = fzui.modals.length * 30 + 60;
+  var top = 60;
 
-  this.remove();
+  object.remove();
   content.addClass('modal-wrapper');
   content.prepend(close);
   content.attr('modal-wrapper-' + fzui.modalCount);
@@ -83,32 +83,43 @@ $.fn.modal = function () {
     );
   });
 
-  fzui.modals.push({modal: content, content: this, backdrop: backdrop});
-  close.on('click.fzui', fzui.closeModal);
-  return content;
-};
+  fzui.modals[uid] = {modal: content, content: object, backdrop: backdrop};
+  close.on('click.fzui', () => {closeModal(content)});
+  return content
+}
 
-fzui.closeModal = function () {
-  var modalData = fzui.modals.pop();
+function closeModal(object) {
+  var modalData = fzui.modals[getModalUID(object)];
   var modal = modalData.modal;
   var content = modalData.content;
   var backdrop = modalData.backdrop;
-
   $(modal).animate({
       top: "-20",
       opacity: 0
     }, 'fast',
     function () {
       $('body').append(content);
-      content.addClass('modal');//.removeClass('current-modal');
+      content.addClass('modal');
       backdrop.fadeOut('fast', function () {
         modal.remove();
         backdrop.remove();
-        fzui.modalCount--;
       });
     }
   );
 }
+
+/**
+ * Create a modal window.
+ * @params selector A CSS selector used for selecting the contents of the modal
+ * @params options An object or string that contains options for the model window creator.
+ */
+$.fn.modal = function (action) {
+  if(action === 'close') {
+    return closeModal(this)
+  } else {
+    return openModal(this)
+  }
+};
 
 /**
  * Implements the highlighting of the current tab or pill for tab and pill
