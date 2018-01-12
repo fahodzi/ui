@@ -10,16 +10,32 @@ if($ === null && typeof require === 'function') {
 fzui.dropdowns = new (function () {
 
   var lastContainer;
+  var onClosedCallback;
+  var onShowCallback;
+  var callbacks = {
+    onClose : function (callback) {
+      console.log(callback);
+      onClosedCallback = callback;
+      return callbacks;
+    },
+    onShow : function (callback) {
+      onShowCallback = callback;
+      return callbacks;
+    }
+  };
+
 
   function resetContents(event) {
-    $('.dropdown, .dropup').each(function () {
+    $('.dropdown.active, .dropup.active').each(function () {
       // Reset all dropdowns on body click
       if (event.type == 'click' && event.target.parentNode === $(this)[0]) return;
       $(this).removeClass('active');
+      onClosedCallback();
     });
     var floatingDropdown = $('body > .dropdown-contents');
     if(floatingDropdown.length > 0) {
       floatingDropdown.remove();
+      floatingDropdown.hide();
       lastContainer.append(floatingDropdown);
     }
   }
@@ -37,10 +53,12 @@ fzui.dropdowns = new (function () {
 
   function showContentsOnBody(button, contents) {
     var position = button.offset();
+    var parent = button.parent();
     lastContainer = button.parent();
     position.top += button.outerHeight();
     contents.remove();
     contents.css({left: position.left, top: position.top, position: 'absolute'});
+    parent.toggleClass('active');
     $('body').append(contents);
     contents.show();
   }
@@ -67,7 +85,8 @@ fzui.dropdowns = new (function () {
   }
 
   this.init = function (containers) {
-    containers.each(initializeContainer)
+    containers.each(initializeContainer);
+    return callbacks
   }
   $(document).on('click.fzui', resetContents);
 })();
