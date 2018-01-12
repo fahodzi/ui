@@ -526,16 +526,17 @@ button:active, .button:active {
   .dropdown button:after {
     content: "▼";
     padding-left: 10px; }
-  .dropdown .dropdown-contents {
-    display: none;
-    position: absolute;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: #fff;
-    border-radius: 3px;
-    border: 1px solid #e8e8e8;
-    z-index: 1000; }
+
+.dropdown-contents {
+  display: none;
+  position: absolute;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #e8e8e8;
+  z-index: 1000; }
 
 .dropup {
   display: inline-block;
@@ -543,16 +544,17 @@ button:active, .button:active {
   .dropup button:after {
     content: "▲";
     padding-left: 10px; }
-  .dropup .dropup-contents {
-    display: none;
-    position: absolute;
-    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: #fff;
-    border-radius: 3px;
-    border: 1px solid #e8e8e8;
-    z-index: 1000; }
+
+.dropup-contents {
+  display: none;
+  position: absolute;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #e8e8e8;
+  z-index: 1000; }
 
 .dropdown.active > .dropdown-contents,
 .dropup.active > .dropup-contents {

@@ -16,6 +16,26 @@ fzui.dropdowns = new (function () {
     });
   }
 
+  function showContentsInPlace(button, content) {
+    var parent = button.parent();
+    parent.toggleClass('active');
+    if (content.hasClass('dropdown-right') || content.hasClass('dropup-right')) {
+      content.css({left: button.outerWidth() - content.outerWidth()});
+    }
+    if (parent.hasClass('dropup')) {
+      content.css({top: -content.outerHeight(true)});
+    }
+  }
+
+  function showContentsOnBody(button, contents) {
+    var position = button.offset();
+    position.top += button.height();
+    contents.remove();
+    contents.css({left: position.left, top: position.top, position: 'absolute'});
+    $('body').append(contents);
+    contents.show();
+  }
+
   function initializeContainer() {
     var container = $(this);
     container.find('.dropdown > .dropdown-right, .dropup > .dropup-right').each(function (i, item) {
@@ -27,14 +47,11 @@ fzui.dropdowns = new (function () {
     container.find(query).click(function (event) {
       resetContents(event);
       var button = $(this);
-      var parent = button.parent();
       var content = button.next();
-      parent.toggleClass('active');
-      if (content.hasClass('dropdown-right') || content.hasClass('dropup-right')) {
-        content.css({left: button.outerWidth() - content.outerWidth()});
-      }
-      if (parent.hasClass('dropup')) {
-        content.css({top: -content.outerHeight(true)});
+      if(content.attr('data-container') == 'body') {
+        showContentsOnBody(button, content);
+      } else {
+        showContentsInPlace(button, content);
       }
       event.stopPropagation();
     });

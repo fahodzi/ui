@@ -25,9 +25,10 @@
   button:after {
     @include after("▼")
   }
-  .dropdown-contents {
-    @include contents;
-  }
+}
+
+.dropdown-contents {
+  @include contents;
 }
 
 .dropup {
@@ -35,9 +36,10 @@
   button:after {
     @include after("▲")
   }
-  .dropup-contents {
-    @include contents;
-  }
+}
+
+.dropup-contents {
+  @include contents;
 }
 
 .dropdown.active > .dropdown-contents, 
