@@ -3,31 +3,28 @@
 <p>
     <div class="{{type}}">
         <button>Dropdown</button>
-        <div class="{{type}}-contents">
+        <div class="{{type}}-contents" data-container="{{container}}">
             Hello!
         </div>
     </div>
-
     <div class="{{type}}">
         <button class="button-red" >Red</button>
-        <ul class="{{type}}-contents menu">
+        <ul class="{{type}}-contents menu" data-container="{{container}}">
             <li>Some Item</li>
             <li>Another Item</li>
         </li>
     </div>
-
     <div class="{{type}}">
         <button class="button-purple" >Purple</button>
-        <ul class="{{type}}-contents {{type}}-right menu">
+        <ul class="{{type}}-contents {{type}}-right menu" data-container="{{container}}">
             <li>Some Item</li>
             <li>Another Item</li>
             <li>Item should align to right"
         </li>
     </div>
-
     <div class="{{type}}">
         <div class="clickable"> Clickable DIV</div>
-        <div class="{{type}}-contents">
+        <div class="{{type}}-contents" data-container="{{container}}">
             <p>This is supposed to be a padded {{type}}.</p>
         </div>
     </div>

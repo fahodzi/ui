@@ -22,7 +22,7 @@ module.exports = function(grunt)
         },
         uglify: {
             dist: {
-                src: js_sources,
+                src: 'dizt/fzui.js',
                 dest: 'dist/fzui.min.js'
             }
         },

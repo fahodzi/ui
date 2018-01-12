@@ -12,7 +12,9 @@
         {"title": "Grid Layout", "class": "form-grid"}
     ],
     "drops" : [
-        {"type": "dropdown"},
-        {"type": "dropup"}
+        {"type": "dropdown", "container": "body"},
+        {"type": "dropup", "container": "body"},
+        {"type": "dropdown", "container": ""},
+        {"type": "dropup", "container": ""}
     ]
 }

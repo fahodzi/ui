@@ -8,12 +8,20 @@ if($ === null && typeof require === 'function') {
  * Dropdown menu javascript
  */
 fzui.dropdowns = new (function () {
+
+  var lastContainer;
+
   function resetContents(event) {
     $('.dropdown, .dropup').each(function () {
       // Reset all dropdowns on body click
       if (event.type == 'click' && event.target.parentNode === $(this)[0]) return;
       $(this).removeClass('active');
     });
+    var floatingDropdown = $('body > .dropdown-contents');
+    if(floatingDropdown.length > 0) {
+      floatingDropdown.remove();
+      lastContainer.append(floatingDropdown);
+    }
   }
 
   function showContentsInPlace(button, content) {
@@ -29,7 +37,8 @@ fzui.dropdowns = new (function () {
 
   function showContentsOnBody(button, contents) {
     var position = button.offset();
-    position.top += button.height();
+    lastContainer = button.parent();
+    position.top += button.outerHeight();
     contents.remove();
     contents.css({left: position.left, top: position.top, position: 'absolute'});
     $('body').append(contents);
