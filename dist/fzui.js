@@ -14,13 +14,12 @@ fzui.dropdowns = new (function () {
   var onShowCallback;
   var callbacks = {
     onClose : function (callback) {
-      console.log(callback);
       onClosedCallback = callback;
-      return callbacks;
+      return callbacks
     },
     onShow : function (callback) {
       onShowCallback = callback;
-      return callbacks;
+      return callbacks
     }
   };
 
@@ -34,9 +33,10 @@ fzui.dropdowns = new (function () {
     });
     var floatingDropdown = $('body > .dropdown-contents');
     if(floatingDropdown.length > 0) {
-      floatingDropdown.remove();
       floatingDropdown.hide();
+      floatingDropdown.remove();
       lastContainer.append(floatingDropdown);
+      lastContainer.removeClass('active');
     }
   }
 
@@ -49,6 +49,7 @@ fzui.dropdowns = new (function () {
     if (parent.hasClass('dropup')) {
       content.css({top: -content.outerHeight(true)});
     }
+    onShowCallback(content)
   }
 
   function showContentsOnBody(button, contents) {
@@ -58,9 +59,10 @@ fzui.dropdowns = new (function () {
     position.top += button.outerHeight();
     contents.remove();
     contents.css({left: position.left, top: position.top, position: 'absolute'});
-    parent.toggleClass('active');
+    parent.addClass('active');
     $('body').append(contents);
     contents.show();
+    onShowCallback(contents)
   }
 
   function initializeContainer() {
