@@ -71,10 +71,10 @@ function closeModal(object) {
  * @params selector A CSS selector used for selecting the contents of the modal
  * @params options An object or string that contains options for the model window creator.
  */
-$.fn.modal = function (action) {
+/*$.fn.modal = function (action) {
   if(action === 'close') {
     return closeModal(this)
   } else {
     return openModal(this)
   }
-};
+};*/

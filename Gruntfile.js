@@ -4,10 +4,6 @@ module.exports = function(grunt)
 {
     grunt.initConfig({
         concat: {
-            options: {
-                banner: '(function($){',
-                footer: "}(typeof jQuery === 'undefined' ? null : jQuery));"
-            },
             dist: {
                 src: js_sources,
                 dest: 'dist/fzui.js',

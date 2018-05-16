@@ -1,6 +1,5 @@
 
 var fzui = {};
-if($ === null && typeof require === 'function') {
-    $ = require('jquery');
+if(typeof require === 'function') {
     module.exports = fzui;
 }

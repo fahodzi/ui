@@ -6,15 +6,17 @@ fzui.dropdowns = new (function () {
   var lastContainer;
 
   function resetContents(event) {
-    $('.dropdown, .dropup').each(function () {
+    document.querySelectorAll('.dropdown, .dropup').forEach(item => {
       // Reset all dropdowns on body click
-      if (event.type == 'click' && event.target.parentNode === $(this)[0]) return;
-      $(this).removeClass('active');
+      if (event.type == 'click' && event.target.parentNode === item) return;
+      item.classList.remove('active');
     });
-    var floatingDropdown = $('body > .dropdown-contents');
+
+    // Replace contents of dropdowns attached directly to the body
+    var floatingDropdown = document.querySelectorAll('body > .dropdown-contents');
     if(floatingDropdown.length > 0) {
-      floatingDropdown.remove();
-      lastContainer.append(floatingDropdown);
+      floatingDropdown.parentNode.removeChild(floatingDropdown);
+      lastContainer.appendChild(floatingDropdown);
     }
   }
 
@@ -30,8 +32,8 @@ fzui.dropdowns = new (function () {
   }
 
   function showContentsOnBody(button, contents) {
-    var position = button.offset();
-    lastContainer = button.parent();
+    let position = {left: button.left, top: button.top};
+    lastContainer = button.parentNode;
     position.top += button.outerHeight();
     contents.remove();
     contents.css({left: position.left, top: position.top, position: 'absolute'});
@@ -39,29 +41,37 @@ fzui.dropdowns = new (function () {
     contents.show();
   }
 
-  function initializeContainer() {
-    var container = $(this);
-    container.find('.dropdown > .dropdown-right, .dropup > .dropup-right').each(function (i, item) {
-      var button = $(item).prev();
-      $(item).css({left: button.offset().left + button.outerWidth() - $(item).outerWidth()});
+  function initializeContainer(container) {
+    
+    container.querySelectorAll('.dropdown > .dropdown-right, .dropup > .dropup-right').forEach(dropdown => {
+      let button = dropdown;
+      do {
+        button = button.previousSibling;
+      } while(button.nodeType == Node.TEXT_NODE);
+      dropdown.style.left = button.style.left + button.outerWidth - dropdown.outerWidth;
     });
-    var query = '.dropdown > button, .dropdown > .button, .dropdown > .clickable,' +
-      '.dropup > button, .dropup > .button, .dropup > .clickable';
-    container.find(query).click(function (event) {
-      resetContents(event);
-      var button = $(this);
-      var content = button.next();
-      if(content.attr('data-container') == 'body') {
-        showContentsOnBody(button, content);
-      } else {
-        showContentsInPlace(button, content);
+    
+    let query = '.dropdown > button, .dropdown > .button, .dropdown > .clickable, .dropup > button, .dropup > .button, .dropup > .clickable';
+    container.querySelectorAll(query).forEach(
+      dropdown => {
+        dropdown.addEventListener('click', event => {
+          resetContents(event);
+          let button = event.target;
+          let content = button.nextSibling
+          console.log(content);
+          if(content.getAttribute('data-container') == 'body') {
+            showContentsOnBody(button, content);
+          } else {
+            showContentsInPlace(button, content);
+          }
+          event.stopPropagation();
+        })
       }
-      event.stopPropagation();
-    });
+    );
   }
 
   this.init = function (containers) {
-    containers.each(initializeContainer)
+    containers.forEach(container => initializeContainer(container))
   }
-  $(document).on('click.fzui', resetContents);
+  document.addEventListener('click', resetContents);
 })();
