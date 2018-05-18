@@ -3,15 +3,54 @@ var fzui = {};
 if(typeof require === 'function') {
     module.exports = fzui;
 }
+function DomUtils() {
+
+    function getSubsequent(node, direction) {
+        do {
+            node = node[`${direction}Sibling`];
+        } while(node.nodeType == Node.TEXT_NODE);
+        return node;
+    }
+
+    function getDimension(node, dimension, margins, margin1, margin2) {
+        let style = window.getComputedStyle(node);
+        return parseInt(style[dimension]) + (margins ? parseInt(style[`margin-${margin1}`]) + parseInt(style[`margin-${margin2}`]) : 0);
+    }
+
+    this.nextSibling = function(node) {
+        return getSubsequent(node, 'next')
+    }
+
+    this.previousSibling = function(node) {
+        return getSubsequent(node, 'previous')
+    }
+
+    this.toggleClass = function(node, className) {
+        if(node.classList.contains(className)) {
+            node.classList.remove(className)
+        } else {
+            node.classList.add(className);
+        }
+    }
+
+    this.outerHeight = function(node, margins) {
+        return getDimension(node, 'height', margins, 'top', 'bottom')
+    }
+
+    this.outerWidth = function(node, margins) {
+        return getDimension(node, 'width', margins, 'left', 'right')
+    }
+}
+
 /**
  * Dropdown menu javascript
  */
 fzui.dropdowns = new (function () {
 
-  var lastContainer;
-  var onClosedCallback;
-  var onShowCallback;
-  var callbacks = {
+  let lastContainer;
+  let onClosedCallback;
+  let onShowCallback;
+  let callbacks = {
     onClose : function (callback) {
       onClosedCallback = callback;
       return callbacks
@@ -21,7 +60,7 @@ fzui.dropdowns = new (function () {
       return callbacks
     }
   };
-
+  let dom = new DomUtils();
 
   function resetContents(event) {
     document.querySelectorAll('.dropdown, .dropup').forEach(item => {
@@ -32,8 +71,8 @@ fzui.dropdowns = new (function () {
     });
 
     // Replace contents of dropdowns attached directly to the body
-    var floatingDropdown = document.querySelectorAll('body > .dropdown-contents');
-    if(floatingDropdown.length > 0) {
+    let floatingDropdown = document.querySelector('body > .dropdown-contents');
+    if(floatingDropdown) {
       floatingDropdown.parentNode.removeChild(floatingDropdown);
       lastContainer.appendChild(floatingDropdown);
       lastContainer.classList.remove('active')
@@ -41,36 +80,35 @@ fzui.dropdowns = new (function () {
   }
 
   function showContentsInPlace(button, content) {
-    var parent = button.parent();
-    parent.toggleClass('active');
-    if (content.hasClass('dropdown-right') || content.hasClass('dropup-right')) {
-      content.css({left: button.outerWidth() - content.outerWidth()});
+    var parent = button.parentNode;
+    dom.toggleClass(parent, 'active');
+    if (content.classList.contains('dropdown-right') || content.classList.contains('dropup-right')) {
+      content.style.left = (button.offsetWidth - content.offsetWidth) + 'px';
     }
-    if (parent.hasClass('dropup')) {
-      content.css({top: -content.outerHeight(true)});
+    if (parent.classList.contains('dropup')) {
+      content.style.top = - dom.outerHeight(content, true) + "px";
     }
     if(typeof onShowCallback === 'function') onShowCallback(content)
   }
 
   function showContentsOnBody(button, contents) {
-    let position = {left: button.left, top: button.top};
+    let position = button.getBoundingClientRect();
+    console.log(position);
     lastContainer = button.parentNode;
-    position.top += button.outerHeight();
-    contents.remove();
-    contents.css({left: position.left, top: position.top, position: 'absolute'});
-    parent.addClass('active');
-    $('body').append(contents);
-    contents.show();
+    contents.parentNode.removeChild(contents);
+    contents.style.position = 'absolute';
+    contents.style.left = position.left + 'px'; 
+    contents.style.top = (position.top + window.scrollY + dom.outerHeight(button, true)) + 'px'; 
+    //parent.classList.add('active');
+    document.getElementsByTagName('body')[0].appendChild(contents);
+    contents.style.display = 'block';
     if(typeof onShowCallback === 'function') onShowCallback(contents)
   }
 
   function initializeContainer(container) {
     
     container.querySelectorAll('.dropdown > .dropdown-right, .dropup > .dropup-right').forEach(dropdown => {
-      let button = dropdown;
-      do {
-        button = button.previousSibling;
-      } while(button.nodeType == Node.TEXT_NODE);
+      let button = dom.previousSibling(dropdown);
       dropdown.style.left = button.style.left + button.outerWidth - dropdown.outerWidth;
     });
     
@@ -80,8 +118,7 @@ fzui.dropdowns = new (function () {
         dropdown.addEventListener('click', event => {
           resetContents(event);
           let button = event.target;
-          let content = button.nextSibling
-          console.log(content);
+          let content = dom.nextSibling(button);
           if(content.getAttribute('data-container') == 'body') {
             showContentsOnBody(button, content);
           } else {

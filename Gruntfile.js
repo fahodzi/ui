@@ -1,4 +1,4 @@
-var js_sources = ['js/fzui.js', 'js/dropdown.js', 'js/modal.js', 'js/nav.js', 'js/main.js'];
+var js_sources = ['js/fzui.js', 'js/dom.js', 'js/dropdown.js', 'js/modal.js', 'js/nav.js', 'js/main.js'];
 
 module.exports = function(grunt)
 {
