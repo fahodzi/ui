@@ -33,7 +33,9 @@ function DomUtils() {
             }
             return measured;
         }
-        return parseInt(style[dimension]) + (margins ? parseInt(style[`margin-${margin1}`]) + parseInt(style[`margin-${margin2}`]) : 0);
+        return parseInt(style[dimension]) 
+            + parseInt(style[`padding-${margin1}`]) + parseInt(style[`padding-${margin2}`])
+            + (margins ? parseInt(style[`margin-${margin1}`]) + parseInt(style[`margin-${margin2}`]) : 0);
     }
 
     this.nextSibling = function(node) {

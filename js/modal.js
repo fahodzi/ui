@@ -34,7 +34,7 @@ fzui.modals = new(function(){
     content.style.left = left + 'px';
     content.style.top = top + 'px'; 
     close.classList.add('close-button');
-    close.style.left = width + 'px';
+    close.style.left = (width - 35) + 'px';
   
     backdrop.appendChild(content);
     document.body.appendChild(backdrop);

@@ -38,7 +38,9 @@ function DomUtils() {
             }
             return measured;
         }
-        return parseInt(style[dimension]) + (margins ? parseInt(style[`margin-${margin1}`]) + parseInt(style[`margin-${margin2}`]) : 0);
+        return parseInt(style[dimension]) 
+            + parseInt(style[`padding-${margin1}`]) + parseInt(style[`padding-${margin2}`])
+            + (margins ? parseInt(style[`margin-${margin1}`]) + parseInt(style[`margin-${margin2}`]) : 0);
     }
 
     this.nextSibling = function(node) {
@@ -195,7 +197,7 @@ fzui.modals = new(function(){
     content.style.left = left + 'px';
     content.style.top = top + 'px'; 
     close.classList.add('close-button');
-    close.style.left = width + 'px';
+    close.style.left = (width - 35) + 'px';
   
     backdrop.appendChild(content);
     document.body.appendChild(backdrop);
