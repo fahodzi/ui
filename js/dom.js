@@ -7,8 +7,32 @@ function DomUtils() {
         return node;
     }
 
+    /**
+     * Get the dimensions of a given dom node.
+     * 
+     * @param {DomNode} node 
+     * @param {string} dimension 
+     * @param {boolean} margins 
+     * @param {string} margin1 
+     * @param {string} margin2 
+     */
     function getDimension(node, dimension, margins, margin1, margin2) {
         let style = window.getComputedStyle(node);
+        if(style[dimension] === 'auto' && style['display']=='none') {
+            let parent = node.parentNode;
+            let sibling = node.nextSibling;
+            let position = node.style.position;
+            document.body.appendChild(node);
+            node.style.display = 'block';
+            node.style.position = 'absolute';
+            let measured = getDimension(node, dimension, margins, margin1, margin2);
+            node.style.display = 'none';
+            node.style.position = position;
+            if(parent) {
+                parent.insertBefore(node, sibling);
+            }
+            return measured;
+        }
         return parseInt(style[dimension]) + (margins ? parseInt(style[`margin-${margin1}`]) + parseInt(style[`margin-${margin2}`]) : 0);
     }
 

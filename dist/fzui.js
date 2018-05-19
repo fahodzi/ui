@@ -12,8 +12,32 @@ function DomUtils() {
         return node;
     }
 
+    /**
+     * Get the dimensions of a given dom node.
+     * 
+     * @param {DomNode} node 
+     * @param {string} dimension 
+     * @param {boolean} margins 
+     * @param {string} margin1 
+     * @param {string} margin2 
+     */
     function getDimension(node, dimension, margins, margin1, margin2) {
         let style = window.getComputedStyle(node);
+        if(style[dimension] === 'auto' && style['display']=='none') {
+            let parent = node.parentNode;
+            let sibling = node.nextSibling;
+            let position = node.style.position;
+            document.body.appendChild(node);
+            node.style.display = 'block';
+            node.style.position = 'absolute';
+            let measured = getDimension(node, dimension, margins, margin1, margin2);
+            node.style.display = 'none';
+            node.style.position = position;
+            if(parent) {
+                parent.insertBefore(node, sibling);
+            }
+            return measured;
+        }
         return parseInt(style[dimension]) + (margins ? parseInt(style[`margin-${margin1}`]) + parseInt(style[`margin-${margin2}`]) : 0);
     }
 
@@ -93,13 +117,11 @@ fzui.dropdowns = new (function () {
 
   function showContentsOnBody(button, contents) {
     let position = button.getBoundingClientRect();
-    console.log(position);
     lastContainer = button.parentNode;
     contents.parentNode.removeChild(contents);
     contents.style.position = 'absolute';
     contents.style.left = position.left + 'px'; 
     contents.style.top = (position.top + window.scrollY + dom.outerHeight(button, true)) + 'px'; 
-    //parent.classList.add('active');
     document.getElementsByTagName('body')[0].appendChild(contents);
     contents.style.display = 'block';
     if(typeof onShowCallback === 'function') onShowCallback(contents)
@@ -137,87 +159,93 @@ fzui.dropdowns = new (function () {
   document.addEventListener('click', resetContents);
 })();
 
-fzui.modals = {};
-fzui.uidCounter = 0;
+fzui.modals = new(function(){
+  let uidCounter = 0;
+  let modalCount = 0;
+  let dom = new DomUtils();
 
-function getModalUID(object) {
-  return object.attr('id') || 'modal-uid-' + (fzui.uidCounter ++)
-}
-
-function openModal(object) {
-  var backdrop = $('<div></div>');
-  backdrop.addClass('modal-backdrop');
-
-  var modal = $('<div></div>');
-  var close = $('<div></div>');
-  var uid = getModalUID(object);
-  object.attr('id', uid);
-  var content = object.clone();
-  var width = object.outerWidth(true);
-  var left = $(window).width() / 2 - width / 2;
-  var top = 60;
-
-  object.remove();
-  content.addClass('modal-wrapper');
-  content.prepend(close);
-  content.attr('modal-wrapper-' + fzui.modalCount);
-  content.css({left: left, top: top});
-  close.addClass('close-button').css({left: width - 35});
-
-  backdrop.append(content);
-  $('body').append(backdrop);
-
-  backdrop.fadeIn('fast', function () {
-    content.css('opacity', '0.0');
-    content.show();
-    content.trigger('fzui.modal.showing');
-    content.animate(
-      {top: "+=20", opacity: 1}, 'fast',
-      function(){
-        fzui.dropdowns.init(content);
-        content.trigger('fzui.modal.shown');
-      }
-    );
-  });
-
-  fzui.modals[uid] = {modal: content, content: object, backdrop: backdrop};
-  close.on('click.fzui', () => {closeModal(content)});
-  return content
-}
-
-function closeModal(object) {
-  var modalData = fzui.modals[getModalUID(object)];
-  var modal = modalData.modal;
-  var content = modalData.content;
-  var backdrop = modalData.backdrop;
-  $(modal).animate({
-      top: "-20",
-      opacity: 0
-    }, 'fast',
-    function () {
-      $('body').append(content);
-      content.addClass('modal');
-      backdrop.fadeOut('fast', function () {
-        modal.remove();
-        backdrop.remove();
-      });
-    }
-  );
-}
-
-/**
- * Create a modal window.
- * @params selector A CSS selector used for selecting the contents of the modal
- * @params options An object or string that contains options for the model window creator.
- */
-/*$.fn.modal = function (action) {
-  if(action === 'close') {
-    return closeModal(this)
-  } else {
-    return openModal(this)
+  function getModalUID(object) {
+    return object.getAttribute('id') || 'modal-uid-' + (fzui.uidCounter ++)
   }
-};*/
 
+  function getObject(description) {
+    if(typeof description === 'string') {
+      return document.querySelector(description);
+    }
+    return description
+  }
+  
+  this.open = function (description) {
+    let object = getObject(description);
+    let backdrop = document.createElement('div');
+    backdrop.classList.add('modal-backdrop');
+  
+    let modal = document.createElement('div');
+    let close = document.createElement('div');
+    let uid = getModalUID(object);
+    let content = object.cloneNode(true);
+    let top = 60;
+    let width = dom.outerWidth(content, true);
+    let left = (window.innerWidth / 2) - (width / 2);
+  
+    object.setAttribute('id', uid);
+    object.parentNode.removeChild(object);
+    content.classList.add('modal-wrapper');
+    content.insertBefore(close, content.firstChild);
+    content.style.left = left + 'px';
+    content.style.top = top + 'px'; 
+    close.classList.add('close-button');
+    close.style.left = width + 'px';
+  
+    backdrop.appendChild(content);
+    document.body.appendChild(backdrop);
+    backdrop.style.display = 'block';
+    content.style.display = 'block';
+  
+    /*backdrop.fadeIn('fast', function () {
+      content.css('opacity', '0.0');
+      content.show();
+      content.trigger('fzui.modal.showing');
+      content.animate(
+        {top: "+=20", opacity: 1}, 'fast',
+        function(){
+          fzui.dropdowns.init(content);
+          content.trigger('fzui.modal.shown');
+        }
+      );
+    });*/
+  
+    fzui.modals[uid] = {modal: content, content: object, backdrop: backdrop};
+    close.addEventListener('click', () => this.close(content));
+    return content
+  }
+  
+  this.close = function (object) {
+    let modalData = fzui.modals[getModalUID(object)];
+    let modal = modalData.modal;
+    let content = modalData.content;
+    let backdrop = modalData.backdrop;
+
+    document.body.appendChild(content);
+    content.classList.add('modal');
+    backdrop.parentNode.removeChild(backdrop);
+    modal.parentNode.removeChild(modal);
+
+    /*$(modal).animate({
+        top: "-20",
+        opacity: 0
+      }, 'fast',
+      function () {
+        $('body').append(content);
+        content.addClass('modal');
+        backdrop.fadeOut('fast', function () {
+          modal.remove();
+          backdrop.remove();
+        });
+      }
+    );*/
+  }  
+})();
 /**
  * Implements the highlighting of the current tab or pill for tab and pill
  * user interfaces.
@@ -233,5 +261,4 @@ fzui.nav = new (function() {
 })();
 
 
-//$(function(){ fzui.dropdowns.init($(document)) })
 window.onload = () => fzui.dropdowns.init([document]);
