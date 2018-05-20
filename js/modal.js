@@ -26,6 +26,8 @@ fzui.modals = new(function(){
     let top = 60;
     let width = dom.outerWidth(content, true);
     let left = (window.innerWidth / 2) - (width / 2);
+
+    let shownEvent = new Event('shown');
   
     object.setAttribute('id', uid);
     object.parentNode.removeChild(object);
@@ -40,6 +42,7 @@ fzui.modals = new(function(){
     document.body.appendChild(backdrop);
     backdrop.style.display = 'block';
     content.style.display = 'block';
+    object.dispatchEvent(shownEvent);
   
     /*backdrop.fadeIn('fast', function () {
       content.css('opacity', '0.0');
