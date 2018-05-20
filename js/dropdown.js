@@ -59,8 +59,13 @@ fzui.dropdowns = new (function () {
     if(typeof onShowCallback === 'function') onShowCallback(contents)
   }
 
+  /**
+   * Initialize all the dropdowns in a containing element.
+   * Use this when new dropdowns are defined after the page has already been loaded.
+   * 
+   * @param {Node} container 
+   */
   function initializeContainer(container) {
-    
     container.querySelectorAll('.dropdown > .dropdown-right, .dropup > .dropup-right').forEach(dropdown => {
       let button = dom.previousSibling(dropdown);
       dropdown.style.left = button.style.left + button.outerWidth - dropdown.outerWidth;
@@ -71,15 +76,17 @@ fzui.dropdowns = new (function () {
       dropdown => {
         dropdown.addEventListener('click', event => {
           resetContents(event);
-          let button = event.target;
+          let button = event.currentTarget;
           let content = dom.nextSibling(button);
+
           if(content.getAttribute('data-container') == 'body') {
             showContentsOnBody(button, content);
           } else {
             showContentsInPlace(button, content);
           }
+
           event.stopPropagation();
-        })
+        }, true)
       }
     );
   }
