@@ -16,7 +16,6 @@ fzui.dropdowns = new (function () {
       return callbacks
     }
   };
-  let dom = new DomUtils();
 
   function resetContents(event) {
     document.querySelectorAll('.dropdown, .dropup').forEach(item => {
@@ -37,12 +36,12 @@ fzui.dropdowns = new (function () {
 
   function showContentsInPlace(button, content) {
     var parent = button.parentNode;
-    dom.toggleClass(parent, 'active');
+    fzui.domUtils.toggleClass(parent, 'active');
     if (content.classList.contains('dropdown-right') || content.classList.contains('dropup-right')) {
       content.style.left = (button.offsetWidth - content.offsetWidth) + 'px';
     }
     if (parent.classList.contains('dropup')) {
-      content.style.top = - dom.outerHeight(content, true) + "px";
+      content.style.top = - fzui.domUtils.outerHeight(content, true) + "px";
     }
     if(typeof onShowCallback === 'function') onShowCallback(content)
   }
@@ -53,7 +52,7 @@ fzui.dropdowns = new (function () {
     contents.parentNode.removeChild(contents);
     contents.style.position = 'absolute';
     contents.style.left = position.left + 'px'; 
-    contents.style.top = (position.top + window.scrollY + dom.outerHeight(button, true)) + 'px'; 
+    contents.style.top = (position.top + window.scrollY + fzui.domUtils.outerHeight(button, true)) + 'px'; 
     document.getElementsByTagName('body')[0].appendChild(contents);
     contents.style.display = 'block';
     if(typeof onShowCallback === 'function') onShowCallback(contents)
@@ -66,8 +65,10 @@ fzui.dropdowns = new (function () {
    * @param {Node} container 
    */
   function initializeContainer(container) {
+    console.log(container);
+
     container.querySelectorAll('.dropdown > .dropdown-right, .dropup > .dropup-right').forEach(dropdown => {
-      let button = dom.previousSibling(dropdown);
+      let button = fzui.domUtils.previousSibling(dropdown);
       dropdown.style.left = button.style.left + button.outerWidth - dropdown.outerWidth;
     });
     
@@ -77,7 +78,7 @@ fzui.dropdowns = new (function () {
         dropdown.addEventListener('click', event => {
           resetContents(event);
           let button = event.currentTarget;
-          let content = dom.nextSibling(button);
+          let content = fzui.domUtils.nextSibling(button);
 
           if(content.getAttribute('data-container') == 'body') {
             showContentsOnBody(button, content);
@@ -92,6 +93,9 @@ fzui.dropdowns = new (function () {
   }
 
   this.init = function (containers) {
+    if(typeof containers[Symbol.iterator] !== 'function') {
+      containers = [containers];
+    }
     containers.forEach(container => initializeContainer(container))
     return callbacks
   }

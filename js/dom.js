@@ -1,4 +1,4 @@
-function DomUtils() {
+fzui.domUtils = new (function () {
 
   function getSubsequent(node, direction) {
     do {
@@ -61,4 +61,16 @@ function DomUtils() {
   this.outerWidth = function (node, margins) {
     return getDimension(node, 'width', margins, 'left', 'right')
   }
-}
+
+  this.siblings = function(node) {
+    let siblings = [];
+    for(let sibling = node.parentNode.firstChild ;sibling; sibling = sibling.nextSibling) {
+      if(sibling === node || sibling.nodeType === Node.TEXT_NODE) {
+        continue;
+      }
+      siblings.push(sibling);
+    }
+    return siblings;
+  }
+})();
+

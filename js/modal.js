@@ -1,7 +1,6 @@
 fzui.modals = new(function(){
   let uidCounter = 0;
   let modalCount = 0;
-  let dom = new DomUtils();
 
   function getModalUID(object) {
     return object.getAttribute('id') || 'modal-uid-' + (fzui.uidCounter ++)
@@ -24,10 +23,10 @@ fzui.modals = new(function(){
     let uid = getModalUID(object);
     let content = object.cloneNode(true);
     let top = 60;
-    let width = dom.outerWidth(content, true);
+    let width = fzui.domUtils.outerWidth(content, true);
     let left = (window.innerWidth / 2) - (width / 2);
 
-    let shownEvent = new Event('shown');
+    let shownEvent = new CustomEvent('shown', {detail: {modal:content}});
   
     object.setAttribute('id', uid);
     object.parentNode.removeChild(object);
