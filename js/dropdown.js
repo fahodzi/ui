@@ -65,7 +65,6 @@ fzui.dropdowns = new (function () {
    * @param {Node} container 
    */
   function initializeContainer(container) {
-    console.log(container);
 
     container.querySelectorAll('.dropdown > .dropdown-right, .dropup > .dropup-right').forEach(dropdown => {
       let button = fzui.domUtils.previousSibling(dropdown);
