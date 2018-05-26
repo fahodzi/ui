@@ -1,11 +1,6 @@
 fzui.modals = new(function(){
-  //let uidCounter = 0;
   let modalCount = 0;
   let openModals = new Map();
-
-  // function getModalUID(object) {
-  //   return object.getAttribute('id') || 'modal-uid-' + (fzui.uidCounter ++)
-  // }
 
   function getObject(description) {
     if(typeof description === 'string') {
@@ -20,7 +15,6 @@ fzui.modals = new(function(){
     backdrop.classList.add('modal-backdrop');
   
     let close = document.createElement('div');
-    //let uid = getModalUID(object);
     let modal = object.cloneNode(true);
     let top = 60;
     let width = fzui.domUtils.outerWidth(modal, true);
@@ -28,7 +22,6 @@ fzui.modals = new(function(){
 
     let shownEvent = new CustomEvent('shown', {detail: {modal:modal}});
   
-    //object.setAttribute('id', uid);
     object.parentNode.removeChild(object);
     modal.classList.add('modal-wrapper');
     modal.insertBefore(close, modal.firstChild);
@@ -56,7 +49,6 @@ fzui.modals = new(function(){
       );
     });*/
   
-    //fzui.modals[uid] = {modal: content, content: object, backdrop: backdrop};
     close.addEventListener('click', () => this.close(modal));
     openModals.set(modal, {content: object, backdrop: backdrop});
     return modal
