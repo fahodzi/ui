@@ -58,7 +58,15 @@ fzui.domUtils = new (function () {
     if (node.classList.contains(className)) {
       node.classList.remove(className)
     } else {
-      node.classList.add(className);
+      node.classList.add(className)
+    }
+  }
+
+  this.toggleStyleProperty = function(node, styleName, value1, value2) {
+    if (node.style[styleName] === value1) {
+      node.style[styleName] = value2
+    } else {
+      node.style[styleName] = value1
     }
   }
 
@@ -187,13 +195,8 @@ fzui.dropdowns = new (function () {
 })();
 
 fzui.modals = new(function(){
-  //let uidCounter = 0;
   let modalCount = 0;
   let openModals = new Map();
-
-  // function getModalUID(object) {
-  //   return object.getAttribute('id') || 'modal-uid-' + (fzui.uidCounter ++)
-  // }
 
   function getObject(description) {
     if(typeof description === 'string') {
@@ -208,7 +211,6 @@ fzui.modals = new(function(){
     backdrop.classList.add('modal-backdrop');
   
     let close = document.createElement('div');
-    //let uid = getModalUID(object);
     let modal = object.cloneNode(true);
     let top = 60;
     let width = fzui.domUtils.outerWidth(modal, true);
@@ -216,7 +218,6 @@ fzui.modals = new(function(){
 
     let shownEvent = new CustomEvent('shown', {detail: {modal:modal}});
   
-    //object.setAttribute('id', uid);
     object.parentNode.removeChild(object);
     modal.classList.add('modal-wrapper');
     modal.insertBefore(close, modal.firstChild);
@@ -244,7 +245,6 @@ fzui.modals = new(function(){
       );
     });*/
   
-    //fzui.modals[uid] = {modal: content, content: object, backdrop: backdrop};
     close.addEventListener('click', () => this.close(modal));
     openModals.set(modal, {content: object, backdrop: backdrop});
     return modal
@@ -255,11 +255,10 @@ fzui.modals = new(function(){
     let content = modalData.content;
     let backdrop = modalData.backdrop;
 
+    backdrop.parentNode.removeChild(backdrop);
+    openModals.delete(modal);
     document.body.appendChild(content);
     content.classList.add('modal');
-    backdrop.parentNode.removeChild(backdrop);
-    modal.parentNode.removeChild(modal);
-    openModals.delete(modal);
 
     /*$(modal).animate({
         top: "-20",

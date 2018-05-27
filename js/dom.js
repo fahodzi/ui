@@ -50,7 +50,15 @@ fzui.domUtils = new (function () {
     if (node.classList.contains(className)) {
       node.classList.remove(className)
     } else {
-      node.classList.add(className);
+      node.classList.add(className)
+    }
+  }
+
+  this.toggleStyleProperty = function(node, styleName, value1, value2) {
+    if (node.style[styleName] === value1) {
+      node.style[styleName] = value2
+    } else {
+      node.style[styleName] = value1
     }
   }
 

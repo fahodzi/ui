@@ -59,11 +59,10 @@ fzui.modals = new(function(){
     let content = modalData.content;
     let backdrop = modalData.backdrop;
 
+    backdrop.parentNode.removeChild(backdrop);
+    openModals.delete(modal);
     document.body.appendChild(content);
     content.classList.add('modal');
-    backdrop.parentNode.removeChild(backdrop);
-    modal.parentNode.removeChild(modal);
-    openModals.delete(modal);
 
     /*$(modal).animate({
         top: "-20",
