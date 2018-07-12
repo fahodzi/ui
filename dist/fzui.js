@@ -3,9 +3,17 @@ var fzui = {};
 
 window.addEventListener('load', () => fzui.dropdowns.init([document]));
 
+function getDOMObject(description) {
+  if(typeof description === 'string') {
+    return document.querySelector(description);
+  }
+  return description  
+}
+
 if(typeof require === 'function') {
   module.exports = fzui;
 }
+
 fzui.domUtils = new (function () {
 
   function getSubsequent(node, direction) {
@@ -194,19 +202,12 @@ fzui.dropdowns = new (function () {
   document.addEventListener('click', resetContents);
 })();
 
-fzui.modals = new(function(){
+fzui.modals = new (function(){
   let modalCount = 0;
   let openModals = new Map();
-
-  function getObject(description) {
-    if(typeof description === 'string') {
-      return document.querySelector(description);
-    }
-    return description
-  }
   
   this.open = function (description) {
-    let object = getObject(description);
+    let object = getDOMObject(description);
     let backdrop = document.createElement('div');
     backdrop.classList.add('modal-backdrop');
   
@@ -251,7 +252,7 @@ fzui.modals = new(function(){
   }
   
   this.close = function (modal) {
-    let modalData = openModals.get(getObject(modal));
+    let modalData = openModals.get(getDOMObject(modal));
     let content = modalData.content;
     let backdrop = modalData.backdrop;
 
@@ -289,3 +290,31 @@ fzui.nav = new (function() {
     }
 })();
 
+
+fzui.notifications = new (function(){
+  
+  const decodeLocation = function(position) {
+
+  }
+
+  /**
+   * Show a notification with content contained in description. Description could either be a DOM node or a CSS query 
+   * string.
+   * 
+   * @param string|DOMNode description 
+   */
+  this.show = function(description) {
+    let notification = getDOMObject(description);
+    
+    notification.style.left = (window.innerWidth - notification.offsetWidth - 50) + 'px';
+    notification.style.visibility = 'visible';
+    notification.style.opacity = 1;
+    notification.style.top = '70px';
+
+    setTimeout(() => {
+      notification.style.opacity = 0;
+      notification.style.top = '50px';
+      setTimeout(() => notification.style.visibility = 'hidden', 1500);
+    }, 5000)
+  }
+});

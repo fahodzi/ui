@@ -1084,3 +1084,20 @@ fieldset {
 
 .panel {
   border: 1px solid; }
+
+.notification {
+  background-color: rgba(255, 217, 138, 0.9);
+  color: #d06f06;
+  position: fixed;
+  padding: 15px;
+  z-index: 1000;
+  box-shadow: 0px 0px 4px rgba(208, 111, 6, 0.3);
+  border-radius: 5px;
+  border: 1px solid #ffb724;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s, top 0.5s;
+  width: 350px;
+  top: 50px; }
+  .notification .error {
+    background-color: #fd8080; }

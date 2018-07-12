@@ -1,16 +1,9 @@
-fzui.modals = new(function(){
+fzui.modals = new (function(){
   let modalCount = 0;
   let openModals = new Map();
-
-  function getObject(description) {
-    if(typeof description === 'string') {
-      return document.querySelector(description);
-    }
-    return description
-  }
   
   this.open = function (description) {
-    let object = getObject(description);
+    let object = getDOMObject(description);
     let backdrop = document.createElement('div');
     backdrop.classList.add('modal-backdrop');
   
@@ -55,7 +48,7 @@ fzui.modals = new(function(){
   }
   
   this.close = function (modal) {
-    let modalData = openModals.get(getObject(modal));
+    let modalData = openModals.get(getDOMObject(modal));
     let content = modalData.content;
     let backdrop = modalData.backdrop;
 
