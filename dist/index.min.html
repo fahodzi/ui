@@ -361,7 +361,11 @@
 <div class="notification" id="plain-notification">
     This is a test notification
 </div>
-<button onclick="fzui.notifications.show('#plain-notification')">Show a Notification</button><h2>Forms</h2>
+<button onclick="fzui.notifications.show('#plain-notification')">Show a Notification</button>
+<input type="text" id="notification-text" value="Hello World!"/> 
+<button onclick="fzui.notifications.showText(document.getElementById('notification-text').value)"> 
+    Show notification with text
+</button><h2>Forms</h2>
 <div class="section">
     <div class="half">
         <h3>Inline Layout</h3>

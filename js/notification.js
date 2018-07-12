@@ -24,4 +24,12 @@ fzui.notifications = new (function(){
       setTimeout(() => notification.style.visibility = 'hidden', 1500);
     }, 5000)
   }
+
+  this.showText = function(text) {
+    let notification = document.createElement('div');
+    notification.classList.add('notification');
+    notification.innerHTML = text;
+    document.body.appendChild(notification);
+    this.show(notification);
+  }
 });
