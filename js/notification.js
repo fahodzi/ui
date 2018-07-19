@@ -31,5 +31,6 @@ fzui.notifications = new (function(){
     notification.innerHTML = text;
     document.body.appendChild(notification);
     this.show(notification);
+    setTimeout(() => document.body.removeChild(notification), 5100)
   }
 });
