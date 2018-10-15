@@ -986,7 +986,7 @@ ul.nav-mega li a {
   .form-grid .form-element > select {
     width: auto;
     max-width: 70%; }
-  .form-grid .form-element span {
+  .form-grid .form-element > span {
     margin-left: 30%;
     font-size: small;
     white-space: normal; }
@@ -1070,6 +1070,18 @@ fieldset {
 .form-element.elements-inline.form-warning ul,
 .form-element.elements-inline.form-success ul {
   margin-left: 0px; }
+
+.text-input-field {
+  border: 1px solid #dbdbdb;
+  border-radius: 3px;
+  padding: 8px 8px 5px 8px;
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: inset 1px 1px 3px rgba(143, 143, 143, 0.2);
+  color: #242424;
+  font-size: 11pt;
+  font-family: inherit;
+  background-color: white; }
 
 .align-left {
   float: left; }

@@ -1,3 +1,15 @@
+@mixin input-style {
+    border:1px solid $gray-5;
+    border-radius: 3px;
+    padding:8px 8px 5px 8px;
+    box-sizing: border-box;
+    box-shadow: inset 1px 1px 3px rgba(darken($gray-5, 30%), 0.2);
+    color:$gray-0;
+    font-size: 11pt;
+    font-family: inherit;
+    background-color: $white;
+}
+
 .form-element {
 
   input:focus, textarea:focus, select:focus {
@@ -14,16 +26,8 @@
   }
 
   >input, >select, textarea {
-    border:1px solid $gray-5;
-    border-radius: 3px;
-    padding:8px 8px 5px 8px;
+    @include input-style;
     width:100%;
-    box-sizing: border-box;
-    box-shadow: inset 1px 1px 3px rgba(darken($gray-5, 30%), 0.2);
-    color:$gray-0;
-    font-size: 11pt;
-    font-family: inherit;
-    background-color: $white;
   }
 
   >input[type=checkbox]{
@@ -140,7 +144,7 @@
       max-width: 70%;
     }
 
-    span {
+    > span {
       margin-left: 30%;
       font-size:small;
       white-space: normal;
@@ -240,4 +244,8 @@ fieldset {
   ul{
     margin-left: 0px;
   }
+}
+
+.text-input-field {
+    @include input-style
 }
