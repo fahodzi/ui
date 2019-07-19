@@ -113,7 +113,7 @@
   .form-element{
     white-space: nowrap;
     font-size: 0;
-    label {
+    >label {
       display:inline-block;
       width:30%;
       box-sizing: border-box;
@@ -140,13 +140,13 @@
       max-width: 70%;
     }
 
-    span {
+    >span {
       margin-left: 30%;
       font-size:small;
       white-space: normal;
     }
 
-    ul{
+    >ul{
       margin-left: 30%;
       white-space: normal;
       font-size: initial;
@@ -164,8 +164,7 @@
     }
   }
   .form-submit-area {
-    padding-top:10px;
-    margin-left: 30%;
+    text-align: right
   }
 }
 
@@ -197,6 +196,7 @@ fieldset {
   padding:10px;
   padding-top:50px;
   position:relative;
+  margin: 0px;
   margin-top:10px;
 
   legend {

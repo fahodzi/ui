@@ -1002,8 +1002,7 @@ ul.nav-mega li a {
     text-align: left; }
 
 .form-grid .form-submit-area {
-  padding-top: 10px;
-  margin-left: 30%; }
+  text-align: right; }
 
 .form-error input, .form-error select {
   border-color: #feb2b2;
@@ -1038,6 +1037,7 @@ fieldset {
   padding: 10px;
   padding-top: 50px;
   position: relative;
+  margin: 0px;
   margin-top: 10px; }
   fieldset legend {
     font-weight: bold;
