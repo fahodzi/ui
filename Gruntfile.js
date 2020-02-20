@@ -15,12 +15,12 @@ module.exports = function(grunt) {
               } 
           }
       },
-      uglify: {
-          dist: {
-              src: 'dizt/fzui.js',
-              dest: 'dist/fzui.min.js'
-          }
-      },
+    //   uglify: {
+    //       dist: {
+    //           src: 'dist/fzui.js',
+    //           dest: 'dist/fzui.min.js'
+    //       }
+    //   },
       sass: {
           dist: {
               files: {
@@ -53,12 +53,12 @@ module.exports = function(grunt) {
       },
       clean : ['dist', 'build']
   });
-  grunt.loadNpmTasks('grunt-sass');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-mustache-render');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.registerTask('default', ['sass', 'concat', 'mustache_render']);
-  grunt.registerTask('build', ['sass', 'concat', 'cssmin', 'uglify', 'mustache_render'])
+  grunt.registerTask('build', ['sass', 'concat', 'cssmin', 'mustache_render'])
 }

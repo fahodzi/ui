@@ -208,6 +208,11 @@ fzui.modals = new (function(){
   
   this.open = function (description) {
     let object = getDOMObject(description);
+    
+    if(object === null) {
+      throw new Error("Could not find the element described by " + description)
+    }
+
     let backdrop = document.createElement('div');
     backdrop.classList.add('modal-backdrop');
   
@@ -233,19 +238,6 @@ fzui.modals = new (function(){
     modal.style.display = 'block';
     object.dispatchEvent(shownEvent);
   
-    /*backdrop.fadeIn('fast', function () {
-      content.css('opacity', '0.0');
-      content.show();
-      content.trigger('fzui.modal.showing');
-      content.animate(
-        {top: "+=20", opacity: 1}, 'fast',
-        function(){
-          fzui.dropdowns.init(content);
-          content.trigger('fzui.modal.shown');
-        }
-      );
-    });*/
-  
     close.addEventListener('click', () => this.close(modal));
     openModals.set(modal, {content: object, backdrop: backdrop});
     return modal
@@ -260,20 +252,6 @@ fzui.modals = new (function(){
     openModals.delete(modal);
     document.body.appendChild(content);
     content.classList.add('modal');
-
-    /*$(modal).animate({
-        top: "-20",
-        opacity: 0
-      }, 'fast',
-      function () {
-        $('body').append(content);
-        content.addClass('modal');
-        backdrop.fadeOut('fast', function () {
-          modal.remove();
-          backdrop.remove();
-        });
-      }
-    );*/
   }  
 })();
 /**

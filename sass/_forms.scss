@@ -23,6 +23,7 @@
     padding-top:5px;
     padding-bottom:5px;
     font-weight: bold;
+    color: $gray-2;
   }
 
   >input, >select, textarea {
@@ -205,12 +206,12 @@ fieldset {
 
   legend {
     font-weight: bold;
-    font-size: initial;
+    font-size: larger;
     position:absolute;
     left:0px;
     top:0px;
     width:100%;
-    color:$gray-2;
+    color:$gray-1;
     border-bottom: 1px dotted $gray-5;
     padding:10px;
     box-sizing: border-box;
