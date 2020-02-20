@@ -1,5 +1,8 @@
 @mixin size($font-size, $vertical-padding, $horizontal-padding, $offset) {
+  $line-height: $font-size + ($font-size / 3); 
   font-size: $font-size;
+  height: $line-height + ($vertical-padding * 2);
+  line-height: $line-height;
   padding: ($vertical-padding - $offset) ($horizontal-padding - $offset) ($vertical-padding - $offset) ($horizontal-padding - $offset);
 }
 

@@ -296,25 +296,25 @@ button:active, .button:active {
 }
 
 .button-group-mini {
-  > button, > .dropdown > button {
+  > button, > .dropdown > button, > .button {
     @include size-mini
   }
 }
 
 .button-group-small {
-  > button, > .dropdown > button {
+  > button, > .dropdown > button, > .button {
     @include size-small
   }
 }
 
 .button-group-large {
-  > button, > .dropdown > button {
+  > button, > .dropdown > button, > .button {
     @include size-large
   }
 }
 
 .button-group-mega {
-  > button, > .dropdown > button {
+  > button, > .dropdown > button, > .button {
     @include size-mega
   }
 }

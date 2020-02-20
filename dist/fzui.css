@@ -193,6 +193,8 @@ table {
 button, .button {
   position: relative;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px;
   background-color: #b6b6b6;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -223,6 +225,8 @@ button:active, .button:active {
 .button-red {
   position: relative;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px;
   background-color: #fc4e4e;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -250,6 +254,8 @@ button:active, .button:active {
 .button-yellow {
   position: relative;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px;
   background-color: #ffb724;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -277,6 +283,8 @@ button:active, .button:active {
 .button-blue {
   position: relative;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px;
   background-color: #21add3;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -304,6 +312,8 @@ button:active, .button:active {
 .button-green {
   position: relative;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px;
   background-color: #3bbf7e;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -331,6 +341,8 @@ button:active, .button:active {
 .button-brown {
   position: relative;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px;
   background-color: #d06f06;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -358,6 +370,8 @@ button:active, .button:active {
 .button-purple {
   position: relative;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px;
   background-color: #c36ad1;
   font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -389,6 +403,8 @@ button:active, .button:active {
   border-style: solid;
   border-color: #b6b6b6;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 6px 14px 6px 14px;
   color: #b6b6b6; }
 
@@ -404,23 +420,33 @@ button:active, .button:active {
 
 .button-mini {
   font-size: 12px;
+  height: 22px;
+  line-height: 16px;
   padding: 3px 6px 3px 6px; }
 
 .button-small {
   font-size: 14px;
+  height: 28.6666666667px;
+  line-height: 18.6666666667px;
   padding: 5px 12px 5px 12px; }
 
 .button-large {
   font-size: 14px;
+  height: 38.6666666667px;
+  line-height: 18.6666666667px;
   padding: 10px 18px 10px 18px; }
 
 .button-mega {
   font-size: 16px;
+  height: 45.3333333333px;
+  line-height: 21.3333333333px;
   padding: 12px 24px 12px 24px; }
 
 .button-outline.button-red {
   border-color: #fc4e4e;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 6px 14px 6px 14px;
   color: #fc4e4e; }
 
@@ -436,6 +462,8 @@ button:active, .button:active {
 .button-outline.button-yellow {
   border-color: #ffb724;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 6px 14px 6px 14px;
   color: #ffb724; }
 
@@ -451,6 +479,8 @@ button:active, .button:active {
 .button-outline.button-blue {
   border-color: #21add3;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 6px 14px 6px 14px;
   color: #21add3; }
 
@@ -466,6 +496,8 @@ button:active, .button:active {
 .button-outline.button-green {
   border-color: #3bbf7e;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 6px 14px 6px 14px;
   color: #3bbf7e; }
 
@@ -481,6 +513,8 @@ button:active, .button:active {
 .button-outline.button-brown {
   border-color: #d06f06;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 6px 14px 6px 14px;
   color: #d06f06; }
 
@@ -496,6 +530,8 @@ button:active, .button:active {
 .button-outline.button-purple {
   border-color: #c36ad1;
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 6px 14px 6px 14px;
   color: #c36ad1; }
 
@@ -510,18 +546,26 @@ button:active, .button:active {
 
 .button-outline.button-mini {
   font-size: 12px;
+  height: 22px;
+  line-height: 16px;
   padding: 2px 5px 2px 5px; }
 
 .button-outline.button-small {
   font-size: 14px;
+  height: 28.6666666667px;
+  line-height: 18.6666666667px;
   padding: 4px 11px 4px 11px; }
 
 .button-outline.button-large {
   font-size: 14px;
+  height: 38.6666666667px;
+  line-height: 18.6666666667px;
   padding: 9px 17px 9px 17px; }
 
 .button-outline.button-mega {
   font-size: 16px;
+  height: 45.3333333333px;
+  line-height: 21.3333333333px;
   padding: 11px 23px 11px 23px; }
 
 .button-group {
@@ -551,20 +595,28 @@ button:active, .button:active {
   .button-group > .button:last-child, .button-group .dropdown:last-child > .button {
     border-radius: 0px 3px 3px 0px; }
 
-.button-group-mini > button, .button-group-mini > .dropdown > button {
+.button-group-mini > button, .button-group-mini > .dropdown > button, .button-group-mini > .button {
   font-size: 12px;
+  height: 22px;
+  line-height: 16px;
   padding: 3px 6px 3px 6px; }
 
-.button-group-small > button, .button-group-small > .dropdown > button {
+.button-group-small > button, .button-group-small > .dropdown > button, .button-group-small > .button {
   font-size: 14px;
+  height: 28.6666666667px;
+  line-height: 18.6666666667px;
   padding: 5px 12px 5px 12px; }
 
-.button-group-large > button, .button-group-large > .dropdown > button {
+.button-group-large > button, .button-group-large > .dropdown > button, .button-group-large > .button {
   font-size: 14px;
+  height: 38.6666666667px;
+  line-height: 18.6666666667px;
   padding: 10px 18px 10px 18px; }
 
-.button-group-mega > button, .button-group-mega > .dropdown > button {
+.button-group-mega > button, .button-group-mega > .dropdown > button, .button-group-mega > .button {
   font-size: 16px;
+  height: 45.3333333333px;
+  line-height: 21.3333333333px;
   padding: 12px 24px 12px 24px; }
 
 .dropdown {
@@ -746,6 +798,8 @@ ul.nav {
   list-style: none; }
   ul.nav li a {
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     text-decoration: none;
     display: block;
@@ -760,22 +814,32 @@ div.nav-panel:target {
 
 ul.nav-mini li a {
   font-size: 12px;
+  height: 22px;
+  line-height: 16px;
   padding: 3px 6px 3px 6px; }
 
 ul.nav-small li a {
   font-size: 14px;
+  height: 28.6666666667px;
+  line-height: 18.6666666667px;
   padding: 5px 12px 5px 12px; }
 
 ul.nav-normal li a {
   font-size: 14px;
+  height: 32.6666666667px;
+  line-height: 18.6666666667px;
   padding: 7px 15px 7px 15px; }
 
 ul.nav-large li a {
   font-size: 14px;
+  height: 38.6666666667px;
+  line-height: 18.6666666667px;
   padding: 10px 18px 10px 18px; }
 
 ul.nav-mega li a {
   font-size: 16px;
+  height: 45.3333333333px;
+  line-height: 21.3333333333px;
   padding: 12px 24px 12px 24px; }
 
 .form-element {
@@ -831,6 +895,8 @@ ul.nav-mega li a {
   .form-submit-area input[type=submit] {
     position: relative;
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     background-color: #21add3;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -855,6 +921,8 @@ ul.nav-mega li a {
   .form-submit-area input[type=submit].button-red {
     position: relative;
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     background-color: #fc4e4e;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -879,6 +947,8 @@ ul.nav-mega li a {
   .form-submit-area input[type=submit].button-yellow {
     position: relative;
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     background-color: #ffb724;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -903,6 +973,8 @@ ul.nav-mega li a {
   .form-submit-area input[type=submit].button-blue {
     position: relative;
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     background-color: #21add3;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -927,6 +999,8 @@ ul.nav-mega li a {
   .form-submit-area input[type=submit].button-green {
     position: relative;
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     background-color: #3bbf7e;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -951,6 +1025,8 @@ ul.nav-mega li a {
   .form-submit-area input[type=submit].button-brown {
     position: relative;
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     background-color: #d06f06;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -975,6 +1051,8 @@ ul.nav-mega li a {
   .form-submit-area input[type=submit].button-purple {
     position: relative;
     font-size: 14px;
+    height: 32.6666666667px;
+    line-height: 18.6666666667px;
     padding: 7px 15px 7px 15px;
     background-color: #c36ad1;
     font-family: "Open Sans", Arial, Helvetica, sans-serif;
@@ -998,15 +1076,23 @@ ul.nav-mega li a {
     left: 1px; }
   .form-submit-area input[type=submit].button-mini {
     font-size: 12px;
+    height: 22px;
+    line-height: 16px;
     padding: 3px 6px 3px 6px; }
   .form-submit-area input[type=submit].button-small {
     font-size: 14px;
+    height: 28.6666666667px;
+    line-height: 18.6666666667px;
     padding: 5px 12px 5px 12px; }
   .form-submit-area input[type=submit].button-large {
     font-size: 14px;
+    height: 38.6666666667px;
+    line-height: 18.6666666667px;
     padding: 10px 18px 10px 18px; }
   .form-submit-area input[type=submit].button-mega {
     font-size: 16px;
+    height: 45.3333333333px;
+    line-height: 21.3333333333px;
     padding: 12px 24px 12px 24px; }
 
 .form-grid .form-element {
