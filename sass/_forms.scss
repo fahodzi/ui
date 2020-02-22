@@ -20,10 +20,11 @@
 
   >label {
     display:block;
-    padding-top:5px;
+    padding-top:9px;
     padding-bottom:5px;
     font-weight: bold;
     color: $gray-2;
+    font-size: 16px;
   }
 
   >input, >select, textarea {
@@ -42,7 +43,7 @@
   }
 
   >span {
-    font-size: small;
+    font-size: 13px;
     color: $gray-3;
     display:block;
     margin-top:5px;
@@ -116,7 +117,7 @@
 
 .form-grid {
   .form-element{
-    white-space: nowrap;
+    //white-space: nowrap;
     font-size: 0;
     label {
       display:inline-block;
@@ -126,7 +127,7 @@
       text-align: right;
       padding-right:10px;
       margin-top:10px;
-      vertical-align: top
+      vertical-align: top;
     }
     >input, >select, textarea, .check-group, .input-wrapper {
       width:70%;
@@ -147,7 +148,7 @@
 
     > span {
       margin-left: 30%;
-      font-size:small;
+      font-size: 13px;
       white-space: normal;
     }
 
@@ -156,7 +157,7 @@
       white-space: normal;
       font-size: initial;
       li{
-        font-size: 0.9em;
+        font-size:14px;
       }
     }
 
@@ -206,7 +207,7 @@ fieldset {
 
   legend {
     font-weight: bold;
-    font-size: larger;
+    font-size: 19px;
     position:absolute;
     left:0px;
     top:0px;
@@ -219,7 +220,7 @@ fieldset {
 }
 
 .form-element.elements-inline{
-
+  
   white-space: normal;
   font-size: initial;
   margin-top: 10px;

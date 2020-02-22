@@ -848,10 +848,11 @@ ul.nav-mega li a {
     outline: none; }
   .form-element > label {
     display: block;
-    padding-top: 5px;
+    padding-top: 9px;
     padding-bottom: 5px;
     font-weight: bold;
-    color: #6d6d6d; }
+    color: #6d6d6d;
+    font-size: 16px; }
   .form-element > input, .form-element > select, .form-element textarea {
     border: 1px solid #dbdbdb;
     border-radius: 3px;
@@ -870,7 +871,7 @@ ul.nav-mega li a {
   .form-element > input[type=text]::placeholder, .form-element > input[type=password]::placeholder {
     color: #a0a0a0; }
   .form-element > span {
-    font-size: small;
+    font-size: 13px;
     color: #929292;
     display: block;
     margin-top: 5px; }
@@ -1096,7 +1097,6 @@ ul.nav-mega li a {
     padding: 12px 24px 12px 24px; }
 
 .form-grid .form-element {
-  white-space: nowrap;
   font-size: 0; }
   .form-grid .form-element label {
     display: inline-block;
@@ -1121,14 +1121,14 @@ ul.nav-mega li a {
     max-width: 70%; }
   .form-grid .form-element > span {
     margin-left: 30%;
-    font-size: small;
+    font-size: 13px;
     white-space: normal; }
   .form-grid .form-element ul {
     margin-left: 30%;
     white-space: normal;
     font-size: initial; }
     .form-grid .form-element ul li {
-      font-size: 0.9em; }
+      font-size: 14px; }
   .form-grid .form-element .check-group label {
     display: block;
     width: auto;
@@ -1170,7 +1170,7 @@ fieldset {
   margin-top: 10px; }
   fieldset legend {
     font-weight: bold;
-    font-size: larger;
+    font-size: 19px;
     position: absolute;
     left: 0px;
     top: 0px;
