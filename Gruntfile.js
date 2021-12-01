@@ -1,3 +1,4 @@
+const sass = require('node-sass');
 const js_sources = ['js/fzui.js', 'js/dom.js', 'js/dropdown.js', 'js/modal.js', 'js/nav.js'];
 
 module.exports = function(grunt)
@@ -23,6 +24,9 @@ module.exports = function(grunt)
             }
         },
         sass: {
+            options : {
+                implementation: sass
+            },
             dist: {
                 files: {
                     'dist/fzui.css' : 'sass/fzui.scss',

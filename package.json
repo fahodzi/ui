@@ -14,13 +14,13 @@
   "homepage": "https://github.com/ekowabaka/fzui#readme",
   "devDependencies": {
     "grunt": "^1.0.4",
-    "grunt-contrib-clean": "^1.0.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-cssmin": "^2.0.0",
-    "grunt-contrib-mincss": "^0.3.2",
-    "grunt-contrib-uglify": "^2.1.0",
+    "grunt-cli": "^1.4.3",
+    "grunt-contrib-clean": "^2.0.0",
+    "grunt-contrib-concat": "^2.0.0",
+    "grunt-contrib-cssmin": "^4.0.0",
+    "grunt-contrib-uglify": "^5.0.0",
     "grunt-mustache-render": "^1.9.2",
-    "grunt-sass": "^1.2.0"
-  },
-  "dependencies": {}
+    "grunt-sass": "^3.0.0",
+    "node-sass": "^6.0.1"
+  }
 }
