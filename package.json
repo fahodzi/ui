@@ -21,6 +21,6 @@
     "grunt-contrib-uglify": "^5.0.0",
     "grunt-mustache-render": "^1.9.2",
     "grunt-sass": "^3.0.0",
-    "node-sass": "^6.0.1"
+    "node-sass": "^7.0.0"
   }
 }
